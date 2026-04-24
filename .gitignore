@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+tokens-raw/
+
+# IDE
+.vscode/
+.idea/
+
+# Build output
+dist/
+build/
+*.log
