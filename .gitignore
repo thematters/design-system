@@ -13,3 +13,6 @@ tokens-raw/
 dist/
 build/
 *.log
+
+# tokens/dist/ is vendored on purpose — consumers copy from there
+!tokens/dist/
