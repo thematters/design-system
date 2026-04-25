@@ -82,4 +82,33 @@
 
 ---
 
+## DS 1.5 Component Extraction Summary（2026-04-25）
+
+整份 Design System 1.5（fileKey `JDKpHezhllOvJF42xbKcNN`）已透過 `scripts/extract-figma.mjs` 抽取至本 repo：
+
+- **Tokens**：先前已抽至 [tokens/tokens.json](../tokens/tokens.json)（v2，11 個 frame，metadata 內含 PM 決議）；本次 REST 比對結果寫於 [docs/figma-tokens-diff.md](./figma-tokens-diff.md)，未發現新色值。
+- **Components**：41 個 spec（pages：Buttons / Inputs / Navigation / Feedback / Card / Screen / Logo / Others），目錄結構 `components/<page-slug>/<name-slug>/`，每個含 `spec.md` + `figma-preview.png`（透過 `/v1/images` REST API 渲染）
+- **Icons**：27 個 variant set + 211 個 standalone icon → [components/icons/index.md](../components/icons/index.md)（catalog only，不個別寫 spec）
+- **Skipped pages**：`Z-INDEX（制作中）` / `---`（separator）/ `草稿` / `Thumbnail`
+
+### 重跑指令
+
+```bash
+# 重新拉 Figma metadata（components / component_sets / styles）
+node scripts/extract-figma.mjs cache
+
+# 比對 styles 與 tokens.json
+node scripts/extract-figma.mjs cross-check
+
+# 重抽某 page 的 components
+node scripts/extract-figma.mjs components "Buttons,Inputs"
+
+# 重建 icons catalog
+node scripts/extract-figma.mjs icons
+```
+
+需設 `.env` 中 `FIGMA_TOKEN`（Personal Access Token，scope: File content read）。
+
+---
+
 _生成自 `figma-inventory.json`；若 Figma 檔案有增減請重新跑同步腳本，並重建本表。_
