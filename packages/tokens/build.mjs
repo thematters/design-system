@@ -164,6 +164,62 @@ ts.push("");
 
 await writeBoth("tokens.ts", ts.join("\n"));
 
+// ----- tokens.js (ESM) + tokens.cjs (CJS) + tokens.d.ts -----
+// tokens.ts works for Vite / esbuild consumers but breaks raw Node /
+// older bundlers. Emit the pre-compiled forms so the published package
+// loads cleanly anywhere.
+const tokensLiteral = JSON.stringify(tokens, null, 2);
+const colorByPathLiteral = (() => {
+  const lines = ["{"];
+  for (const t of flat(tokens.color, ["color"])) {
+    lines.push(`  ${JSON.stringify(t.path.join("."))}: ${JSON.stringify(t.value)},`);
+  }
+  lines.push("}");
+  return lines.join("\n");
+})();
+
+const esm = `// Auto-generated. Do not edit. Run \`node packages/tokens/build.mjs\`.
+export const tokens = ${tokensLiteral};
+export const colorByPath = ${colorByPathLiteral};
+`;
+await writeBoth("tokens.js", esm);
+
+const cjs = `// Auto-generated. Do not edit. Run \`node packages/tokens/build.mjs\`.
+const tokens = ${tokensLiteral};
+const colorByPath = ${colorByPathLiteral};
+module.exports = { tokens, colorByPath };
+module.exports.tokens = tokens;
+module.exports.colorByPath = colorByPath;
+`;
+await writeBoth("tokens.cjs", cjs);
+
+// Type-wise we expose a loose shape on tokens.d.ts. Consumers wanting
+// the literal `as const` types should import from "./tokens.ts" (also
+// shipped) — Vite / esbuild / TS-aware bundlers will pick that up via
+// the conditional export.
+const dts = `// Auto-generated. Do not edit. Run \`node packages/tokens/build.mjs\`.
+export interface TokenLeaf {
+  readonly value: string;
+  readonly description?: string;
+}
+export interface TokenTree {
+  readonly [key: string]: TokenLeaf | TokenTree;
+}
+export declare const tokens: {
+  readonly color: TokenTree;
+  readonly spacing: TokenTree;
+  readonly effect: TokenTree;
+  readonly typography: {
+    readonly fontFamily: { readonly [k: string]: TokenLeaf };
+    readonly system: { readonly [name: string]: { readonly [weight: string]: { readonly fontFamily: string; readonly fontWeight: number; readonly fontSize: string; readonly lineHeight: string; readonly letterSpacing?: string } } };
+    readonly article: { readonly [name: string]: { readonly [weight: string]: { readonly fontFamily: string; readonly fontWeight: number; readonly fontSize: string; readonly lineHeight: string; readonly letterSpacing?: string } } };
+  };
+};
+export declare const colorByPath: Record<string, string>;
+export type Tokens = typeof tokens;
+`;
+await writeBoth("tokens.d.ts", dts);
+
 // ----- tailwind.preset.cjs -----
 function tailwindColorTree(obj) {
   const out = {};

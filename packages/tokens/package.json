@@ -9,14 +9,20 @@
     "directory": "packages/tokens"
   },
   "type": "module",
-  "main": "./dist/tokens.ts",
-  "types": "./dist/tokens.ts",
+  "main": "./dist/tokens.cjs",
+  "module": "./dist/tokens.js",
+  "types": "./dist/tokens.d.ts",
   "exports": {
-    ".": "./dist/tokens.ts",
+    ".": {
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js",
+      "require": "./dist/tokens.cjs"
+    },
     "./tokens.css": "./dist/tokens.css",
     "./freewrite.css": "./dist/freewrite.css",
     "./tailwind": "./dist/tailwind.preset.cjs",
-    "./tokens.json": "./tokens.json"
+    "./tokens.json": "./tokens.json",
+    "./tokens.ts": "./dist/tokens.ts"
   },
   "files": [
     "dist/",

@@ -1,0 +1,92 @@
+name: Visual regression
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "packages/react/**"
+      - "packages/tokens/**"
+      - "apps/storybook/**"
+      - "tests/visual/**"
+      - "playwright.config.ts"
+      - ".github/workflows/visual-regression.yml"
+  workflow_dispatch:
+    inputs:
+      update:
+        description: "Update snapshots (commits new baseline back to the branch)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # On manual update, push back to the same branch.
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Playwright browsers
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Build tokens + Storybook
+        run: |
+          pnpm build:tokens
+          pnpm build:storybook
+
+      - name: Run visual regression
+        if: github.event.inputs.update != 'true'
+        run: pnpm test:visual
+
+      - name: Update snapshots
+        if: github.event.inputs.update == 'true'
+        run: pnpm test:visual:update
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Commit updated snapshots back to branch
+        if: github.event.inputs.update == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tests/visual/__snapshots__
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(visual): update snapshots [skip ci]"
+            git push
+          else
+            echo "No snapshot changes to commit."
+          fi
