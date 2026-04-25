@@ -15,13 +15,13 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Show Text | `true` |  |
-| Show Icon | `true` |  |
-| Text | `Text` |  |
-| Type | `Matters Green` | `Matters Green`, `Black`, `Grey Darker`, `Error`, `Disable` |
-| Icon | `Left` | `Left`, `Right` |
+| Property  | Default         | Options                                                     |
+| --------- | --------------- | ----------------------------------------------------------- |
+| Show Text | `true`          |                                                             |
+| Show Icon | `true`          |                                                             |
+| Text      | `Text`          |                                                             |
+| Type      | `Matters Green` | `Matters Green`, `Black`, `Grey Darker`, `Error`, `Disable` |
+| Icon      | `Left`          | `Left`, `Right`                                             |
 
 ### Variant nodes
 
@@ -40,14 +40,14 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Logo/Matters Green (`FILL`) | _待對照_ | _待補_ |
-| System/Body 2/Regular (`TEXT`) | _待對照_ | _待補_ |
-| Grey Scale/Black (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Darker (`FILL`) | _待對照_ | _待補_ |
-| Function/Negative red (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Grey (`FILL`) | _待對照_ | _待補_ |
+| Figma style                     | Token (tokens.json) | Used for |
+| ------------------------------- | ------------------- | -------- |
+| Logo/Matters Green (`FILL`)     | _待對照_            | _待補_   |
+| System/Body 2/Regular (`TEXT`)  | _待對照_            | _待補_   |
+| Grey Scale/Black (`FILL`)       | _待對照_            | _待補_   |
+| Grey Scale/Grey Darker (`FILL`) | _待對照_            | _待補_   |
+| Function/Negative red (`FILL`)  | _待對照_            | _待補_   |
+| Grey Scale/Grey (`FILL`)        | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

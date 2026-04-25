@@ -15,9 +15,9 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Type | `Contributor` | `Contributor`, `Author` |
+| Property | Default       | Options                 |
+| -------- | ------------- | ----------------------- |
+| Type     | `Contributor` | `Contributor`, `Author` |
 
 ### Variant nodes
 
@@ -28,13 +28,13 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Logo/Yellow Lighter (`FILL`) | _待對照_ | _待補_ |
-| Logo/Matters Gold (`FILL`) | _待對照_ | _待補_ |
-| System/Small/Regular (`TEXT`) | _待對照_ | _待補_ |
-| Logo/Green Lighter (`FILL`) | _待對照_ | _待補_ |
-| Logo/Matters Green (`FILL`) | _待對照_ | _待補_ |
+| Figma style                   | Token (tokens.json) | Used for |
+| ----------------------------- | ------------------- | -------- |
+| Logo/Yellow Lighter (`FILL`)  | _待對照_            | _待補_   |
+| Logo/Matters Gold (`FILL`)    | _待對照_            | _待補_   |
+| System/Small/Regular (`TEXT`) | _待對照_            | _待補_   |
+| Logo/Green Lighter (`FILL`)   | _待對照_            | _待補_   |
+| Logo/Matters Green (`FILL`)   | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

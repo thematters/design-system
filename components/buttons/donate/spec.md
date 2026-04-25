@@ -15,11 +15,11 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Text | `支持作者` |  |
-| View | `Reader` | `Author`, `Reader` |
-| State | `Default` | `Default`, `Hovering`, `Pressed`, `Disable` |
+| Property | Default    | Options                                     |
+| -------- | ---------- | ------------------------------------------- |
+| Text     | `支持作者` |                                             |
+| View     | `Reader`   | `Author`, `Reader`                          |
+| State    | `Default`  | `Default`, `Hovering`, `Pressed`, `Disable` |
 
 ### Variant nodes
 
@@ -36,14 +36,14 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Grey Scale/White (`FILL`) | _待對照_ | _待補_ |
-| Logo/Matters Gold (`FILL`) | _待對照_ | _待補_ |
-| <unknown 2901:106> (``) | _待對照_ | _待補_ |
-| System/Body 1/Regular (`TEXT`) | _待對照_ | _待補_ |
-| Logo/Matters Gold Hover (`FILL`) | _待對照_ | _待補_ |
-| Logo/Matters Gold Press (`FILL`) | _待對照_ | _待補_ |
+| Figma style                      | Token (tokens.json) | Used for |
+| -------------------------------- | ------------------- | -------- |
+| Grey Scale/White (`FILL`)        | _待對照_            | _待補_   |
+| Logo/Matters Gold (`FILL`)       | _待對照_            | _待補_   |
+| <unknown 2901:106> (``)          | _待對照_            | _待補_   |
+| System/Body 1/Regular (`TEXT`)   | _待對照_            | _待補_   |
+| Logo/Matters Gold Hover (`FILL`) | _待對照_            | _待補_   |
+| Logo/Matters Gold Press (`FILL`) | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

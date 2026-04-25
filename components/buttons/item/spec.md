@@ -15,12 +15,12 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Text | `text` |  |
-| Show Icon | `true` |  |
-| Icon | `4581:754` |  |
-| Type | `Normal` | `Normal`, `Disable`, `Warn`, `Split`, `Hover` |
+| Property  | Default    | Options                                       |
+| --------- | ---------- | --------------------------------------------- |
+| Text      | `text`     |                                               |
+| Show Icon | `true`     |                                               |
+| Icon      | `4581:754` |                                               |
+| Type      | `Normal`   | `Normal`, `Disable`, `Warn`, `Split`, `Hover` |
 
 ### Variant nodes
 
@@ -34,14 +34,14 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Grey Scale/Grey Darker (`FILL`) | _待對照_ | _待補_ |
-| System/Body 1/Regular (`TEXT`) | _待對照_ | _待補_ |
-| Grey Scale/Black (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Grey (`FILL`) | _待對照_ | _待補_ |
-| Function/Negative red (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Hover (`FILL`) | _待對照_ | _待補_ |
+| Figma style                     | Token (tokens.json) | Used for |
+| ------------------------------- | ------------------- | -------- |
+| Grey Scale/Grey Darker (`FILL`) | _待對照_            | _待補_   |
+| System/Body 1/Regular (`TEXT`)  | _待對照_            | _待補_   |
+| Grey Scale/Black (`FILL`)       | _待對照_            | _待補_   |
+| Grey Scale/Grey (`FILL`)        | _待對照_            | _待補_   |
+| Function/Negative red (`FILL`)  | _待對照_            | _待補_   |
+| Grey Scale/Grey Hover (`FILL`)  | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

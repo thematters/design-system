@@ -15,9 +15,9 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Icon | `on` | `on`, `off` |
+| Property | Default | Options     |
+| -------- | ------- | ----------- |
+| Icon     | `on`    | `on`, `off` |
 
 ### Variant nodes
 
@@ -28,11 +28,11 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| <unknown 2901:1527> (``) | _待對照_ | _待補_ |
-| <unknown 2901:98> (``) | _待對照_ | _待補_ |
-| <unknown 2901:1528> (``) | _待對照_ | _待補_ |
+| Figma style              | Token (tokens.json) | Used for |
+| ------------------------ | ------------------- | -------- |
+| <unknown 2901:1527> (``) | _待對照_            | _待補_   |
+| <unknown 2901:98> (``)   | _待對照_            | _待補_   |
+| <unknown 2901:1528> (``) | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

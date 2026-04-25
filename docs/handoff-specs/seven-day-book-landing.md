@@ -24,6 +24,7 @@
 **設計核心（方向 C 小鎮）**：以「不是一個人在寫」為情感主軸。首屏用**參與者頭像牆 + 參與人數**建立社群溫度，降低新人啟動障礙；對既有創作者也給予「同行」的歸屬感。
 
 **使用情境**：
+
 1. 活動前 7 天（預告）→ CTA 為「訂閱提醒」；頭像牆顯示歷屆參與者
 2. 活動進行中（7 天）→ CTA 為「看他人的七日書」（主）+「加入寫作 / 寫今天」（次）；頭像牆為本季參與者
 3. 活動結束後 → CTA 為「讀選集」+「期待下一季」；頭像牆保留作為歷史紀念
@@ -82,6 +83,7 @@
 ```
 
 **Grid**：
+
 - 頁面底色：`color.grey.greyLighter` (#F7F7F7)
 - 每個 Board：白底 + `effect.shadow1` + `border-radius: 16px` + `padding: 40px 48px`
 - Board 之間垂直間距：`spacing.sp32` (32px)
@@ -97,55 +99,55 @@
 
 ### Color
 
-| Token | Value | Used for |
-| ----- | ----- | -------- |
-| `color.grey.greyLighter` | `#F7F7F7` | 頁面底色 |
-| `color.grey.white` | `#FFFFFF` | Board 背景 |
-| `color.grey.black` | `#333333` | H1 / H2 / 主文字 |
-| `color.grey.greyDarker` | `#808080` | Sub text / meta / timestamp |
-| `color.grey.greyLight` | `#DDDDDD` | Border / divider |
-| `color.freewrite.textDark` | `#045898` | **主 CTA 按鈕底色、連結色、eyebrow、今日高亮、focus ring**（11.5:1 AAA on white）|
-| `color.freewrite.text` | `#1999D0` | CTA hover、次要 accent、強調文字（≥18pt 時可用）|
-| `color.info.900` | `#015379` | 活躍 / pressed |
-| `color.freewrite.label` | `#83BAD1` | EntryCard hover border、頭像 placeholder 深階 |
-| `color.info.200` | `#CAEEFF` | 頭像 placeholder 中階 |
-| `color.info.100` | `#DCF3FE` | 頭像 placeholder 淺階、DayPromptChip hover（非今日） |
-| `color.freewrite.background` | `#F0F9FE` | DayPromptChip 非 today 底色、daytag chip 底色、closing CTA 漸層起點 |
+| Token                        | Value     | Used for                                                                          |
+| ---------------------------- | --------- | --------------------------------------------------------------------------------- |
+| `color.grey.greyLighter`     | `#F7F7F7` | 頁面底色                                                                          |
+| `color.grey.white`           | `#FFFFFF` | Board 背景                                                                        |
+| `color.grey.black`           | `#333333` | H1 / H2 / 主文字                                                                  |
+| `color.grey.greyDarker`      | `#808080` | Sub text / meta / timestamp                                                       |
+| `color.grey.greyLight`       | `#DDDDDD` | Border / divider                                                                  |
+| `color.freewrite.textDark`   | `#045898` | **主 CTA 按鈕底色、連結色、eyebrow、今日高亮、focus ring**（11.5:1 AAA on white） |
+| `color.freewrite.text`       | `#1999D0` | CTA hover、次要 accent、強調文字（≥18pt 時可用）                                  |
+| `color.info.900`             | `#015379` | 活躍 / pressed                                                                    |
+| `color.freewrite.label`      | `#83BAD1` | EntryCard hover border、頭像 placeholder 深階                                     |
+| `color.info.200`             | `#CAEEFF` | 頭像 placeholder 中階                                                             |
+| `color.info.100`             | `#DCF3FE` | 頭像 placeholder 淺階、DayPromptChip hover（非今日）                              |
+| `color.freewrite.background` | `#F0F9FE` | DayPromptChip 非 today 底色、daytag chip 底色、closing CTA 漸層起點               |
 
 > **未使用**：`color.primary.*`（紫）+ `color.secondary.*`（lime）在方向 C **不進入**；全站品牌色在七日書 context 讓位給 freewrite 藍，回主站後續 navigation / footer 仍維持 primary 紫。若後續做七日書「完成徽章」需點亮配件色，再評估引入 `color.brand.legacy.gold` 或 `color.secondary.*`。
 
 ### Typography
 
-| Token | Value | Used for |
-| ----- | ----- | -------- |
-| `typography.fontFamily.reading` | Noto Serif TC | Hero H1、當季主題引言、EntryCard 標題、Board H2 |
-| `typography.fontFamily.ui` | PingFang TC | 按鈕 label、meta、eyebrow、FAQ 問題 |
-| `typography.article.title.desktop` | Noto Serif TC / 32 / 54 / 600 / ls 1.2 | Hero H1（desktop） |
-| `typography.article.title.mobile` | Noto Serif TC / 24 / 36 / 600 / ls 1.2 | Hero H1（mobile） |
-| `typography.article.summary.desktop` | Noto Serif TC / 20 / 35 / 400 | Hero sub / 當季主題說明（desktop） |
-| `typography.article.summary.mobile` | Noto Serif TC / 18 / 30 / 400 | Hero sub（mobile） |
-| `typography.system.h2.semibold` | PingFang TC / 20 / 30 / 600 | Board H2（e.g. 「今天，他們寫了這些」） |
-| `typography.system.body1.semibold` | PingFang TC / 16 / 24 / 600 | CTA 按鈕 label、EntryCard 作者名 |
-| `typography.system.body2.regular` | PingFang TC / 14 / 22 / 400 | EntryCard excerpt、meta |
-| `typography.system.body2.medium` | PingFang TC / 14 / 22 / 500 | DayPromptChip 提示詞 |
-| `typography.system.small.regular` | PingFang TC / 12 / 18 / 400 | eyebrow、timestamp、daytag chip |
+| Token                                | Value                                  | Used for                                        |
+| ------------------------------------ | -------------------------------------- | ----------------------------------------------- |
+| `typography.fontFamily.reading`      | Noto Serif TC                          | Hero H1、當季主題引言、EntryCard 標題、Board H2 |
+| `typography.fontFamily.ui`           | PingFang TC                            | 按鈕 label、meta、eyebrow、FAQ 問題             |
+| `typography.article.title.desktop`   | Noto Serif TC / 32 / 54 / 600 / ls 1.2 | Hero H1（desktop）                              |
+| `typography.article.title.mobile`    | Noto Serif TC / 24 / 36 / 600 / ls 1.2 | Hero H1（mobile）                               |
+| `typography.article.summary.desktop` | Noto Serif TC / 20 / 35 / 400          | Hero sub / 當季主題說明（desktop）              |
+| `typography.article.summary.mobile`  | Noto Serif TC / 18 / 30 / 400          | Hero sub（mobile）                              |
+| `typography.system.h2.semibold`      | PingFang TC / 20 / 30 / 600            | Board H2（e.g. 「今天，他們寫了這些」）         |
+| `typography.system.body1.semibold`   | PingFang TC / 16 / 24 / 600            | CTA 按鈕 label、EntryCard 作者名                |
+| `typography.system.body2.regular`    | PingFang TC / 14 / 22 / 400            | EntryCard excerpt、meta                         |
+| `typography.system.body2.medium`     | PingFang TC / 14 / 22 / 500            | DayPromptChip 提示詞                            |
+| `typography.system.small.regular`    | PingFang TC / 12 / 18 / 400            | eyebrow、timestamp、daytag chip                 |
 
 ### Spacing
 
-| Token | Value | Used for |
-| ----- | ----- | -------- |
-| `spacing.sp4` | 4px | 極小 rhythm（day num 與 label） |
-| `spacing.sp8` | 8px | Avatar wall inner gap |
-| `spacing.sp10` | 10px | DayPromptRow 格間距 |
-| `spacing.sp12` | 12px | CTA pair gap、EntryCard padding |
-| `spacing.sp16` | 16px | 區塊內 padding、EntryCard 內間距 |
-| `spacing.sp32` | 32px | Board 之間 / 大節奏 |
+| Token          | Value | Used for                         |
+| -------------- | ----- | -------------------------------- |
+| `spacing.sp4`  | 4px   | 極小 rhythm（day num 與 label）  |
+| `spacing.sp8`  | 8px   | Avatar wall inner gap            |
+| `spacing.sp10` | 10px  | DayPromptRow 格間距              |
+| `spacing.sp12` | 12px  | CTA pair gap、EntryCard padding  |
+| `spacing.sp16` | 16px  | 區塊內 padding、EntryCard 內間距 |
+| `spacing.sp32` | 32px  | Board 之間 / 大節奏              |
 
 ### Effect
 
-| Token | Value | Used for |
-| ----- | ----- | -------- |
-| `effect.shadow1` | 0 4px 8px rgba(0,0,0,0.08) | Board 卡片陰影 |
+| Token             | Value                       | Used for                 |
+| ----------------- | --------------------------- | ------------------------ |
+| `effect.shadow1`  | 0 4px 8px rgba(0,0,0,0.08)  | Board 卡片陰影           |
 | `effect.dropdown` | 0 4px 16px rgba(0,0,0,0.12) | FAQ 展開、Avatar tooltip |
 
 ### New tokens needed
@@ -158,11 +160,11 @@
 
 ### 既有（複用 `components/`）
 
-| Component | 來源 | Props / 備註 |
-| --------- | ---- | ------------ |
-| `Button` | 既有 | `variant: primary \| outline`、`size: md`；主 CTA 用 primary，次用 outline |
-| `Avatar` | 既有 | 用於 EntryCard；尺寸 40px desktop / 36px mobile |
-| `Disclosure` / `Accordion` | 既有 | 用於 Rules / FAQ；若 `components/` 無，新增 |
+| Component                  | 來源 | Props / 備註                                                               |
+| -------------------------- | ---- | -------------------------------------------------------------------------- |
+| `Button`                   | 既有 | `variant: primary \| outline`、`size: md`；主 CTA 用 primary，次用 outline |
+| `Avatar`                   | 既有 | 用於 EntryCard；尺寸 40px desktop / 36px mobile                            |
+| `Disclosure` / `Accordion` | 既有 | 用於 Rules / FAQ；若 `components/` 無，新增                                |
 
 ### 新建（Structural Track 必須新建）
 
@@ -196,6 +198,7 @@ props:
 ```
 
 **視覺**：
+
 - 每個頭像 32×32 圓形，白色 2px border，`shadow: 0 1px 3px rgba(0,0,0,.08)`
 - Fallback 色取自 `color.info.{100,200}` + `color.freewrite.label`，避免搶戲
 - Flex wrap，gap `sp8`（4px 視覺上緊湊）
@@ -213,6 +216,7 @@ props:
 ```
 
 **視覺**：
+
 - 7 等分 grid，gap `sp10`
 - 每格 radius 10px、padding 14/10
 - 非今日：背景 `color.freewrite.background`、數字 `color.freewrite.textDark`、keyword `color.grey.greyDarker`
@@ -230,6 +234,7 @@ props:
 ```
 
 **視覺**：
+
 - 白底 + 1px transparent border（hover → `color.freewrite.label`）
 - Radius 12、padding `sp16`
 - 左側作者頭像 40px
@@ -245,11 +250,11 @@ props:
 
 ### 活動階段 × CTA 行為矩陣
 
-| Phase | 主 CTA | 次 CTA | StreakProgress 顯示？ |
-| ----- | ------ | ------ | --------------------- |
-| `before` | 「訂閱開跑提醒」→ email 訂閱 flow | 無 | 無 |
-| `during` | 「看他人的七日書」→ 選集頁 | 「加入寫作」→ 若未參加 / 「寫今天」→ 若今日未寫 / 「查看今日作品」→ 若今日已寫 | 無（方向 C 不用 streak） |
-| `after` | 「讀選集」→ 選集頁 | 「期待下一季」→ email 訂閱 | 無 |
+| Phase    | 主 CTA                            | 次 CTA                                                                         | StreakProgress 顯示？    |
+| -------- | --------------------------------- | ------------------------------------------------------------------------------ | ------------------------ |
+| `before` | 「訂閱開跑提醒」→ email 訂閱 flow | 無                                                                             | 無                       |
+| `during` | 「看他人的七日書」→ 選集頁        | 「加入寫作」→ 若未參加 / 「寫今天」→ 若今日未寫 / 「查看今日作品」→ 若今日已寫 | 無（方向 C 不用 streak） |
+| `after`  | 「讀選集」→ 選集頁                | 「期待下一季」→ email 訂閱                                                     | 無                       |
 
 ### 主 CTA 「看他人的七日書」
 
@@ -311,20 +316,20 @@ props:
 
 ## Edge Cases
 
-| 情境 | 處理 |
-| ---- | ---- |
-| 活動未開跑（phase=before） | DayPromptRow 所有格 locked；CTA 改訂閱 |
-| 活動進行中但我未登入 | 顯示 guest 版 CTA（「加入寫作」跳登入）；ParticipantWall 正常；無個人進度區 |
-| 我登入但未參加本季 | 次 CTA 文案 = 「加入寫作」 |
-| 我參加了但斷天 | 方向 C 不顯示 streak；僅次 CTA 引導「補寫 Day N」（Day N = 目前應寫但沒寫的那天） |
-| 活動結束（phase=after） | DayPromptRow 全格恢復可讀但無 today 高亮；CTA 改選集 |
-| 參與人數 = 0（新季剛開跑） | ParticipantWall 顯示 onboarding copy「成為第一位」；totalCount 隱藏或顯示 `—` |
-| 本季無作品 | Entries board 顯示 empty state「成為第一個寫下來的人」+ 引導 CTA |
-| 載入中 | Board-level skeleton（非全頁 spinner）；頭像牆 + entries 各自獨立 skeleton |
-| 作者頭像 404 / 未上傳 | 顯示 `color.info.{100,200}` + `color.freewrite.label` 色塊 + 姓名首字（PingFang bold 白字） |
-| 極長作者名 | 單行 `text-overflow: ellipsis`；tooltip 露全名 |
-| 極長作品標題 | 2 行後 `-webkit-line-clamp: 2` |
-| prefers-reduced-motion | 移除所有 hover transform、accordion 動畫；靜態顯示 |
+| 情境                       | 處理                                                                                        |
+| -------------------------- | ------------------------------------------------------------------------------------------- |
+| 活動未開跑（phase=before） | DayPromptRow 所有格 locked；CTA 改訂閱                                                      |
+| 活動進行中但我未登入       | 顯示 guest 版 CTA（「加入寫作」跳登入）；ParticipantWall 正常；無個人進度區                 |
+| 我登入但未參加本季         | 次 CTA 文案 = 「加入寫作」                                                                  |
+| 我參加了但斷天             | 方向 C 不顯示 streak；僅次 CTA 引導「補寫 Day N」（Day N = 目前應寫但沒寫的那天）           |
+| 活動結束（phase=after）    | DayPromptRow 全格恢復可讀但無 today 高亮；CTA 改選集                                        |
+| 參與人數 = 0（新季剛開跑） | ParticipantWall 顯示 onboarding copy「成為第一位」；totalCount 隱藏或顯示 `—`               |
+| 本季無作品                 | Entries board 顯示 empty state「成為第一個寫下來的人」+ 引導 CTA                            |
+| 載入中                     | Board-level skeleton（非全頁 spinner）；頭像牆 + entries 各自獨立 skeleton                  |
+| 作者頭像 404 / 未上傳      | 顯示 `color.info.{100,200}` + `color.freewrite.label` 色塊 + 姓名首字（PingFang bold 白字） |
+| 極長作者名                 | 單行 `text-overflow: ellipsis`；tooltip 露全名                                              |
+| 極長作品標題               | 2 行後 `-webkit-line-clamp: 2`                                                              |
+| prefers-reduced-motion     | 移除所有 hover transform、accordion 動畫；靜態顯示                                          |
 
 ---
 
@@ -380,7 +385,7 @@ props:
 2. **活動選集頁**的 URL / 接面：`/events/sevenday/{seasonId}/collection`？需與既有選集系統 owner 對齊
 3. **「帶入當季 prompt」**的技術接面：URL param `?prompt=seasonId:dayN` 還是 session？需與編輯器團隊對齊（`matters-editor` repo）
 4. **頭像牆的 totalCount**：只計本季、還是累積歷屆？影響數字心理效應
-5. **是否有徽章**：完成七天發 NFT / 站內徽章？若有，需追加 BadgeReveal 元件 + 對應 token（secondary.*）
+5. **是否有徽章**：完成七天發 NFT / 站內徽章？若有，需追加 BadgeReveal 元件 + 對應 token（secondary.\*）
 6. **Matters 2.0 colors Variables diff**：`claude-design-output/01-matters-2.0-variables.md` 已回填完成（PM 2026-04-24 裁示維持 Brand Guidelines 的 purple/lime，`color.freewrite.*` 直接沿用 2.0 值，**無需再同步**）。若未來 2.0 調整 freewrite 四色，landing 需同步重驗對比度
 7. **視覺色盲指標**（DayPromptRow today）：是否加小三角？需 PM 同意引入非文字視覺標記
 

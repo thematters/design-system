@@ -15,13 +15,13 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Text | `來自作者` |  |
-| State | `Default` | `Selected`, `Default`, `New Event` |
-| Type | `Normal` | `Normal`, `Sidebar` |
-| Color | `No` | `Free Write`, `No`, `Brown`, `Orange`, `Yellow`, `Green`, `Purple`, `Pink`, `Red`, `Grey` |
-| Hover | `Off` | `Off`, `On` |
+| Property | Default    | Options                                                                                   |
+| -------- | ---------- | ----------------------------------------------------------------------------------------- |
+| Text     | `來自作者` |                                                                                           |
+| State    | `Default`  | `Selected`, `Default`, `New Event`                                                        |
+| Type     | `Normal`   | `Normal`, `Sidebar`                                                                       |
+| Color    | `No`       | `Free Write`, `No`, `Brown`, `Orange`, `Yellow`, `Green`, `Purple`, `Pink`, `Red`, `Grey` |
+| Hover    | `Off`      | `Off`, `On`                                                                               |
 
 ### Variant nodes
 
@@ -93,20 +93,20 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Grey Scale/Black (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/White (`FILL`) | _待對照_ | _待補_ |
-| System/Body 2/Semibold (`TEXT`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Hover (`FILL`) | _待對照_ | _待補_ |
-| System/Body 2/Regular (`TEXT`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Lighter (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Darker (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Grey (`FILL`) | _待對照_ | _待補_ |
-| New Palette/Secondary/500 (`FILL`) | _待對照_ | _待補_ |
-| Freewrite/Text (`FILL`) | _待對照_ | _待補_ |
-| Freewrite/Background (`FILL`) | _待對照_ | _待補_ |
-| Freewrite/Text Dark (`FILL`) | _待對照_ | _待補_ |
+| Figma style                        | Token (tokens.json) | Used for |
+| ---------------------------------- | ------------------- | -------- |
+| Grey Scale/Black (`FILL`)          | _待對照_            | _待補_   |
+| Grey Scale/White (`FILL`)          | _待對照_            | _待補_   |
+| System/Body 2/Semibold (`TEXT`)    | _待對照_            | _待補_   |
+| Grey Scale/Grey Hover (`FILL`)     | _待對照_            | _待補_   |
+| System/Body 2/Regular (`TEXT`)     | _待對照_            | _待補_   |
+| Grey Scale/Grey Lighter (`FILL`)   | _待對照_            | _待補_   |
+| Grey Scale/Grey Darker (`FILL`)    | _待對照_            | _待補_   |
+| Grey Scale/Grey (`FILL`)           | _待對照_            | _待補_   |
+| New Palette/Secondary/500 (`FILL`) | _待對照_            | _待補_   |
+| Freewrite/Text (`FILL`)            | _待對照_            | _待補_   |
+| Freewrite/Background (`FILL`)      | _待對照_            | _待補_   |
+| Freewrite/Text Dark (`FILL`)       | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

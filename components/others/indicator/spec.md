@@ -15,10 +15,10 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| No. of pages | `2` | `6`, `2`, `3`, `4`, `5`, `7`, `8` |
-| Dark mode | `Off` | `Off`, `On` |
+| Property     | Default | Options                           |
+| ------------ | ------- | --------------------------------- |
+| No. of pages | `2`     | `6`, `2`, `3`, `4`, `5`, `7`, `8` |
+| Dark mode    | `Off`   | `Off`, `On`                       |
 
 ### Variant nodes
 
@@ -41,12 +41,12 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Grey Scale/Black (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Light (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/White (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/White 60% (`FILL`) | _待對照_ | _待補_ |
+| Figma style                    | Token (tokens.json) | Used for |
+| ------------------------------ | ------------------- | -------- |
+| Grey Scale/Black (`FILL`)      | _待對照_            | _待補_   |
+| Grey Scale/Grey Light (`FILL`) | _待對照_            | _待補_   |
+| Grey Scale/White (`FILL`)      | _待對照_            | _待補_   |
+| Grey Scale/White 60% (`FILL`)  | _待對照_            | _待補_   |
 
 ## States and Interactions
 

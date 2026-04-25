@@ -17,16 +17,16 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Grey Scale/White (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Light (`FILL`) | _待對照_ | _待補_ |
-| Shadow 1 (`EFFECT`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Darker (`FILL`) | _待對照_ | _待補_ |
-| System/Body 1/Regular (`TEXT`) | _待對照_ | _待補_ |
-| Grey Scale/Grey (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Hover (`FILL`) | _待對照_ | _待補_ |
-| Function/Negative red (`FILL`) | _待對照_ | _待補_ |
+| Figma style                     | Token (tokens.json) | Used for |
+| ------------------------------- | ------------------- | -------- |
+| Grey Scale/White (`FILL`)       | _待對照_            | _待補_   |
+| Grey Scale/Grey Light (`FILL`)  | _待對照_            | _待補_   |
+| Shadow 1 (`EFFECT`)             | _待對照_            | _待補_   |
+| Grey Scale/Grey Darker (`FILL`) | _待對照_            | _待補_   |
+| System/Body 1/Regular (`TEXT`)  | _待對照_            | _待補_   |
+| Grey Scale/Grey (`FILL`)        | _待對照_            | _待補_   |
+| Grey Scale/Grey Hover (`FILL`)  | _待對照_            | _待補_   |
+| Function/Negative red (`FILL`)  | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 
