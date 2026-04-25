@@ -24,3 +24,10 @@ coverage/
 
 # packages/react built dist is NOT vendored; consumers import the package
 # (left as default-ignored above)
+
+# Playwright
+playwright-report/
+test-results/
+# Non-Linux visual snapshots — only the Linux baseline is committed
+tests/visual/__snapshots__/**/*-darwin.png
+tests/visual/__snapshots__/**/*-win32.png
