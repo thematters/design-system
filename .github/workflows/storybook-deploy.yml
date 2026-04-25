@@ -43,6 +43,11 @@ jobs:
         run: pnpm build:storybook
 
       - uses: actions/configure-pages@v5
+        with:
+          # On first run after the repo became public, automatically
+          # enable Pages with GitHub Actions as the source — saves a
+          # manual click in repo Settings.
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
