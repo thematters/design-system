@@ -43,10 +43,14 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          # `pnpm version`  → bumps versions + writes CHANGELOG.md, opens PR
-          # `pnpm release`  → builds + `changeset publish` → npm + git tags
-          version: pnpm version
-          publish: pnpm release
+          # `pnpm run version`  → bumps versions + writes CHANGELOG.md, opens PR
+          # `pnpm run release`  → builds + `changeset publish` → npm + git tags
+          # NOTE: must be `pnpm run …`. Bare `pnpm version` invokes the built-in
+          # version subcommand (which silently dumps Node/npm versions and
+          # never runs our script). `pnpm release` is fine because pnpm has
+          # no built-in command of that name, but we keep `run` for symmetry.
+          version: pnpm run version
+          publish: pnpm run release
           commit: "chore(release): version packages"
           title: "chore(release): version packages"
         env:
