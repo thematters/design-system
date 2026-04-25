@@ -1,0 +1,94 @@
+/* Button (DS 1.5 Buttons/Normal) implementation
+ * Uses CSS custom properties from tokens/dist/tokens.css.
+ * Brand color follows PM 2026-04-24 decision: canonical = New Palette purple/lime.
+ *
+ * Markup:
+ *   <button class="ds-btn ds-btn--primary ds-btn--large">送出</button>
+ *   <button class="ds-btn ds-btn--secondary ds-btn--medium">
+ *     <span class="ds-btn__icon">…</span>取消
+ *   </button>
+ *
+ * Variants (from Figma):
+ *   Type:      Primary | Secondary | Tertiary
+ *   Size:      Large   | Medium    | Small
+ *   Show Icon: optional <span class="ds-btn__icon"> child
+ *   Show Text: hide text by setting aria-label and using --icon-only modifier
+ */
+
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sp6);
+  border: 1px solid transparent;
+  border-radius: 999px; /* pill — DS 1.5 default */
+  cursor: pointer;
+  font-family: var(--font-family-ui);
+  font-weight: 400;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ds-btn:focus-visible {
+  outline: 2px solid var(--color-brand-new-purple);
+  outline-offset: 2px;
+}
+
+.ds-btn:disabled,
+.ds-btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* ---- Sizes ---- */
+.ds-btn--large  { font-size: 16px; line-height: 24px; padding: var(--space-sp12) var(--space-sp32); min-height: 48px; }
+.ds-btn--medium { font-size: 14px; line-height: 22px; padding: var(--space-sp8)  var(--space-sp16); min-height: 36px; }
+.ds-btn--small  { font-size: 12px; line-height: 18px; padding: var(--space-sp4)  var(--space-sp12); min-height: 28px; }
+
+/* ---- Type: Primary ---- */
+.ds-btn--primary {
+  background-color: var(--color-brand-new-purple);
+  color: var(--color-grey-white);
+}
+.ds-btn--primary:hover:not(:disabled):not([aria-disabled="true"]) { background-color: var(--color-primary-700); }
+.ds-btn--primary:active:not(:disabled):not([aria-disabled="true"]) { background-color: var(--color-primary-800); }
+
+/* ---- Type: Secondary ---- */
+.ds-btn--secondary {
+  background-color: transparent;
+  color: var(--color-brand-new-purple);
+  border-color: var(--color-brand-new-purple);
+}
+.ds-btn--secondary:hover:not(:disabled):not([aria-disabled="true"]) { background-color: var(--color-primary-0); }
+.ds-btn--secondary:active:not(:disabled):not([aria-disabled="true"]) { background-color: var(--color-primary-100); }
+
+/* ---- Type: Tertiary ---- */
+.ds-btn--tertiary {
+  background-color: transparent;
+  color: var(--color-brand-new-purple);
+  border-color: transparent;
+}
+.ds-btn--tertiary:hover:not(:disabled):not([aria-disabled="true"]) { background-color: var(--color-primary-0); }
+.ds-btn--tertiary:active:not(:disabled):not([aria-disabled="true"]) { background-color: var(--color-primary-100); }
+
+/* ---- Icon-only (Show Text=off) ---- */
+.ds-btn--icon-only {
+  padding-left: var(--space-sp8);
+  padding-right: var(--space-sp8);
+  aspect-ratio: 1;
+}
+.ds-btn--icon-only.ds-btn--large  { padding: var(--space-sp12); }
+.ds-btn--icon-only.ds-btn--small  { padding: var(--space-sp4);  }
+
+/* Icon slot */
+.ds-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+.ds-btn__icon svg { width: 100%; height: 100%; fill: currentColor; }

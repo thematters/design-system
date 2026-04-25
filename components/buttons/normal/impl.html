@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DS 1.5 · Button</title>
+  <link rel="stylesheet" href="../../../tokens/dist/tokens.css">
+  <link rel="stylesheet" href="./impl.css">
+  <style>
+    body { margin: 0; padding: 32px; background: var(--color-grey-greyLighter); font-family: var(--font-family-ui); color: var(--color-grey-black); }
+    h1, h2 { margin: 0 0 16px; }
+    h1 { font-size: 24px; line-height: 36px; font-weight: 600; }
+    h2 { font-size: 18px; line-height: 28px; font-weight: 600; margin-top: 32px; }
+    .row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--color-grey-greyLight); }
+    .row:last-child { border-bottom: none; }
+    .label { width: 96px; font-size: 12px; line-height: 18px; color: var(--color-grey-greyDarker); }
+    code { background: var(--color-grey-greyHover); padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>DS 1.5 · Button (Buttons/Normal)</h1>
+  <p>Pilot 實作。所有顏色 / 字級 / 間距取自 <code>tokens/dist/tokens.css</code>，brand color 採 New Palette purple（PM 2026-04-24 決議）。</p>
+
+  <h2>Primary</h2>
+  <div class="row"><span class="label">Large</span>
+    <button class="ds-btn ds-btn--primary ds-btn--large">送出文章</button>
+    <button class="ds-btn ds-btn--primary ds-btn--large"><span class="ds-btn__icon">＋</span>新增</button>
+    <button class="ds-btn ds-btn--primary ds-btn--large ds-btn--icon-only" aria-label="新增"><span class="ds-btn__icon">＋</span></button>
+  </div>
+  <div class="row"><span class="label">Medium</span>
+    <button class="ds-btn ds-btn--primary ds-btn--medium">確認</button>
+    <button class="ds-btn ds-btn--primary ds-btn--medium"><span class="ds-btn__icon">＋</span>追蹤</button>
+    <button class="ds-btn ds-btn--primary ds-btn--medium ds-btn--icon-only" aria-label="追蹤"><span class="ds-btn__icon">＋</span></button>
+  </div>
+  <div class="row"><span class="label">Small</span>
+    <button class="ds-btn ds-btn--primary ds-btn--small">儲存</button>
+    <button class="ds-btn ds-btn--primary ds-btn--small"><span class="ds-btn__icon">＋</span>分享</button>
+    <button class="ds-btn ds-btn--primary ds-btn--small ds-btn--icon-only" aria-label="分享"><span class="ds-btn__icon">＋</span></button>
+  </div>
+
+  <h2>Secondary</h2>
+  <div class="row"><span class="label">Large</span>
+    <button class="ds-btn ds-btn--secondary ds-btn--large">取消</button>
+    <button class="ds-btn ds-btn--secondary ds-btn--large"><span class="ds-btn__icon">↺</span>重試</button>
+  </div>
+  <div class="row"><span class="label">Medium</span>
+    <button class="ds-btn ds-btn--secondary ds-btn--medium">取消</button>
+    <button class="ds-btn ds-btn--secondary ds-btn--medium" disabled>已停用</button>
+  </div>
+  <div class="row"><span class="label">Small</span>
+    <button class="ds-btn ds-btn--secondary ds-btn--small">取消</button>
+  </div>
+
+  <h2>Tertiary</h2>
+  <div class="row"><span class="label">Large</span>
+    <button class="ds-btn ds-btn--tertiary ds-btn--large">了解更多</button>
+  </div>
+  <div class="row"><span class="label">Medium</span>
+    <button class="ds-btn ds-btn--tertiary ds-btn--medium">了解更多</button>
+    <button class="ds-btn ds-btn--tertiary ds-btn--medium" aria-disabled="true">已停用</button>
+  </div>
+  <div class="row"><span class="label">Small</span>
+    <button class="ds-btn ds-btn--tertiary ds-btn--small">了解更多</button>
+  </div>
+
+  <h2>Focus state（Tab 鍵聚焦看 outline）</h2>
+  <div class="row">
+    <button class="ds-btn ds-btn--primary ds-btn--medium">tab1</button>
+    <button class="ds-btn ds-btn--secondary ds-btn--medium">tab2</button>
+    <button class="ds-btn ds-btn--tertiary ds-btn--medium">tab3</button>
+  </div>
+</body>
+</html>
