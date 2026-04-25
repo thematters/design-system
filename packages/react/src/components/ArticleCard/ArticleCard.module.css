@@ -1,0 +1,211 @@
+/* ArticleCard — Matters DS 1.5 (Card/Article-Card, node 4853:994).
+ *
+ * Layout (top→bottom): [head row] / [content row: text + cover image] /
+ * optional [footer row: badges/meta + more-actions].
+ *
+ * Sizes (Figma): Small (Mobile, 76px image), Big (Desktop, 106px image).
+ * Both share the same vertical rhythm.
+ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sp8);
+  padding: var(--space-sp20) 0;
+  font-family: var(--font-family-ui);
+  color: var(--color-grey-black);
+  border-bottom: 1px dashed var(--color-grey-grey-light);
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+}
+
+.root:last-child {
+  border-bottom: 0;
+}
+
+a.root {
+  color: inherit;
+}
+a.root:hover .title {
+  color: var(--color-brand-new-purple);
+}
+a.root:focus-visible {
+  outline: 2px solid var(--color-brand-new-purple);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Head row: avatar + author + dot + timestamp. */
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sp4);
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-grey-grey);
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sp6);
+  color: var(--color-grey-black);
+  text-decoration: none;
+}
+.author:hover {
+  color: var(--color-brand-new-purple);
+}
+.dot {
+  color: var(--color-grey-grey-light);
+}
+
+/* Content row: text column + cover image. */
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sp24);
+  width: 100%;
+}
+
+.text {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sp8);
+}
+
+.title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--color-grey-black);
+  /* 2-line clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 120ms ease;
+}
+
+.summary {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-grey-grey-darker);
+  margin: 0;
+  /* 2-line clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cover {
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--color-grey-grey-lighter);
+}
+
+/* Big size (Desktop). */
+.big .content {
+  gap: var(--space-sp48);
+}
+.big .cover {
+  width: 106px;
+  height: 106px;
+}
+
+/* Footer row: meta (free-form slot) + more-actions. */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sp16);
+  width: 100%;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-grey-grey);
+}
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sp16);
+  flex: 1 0 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.meta > * {
+  flex-shrink: 0;
+}
+.moreButton {
+  background: none;
+  border: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-grey-grey-darker);
+  border-radius: 999px;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+  flex-shrink: 0;
+}
+.moreButton:hover {
+  background: var(--color-grey-grey-hover);
+  color: var(--color-grey-black);
+}
+.moreButton:focus-visible {
+  outline: 2px solid var(--color-brand-new-purple);
+  outline-offset: 2px;
+}
+
+/* Placeholder (skeleton) state. */
+.placeholder .text > *,
+.placeholder .cover {
+  background: var(--color-grey-grey-lighter);
+  border-radius: 4px;
+  animation: ds-card-pulse 1.4s ease-in-out infinite;
+}
+.placeholder .titleSkel {
+  height: 16px;
+  width: 60%;
+}
+.placeholder .lineSkel {
+  height: 16px;
+  width: 100%;
+}
+.placeholder .lineSkel.short {
+  width: 80%;
+}
+.placeholder .cover {
+  width: 76px;
+  height: 76px;
+}
+.placeholder.big .cover {
+  width: 106px;
+  height: 106px;
+}
+
+@keyframes ds-card-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .placeholder .text > *,
+  .placeholder .cover {
+    animation: none;
+  }
+}

@@ -1,0 +1,32 @@
+name: Publish Figma Code Connect
+
+on:
+  # Manual trigger only — publishing rewrites Figma server state, so we
+  # don't auto-run on every push. Run after a component PR has merged.
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Parse Code Connect (validate without publishing)
+        run: pnpm --filter @matters/design-system-react figma:connect:parse
+
+      - name: Publish to Figma
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+        run: pnpm --filter @matters/design-system-react figma:connect:publish

@@ -37,12 +37,12 @@ the tokens package. Import once at your app's root.
 | Component     | Phase | Status |
 | ------------- | ----- | ------ |
 | `Button`      | 1     | ✅     |
-| `TextField`   | 2     | ⏳     |
-| `Dialog`      | 2     | ⏳     |
-| `Toast`       | 2     | ⏳     |
-| `ArticleCard` | 4     | ⏳     |
-| `Avatar`      | 4     | ⏳     |
-| `Banner`      | 4     | ⏳     |
+| `TextField`   | 2     | ✅     |
+| `Dialog`      | 2     | ✅     |
+| `Toast`       | 2     | ✅     |
+| `Avatar`      | 4     | ✅     |
+| `Banner`      | 4     | ✅     |
+| `ArticleCard` | 4     | ✅     |
 
 See [`docs/architecture.md`](../../docs/architecture.md) for the full phase
 plan.
