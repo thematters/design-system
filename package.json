@@ -27,12 +27,11 @@
     "scaffold:component": "node scripts/scaffold-component.mjs",
     "changeset": "changeset",
     "version": "changeset version && pnpm install --lockfile-only",
-    "release": "pnpm -r --filter './packages/*' build && changeset publish",
+    "release": "bash scripts/release.sh",
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.9",
     "@playwright/test": "^1.48.0",
     "@types/node": "^20.11.0",
