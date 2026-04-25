@@ -49,10 +49,26 @@ module.exports = {
 | Brand colors (canonical)                | `--color-brand-new-purple` (#7258FF), `--color-brand-new-green` (#C3F432)              |
 | Brand colors (legacy, migration period) | `--color-brand-legacy-green-*`, `--color-brand-legacy-gold-*`                          |
 | Semantic scales                         | `primary`, `secondary`, `info`, `success`, `warn`, `error`, `grey` (each 0–900)        |
-| Freewrite (七日書 only)                 | `--color-freewrite-*` — **do NOT use outside Freewrite contexts**                      |
+| Freewrite (七日書 only, **opt-in**)     | `--color-freewrite-*` — shipped in a separate `freewrite.css`. See note below.         |
 | Typography                              | System scale (h1/h2/h3/body-1/body-2/small/label) + Article scale (title/summary/body) |
 | Spacing                                 | `--space-sp2` … `--space-sp32` (8pt grid + 2-unit fine-grain)                          |
 | Effects                                 | `--shadow-shadow-1` … `--shadow-shadow-4`                                              |
+
+### Freewrite isolation (Phase 3)
+
+The Freewrite landing page has its own palette (cool blue), distinct from the
+canonical brand. To prevent product code from accidentally referencing it,
+`--color-freewrite-*` tokens are **not** included in `tokens.css`. They ship
+in a separate stylesheet that consumers must opt into:
+
+```tsx
+import "@matters/design-system-tokens/tokens.css"; // canonical
+import "@matters/design-system-tokens/freewrite.css"; // ⚠ Freewrite only
+```
+
+If a non-Freewrite surface references `--color-freewrite-*`, the variable
+will be undefined and CSS will fall back to its inherited value — that's
+the intended failure mode.
 
 ## Building
 

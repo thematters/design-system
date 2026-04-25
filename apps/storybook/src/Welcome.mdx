@@ -2,21 +2,30 @@ import { Meta } from "@storybook/blocks";
 
 <Meta title="Welcome" />
 
-# Matters Design System — Storybook
+# Matters Design System
 
-This is the local docs site for `@matters/design-system-react`.
+Storybook docs for [`thematters/design-system`](https://github.com/thematters/design-system).
 
-**Status:** Phase 1 — only `Button` is shipped here. Phase 2 will add
-`TextField`, `Dialog`, `Toast`. Phase 3 will deploy this site publicly.
+## What's in here
 
-- 元件實作：`packages/react/src/components/`
-- 設計交接 spec：`components/<group>/<name>/spec.md`
-- Tokens：`packages/tokens/`
+- **Tokens** — Brand · Colors · Typography · Spacing · Shadows · Freewrite (opt-in)
+- **Components** — Button · TextField · Dialog · Toast (Phase 1–2)
+- More components arrive in Phase 4 (ArticleCard / Avatar / Banner)
 
-## Brand colors (canonical, 2026-04-24 PM decision)
+## Three consumption channels
+
+| Channel        | Best for                                  | Entry                                                 |
+| -------------- | ----------------------------------------- | ----------------------------------------------------- |
+| Vendored copy  | Static landing pages / no JS framework    | `cp -r tokens/dist consumer/assets/`                  |
+| **npm package** | React apps                                | `pnpm add @matters/design-system-react`               |
+| Copy-and-own   | Forks / one-off marketing sites           | `node scripts/scaffold-component.mjs Button`          |
+
+Full consumer guide: [`docs/consume.md`](https://github.com/thematters/design-system/blob/main/docs/consume.md).
+
+## Brand colors (canonical, 2026-04-24)
 
 - `--color-brand-new-purple` `#7258FF`
 - `--color-brand-new-green` `#C3F432`
 
 Legacy green/gold tokens still exist for migration; new code must reference
-the New Palette.
+the New Palette. Detail on the **Tokens / Brand** page.

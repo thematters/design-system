@@ -1,0 +1,46 @@
+import { Meta } from "@storybook/blocks";
+import { ColorScale } from "./TokenViews";
+
+<Meta title="Tokens/Colors" />
+
+# Colors
+
+Auto-rendered from `@matters/design-system-tokens`. Each chip shows the
+canonical CSS custom property name; copy the `--color-...` variable into
+your component's CSS.
+
+> Brand colors live on a separate page — see **Tokens / Brand**.
+
+## Primary scale (purple)
+
+Use for primary actions, focus rings, brand surfaces.
+
+<ColorScale path={["primary"]} />
+
+## Secondary scale (lime green)
+
+Use for secondary accents, callouts, opt-in chips.
+
+<ColorScale path={["secondary"]} />
+
+## Grey
+
+The neutral spine. Backgrounds, borders, body text.
+
+<ColorScale path={["grey"]} />
+
+## Function — Positive / Warn / Negative / Info
+
+Semantic state colors. Match these to user-facing meaning, not to
+visual preference.
+
+<ColorScale path={["function"]} />
+
+<ColorScale path={["info"]} title="Info scale" />
+
+<ColorScale path={["attention"]} title="Attention scale" />
+
+## Don't use
+
+- `freewrite-*` — see **Tokens / Freewrite (七日書 only)**. Reserved for
+  the 七日書 / Freewrite landing page; do **not** use in product surfaces.

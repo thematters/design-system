@@ -1,0 +1,40 @@
+import { Meta } from "@storybook/blocks";
+import { ColorChip } from "./ColorChip";
+
+<Meta title="Tokens/Brand" />
+
+# Brand colors — canonical
+
+> PM decision 2026-04-24: the **New Palette** is the canonical brand reference.
+> Legacy green/gold are retained for migration only and must not be
+> referenced by new code.
+
+## New Palette (canonical)
+
+<div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16, margin: "16px 0" }}>
+  <ColorChip
+    name="--color-brand-new-purple"
+    value="#7258FF"
+    note="Primary action, focus ring, brand identity"
+  />
+  <ColorChip
+    name="--color-brand-new-green"
+    value="#C3F432"
+    note="Secondary accent, callouts"
+  />
+</div>
+
+## Legacy palette — migration only
+
+<div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, margin: "16px 0" }}>
+  <ColorChip name="--color-brand-legacy-green" value="#0D6763" note="Old primary" deprecated />
+  <ColorChip name="--color-brand-legacy-green-light" value="#79B1A6" deprecated />
+  <ColorChip name="--color-brand-legacy-green-lighter" value="#D7EAE1" deprecated />
+  <ColorChip name="--color-brand-legacy-gold" value="#BF9F5E" note="Old accent" deprecated />
+  <ColorChip name="--color-brand-legacy-gold-light" value="#E5CD92" deprecated />
+  <ColorChip name="--color-brand-legacy-gold-lighter" value="#F4E2BC" deprecated />
+</div>
+
+> If you encounter `Logo/Matters Green` (#0D6763) in a Figma file, it must
+> remap to `--color-brand-new-purple` per the PM decision. See spec.md
+> files for examples of how this remap is documented per component.

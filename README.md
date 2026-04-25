@@ -25,6 +25,7 @@ Matters（馬特市，繁中創作社群，官方網址 [matters.town](https://m
 
 ## 重要文件
 
+- 📚 **[Storybook docs site](https://thematters.github.io/design-system/)** — Phase 3 起公開部署，含元件 stories + tokens 視覺化（colors / typography / spacing / shadows / brand）
 - [`docs/architecture.md`](docs/architecture.md) — **Phase 1 起的 monorepo 結構與 phase plan**
 - [`docs/consume.md`](docs/consume.md) — 三種消費方式
 - [`docs/dual-track-workflow.md`](docs/dual-track-workflow.md) — 模板軌 vs. 結構軌的雙軌工作流
@@ -67,15 +68,15 @@ pnpm dev:storybook
 
 ## 狀態
 
-| Phase       | Scope                                          | 狀態           |
-| ----------- | ---------------------------------------------- | -------------- |
-| Phase 0     | Tokens v2 + 41 specs + Button vanilla impl     | ✅ 已合 PR #29 |
-| **Phase 1** | **Monorepo + Button (React) + Storybook + CI** | **🚧 本 PR**   |
-| Phase 2     | TextField + Dialog + Toast                     | ⏳             |
-| Phase 3     | Storybook 上架 + tokens 文件化                 | ⏳             |
-| Phase 4     | ArticleCard + Avatar + Banner                  | ⏳             |
-| Phase 5     | npm publish + 版本治理 + visual regression     | ⏳             |
-| Phase 6+    | Operational templates                          | ⏳             |
+| Phase       | Scope                                                         | 狀態           |
+| ----------- | ------------------------------------------------------------- | -------------- |
+| Phase 0     | Tokens v2 + 41 specs + Button vanilla impl                    | ✅ 已合 PR #29 |
+| Phase 1     | Monorepo + Button (React) + Storybook + CI                    | ✅ 已合 PR #30 |
+| Phase 2     | TextField + Dialog + Toast + scaffold CLI                     | ✅ 已合 PR #31 |
+| **Phase 3** | **Storybook deploy + tokens docs site + freewrite isolation** | **🚧 本 PR**   |
+| Phase 4     | ArticleCard + Avatar + Banner                                 | ⏳             |
+| Phase 5     | npm publish + 版本治理 + visual regression                    | ⏳             |
+| Phase 6+    | Operational templates                                         | ⏳             |
 
 完整 phase plan 在 [`docs/architecture.md`](docs/architecture.md)。
 
