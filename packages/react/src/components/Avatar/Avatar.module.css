@@ -1,0 +1,126 @@
+/* Avatar — Matters DS 1.5 (Others/Avatar, node 3278:8803).
+ *
+ * Figma source has 4 styles (Standard / Matters Architect / Civic Liker /
+ * Civic Liker & Architect) + an optional `logbook` badge. Phase 4 React
+ * port generalises to: a circular image with optional `ring` (decorative
+ * border) and optional `badge` slot (corner overlay).
+ */
+
+.root {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 999px;
+  overflow: visible;
+  font-size: 0; /* prevent baseline gap */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 999px;
+  display: block;
+  background: var(--color-grey-grey-lighter);
+}
+
+/* Initials fallback when no src is provided. */
+.fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-100);
+  color: var(--color-brand-new-purple);
+  font-family: var(--font-family-ui);
+  font-weight: 500;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+/* Sizes */
+.xs {
+  width: 20px;
+  height: 20px;
+}
+.xs .fallback {
+  font-size: 10px;
+}
+.sm {
+  width: 32px;
+  height: 32px;
+}
+.sm .fallback {
+  font-size: 13px;
+}
+.md {
+  width: 48px;
+  height: 48px;
+}
+.md .fallback {
+  font-size: 18px;
+}
+.lg {
+  width: 72px;
+  height: 72px;
+}
+.lg .fallback {
+  font-size: 28px;
+}
+
+/* Ring variants (decorative border indicating status / role). */
+.ring {
+  position: relative;
+}
+.ring::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  pointer-events: none;
+}
+.ringArchitect {
+  color: var(--color-brand-new-green);
+}
+.ringCivicLiker {
+  color: var(--color-brand-new-purple);
+}
+.ringBoth {
+  color: var(--color-brand-new-purple);
+}
+.ringBoth::before {
+  border: 2px solid var(--color-brand-new-purple);
+}
+.ringBoth::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 999px;
+  border: 2px solid var(--color-brand-new-green);
+  pointer-events: none;
+}
+
+/* Corner badge slot — bottom right. */
+.badge {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 40%;
+  height: 40%;
+  border-radius: 999px;
+  background: var(--color-grey-white);
+  box-shadow: 0 0 0 2px var(--color-grey-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.badge img,
+.badge svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -68,15 +68,15 @@ pnpm dev:storybook
 
 ## 狀態
 
-| Phase       | Scope                                                         | 狀態           |
-| ----------- | ------------------------------------------------------------- | -------------- |
-| Phase 0     | Tokens v2 + 41 specs + Button vanilla impl                    | ✅ 已合 PR #29 |
-| Phase 1     | Monorepo + Button (React) + Storybook + CI                    | ✅ 已合 PR #30 |
-| Phase 2     | TextField + Dialog + Toast + scaffold CLI                     | ✅ 已合 PR #31 |
-| **Phase 3** | **Storybook deploy + tokens docs site + freewrite isolation** | **🚧 本 PR**   |
-| Phase 4     | ArticleCard + Avatar + Banner                                 | ⏳             |
-| Phase 5     | npm publish + 版本治理 + visual regression                    | ⏳             |
-| Phase 6+    | Operational templates                                         | ⏳             |
+| Phase       | Scope                                                     | 狀態           |
+| ----------- | --------------------------------------------------------- | -------------- |
+| Phase 0     | Tokens v2 + 41 specs + Button vanilla impl                | ✅ 已合 PR #29 |
+| Phase 1     | Monorepo + Button (React) + Storybook + CI                | ✅ 已合 PR #30 |
+| Phase 2     | TextField + Dialog + Toast + scaffold CLI                 | ✅ 已合 PR #31 |
+| Phase 3     | Storybook deploy + tokens docs site + freewrite isolation | ✅ 已合 PR #32 |
+| **Phase 4** | **Avatar + Banner + ArticleCard + Figma Code Connect**    | **🚧 本 PR**   |
+| Phase 5     | npm publish + 版本治理 + visual regression                | ⏳             |
+| Phase 6+    | Operational templates                                     | ⏳             |
 
 完整 phase plan 在 [`docs/architecture.md`](docs/architecture.md)。
 

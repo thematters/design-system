@@ -1,0 +1,10 @@
+{
+  "codeConnect": {
+    "include": ["src/**/*.figma.tsx"],
+    "exclude": ["dist/**", "node_modules/**"],
+    "label": "@matters/design-system-react",
+    "documentUrlSubstitutions": {
+      "DS_1_5": "https://www.figma.com/design/JDKpHezhllOvJF42xbKcNN/Design-System-1.5"
+    }
+  }
+}

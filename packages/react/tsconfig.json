@@ -6,5 +6,12 @@
     "types": ["vitest/globals", "@testing-library/jest-dom", "node"]
   },
   "include": ["src/**/*"],
-  "exclude": ["dist", "node_modules", "**/*.test.tsx", "**/*.test.ts", "**/*.stories.tsx"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.test.tsx",
+    "**/*.test.ts",
+    "**/*.stories.tsx",
+    "**/*.figma.tsx"
+  ]
 }
