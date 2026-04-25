@@ -15,10 +15,10 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Device | `Desktop` | `Desktop`, `Mobile` |
-| Type | `Placeholder` | `Placeholder`, `With Cover`, `Without Cover` |
+| Property | Default       | Options                                      |
+| -------- | ------------- | -------------------------------------------- |
+| Device   | `Desktop`     | `Desktop`, `Mobile`                          |
+| Type     | `Placeholder` | `Placeholder`, `With Cover`, `Without Cover` |
 
 ### Variant nodes
 
@@ -33,15 +33,15 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Grey Scale/Grey Lighter (`FILL`) | _待對照_ | _待補_ |
-| New Palette/Secondary/700 (`FILL`) | _待對照_ | _待補_ |
-| Others/Mask (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/White (`FILL`) | _待對照_ | _待補_ |
-| System/Small/Regular (`TEXT`) | _待對照_ | _待補_ |
-| Grey Scale/Black (`FILL`) | _待對照_ | _待補_ |
-| System/Body 1/Medium (`TEXT`) | _待對照_ | _待補_ |
+| Figma style                        | Token (tokens.json) | Used for |
+| ---------------------------------- | ------------------- | -------- |
+| Grey Scale/Grey Lighter (`FILL`)   | _待對照_            | _待補_   |
+| New Palette/Secondary/700 (`FILL`) | _待對照_            | _待補_   |
+| Others/Mask (`FILL`)               | _待對照_            | _待補_   |
+| Grey Scale/White (`FILL`)          | _待對照_            | _待補_   |
+| System/Small/Regular (`TEXT`)      | _待對照_            | _待補_   |
+| Grey Scale/Black (`FILL`)          | _待對照_            | _待補_   |
+| System/Body 1/Medium (`TEXT`)      | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

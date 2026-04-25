@@ -15,9 +15,9 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Style | `Default` | `Default`, `Photo` |
+| Property | Default   | Options            |
+| -------- | --------- | ------------------ |
+| Style    | `Default` | `Default`, `Photo` |
 
 ### Variant nodes
 
@@ -27,6 +27,7 @@ _（Figma 描述為空，請日後補完）_
 ## Design Tokens Used
 
 _（未在此 component 內偵測到 style 引用；可能使用 raw paint，需手動對照 tokens.json）_
+
 ## States and Interactions
 
 _實作時補入：hover / active / focus / disabled / loading / error_

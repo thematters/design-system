@@ -15,9 +15,9 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| type | `TC` | `TC`, `EN`, `SC` |
+| Property | Default | Options          |
+| -------- | ------- | ---------------- |
+| type     | `TC`    | `TC`, `EN`, `SC` |
 
 ### Variant nodes
 
@@ -29,10 +29,10 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Grey Scale/Grey Dark (`FILL`) | _待對照_ | _待補_ |
-| System/Small/Regular (`TEXT`) | _待對照_ | _待補_ |
+| Figma style                   | Token (tokens.json) | Used for |
+| ----------------------------- | ------------------- | -------- |
+| Grey Scale/Grey Dark (`FILL`) | _待對照_            | _待補_   |
+| System/Small/Regular (`TEXT`) | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

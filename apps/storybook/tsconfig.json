@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": [".storybook/**/*", "src/**/*"],
+  "exclude": ["storybook-static", "node_modules"]
+}

@@ -1,0 +1,6 @@
+/* Storybook preview frame — typography baseline. */
+body {
+  font-family: var(--font-family-ui), system-ui, sans-serif;
+  color: var(--color-grey-black);
+  margin: 0;
+}

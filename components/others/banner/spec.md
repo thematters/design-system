@@ -15,9 +15,9 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Device | `Desktop` | `Desktop`, `Mobile` |
+| Property | Default   | Options             |
+| -------- | --------- | ------------------- |
+| Device   | `Desktop` | `Desktop`, `Mobile` |
 
 ### Variant nodes
 
@@ -28,10 +28,10 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| <unknown 1338:194> (``) | _待對照_ | _待補_ |
-| System/Body 1/Medium (`TEXT`) | _待對照_ | _待補_ |
+| Figma style                   | Token (tokens.json) | Used for |
+| ----------------------------- | ------------------- | -------- |
+| <unknown 1338:194> (``)       | _待對照_            | _待補_   |
+| System/Body 1/Medium (`TEXT`) | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

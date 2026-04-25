@@ -1,0 +1,33 @@
+{
+  "name": "@matters/design-system-tokens",
+  "version": "0.1.0",
+  "description": "Matters Design System — canonical design tokens (colors, typography, spacing, effects).",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thematters/design-system.git",
+    "directory": "packages/tokens"
+  },
+  "type": "module",
+  "main": "./dist/tokens.ts",
+  "types": "./dist/tokens.ts",
+  "exports": {
+    ".": "./dist/tokens.ts",
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind": "./dist/tailwind.preset.cjs",
+    "./tokens.json": "./tokens.json"
+  },
+  "files": [
+    "dist/",
+    "tokens.json",
+    "build.mjs",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "node -e \"console.log('packages/tokens: no TS sources, skipping')\""
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

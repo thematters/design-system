@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+storybook-static
+pnpm-lock.yaml
+tokens/dist/**
+packages/tokens/dist/**
+components/**/figma-preview.png

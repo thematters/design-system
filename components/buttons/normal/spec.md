@@ -15,14 +15,14 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Text | `按鈕` |  |
-| Icon | `4581:641` |  |
-| Type | `Primary` | `Primary`, `Secondary`, `Tertiary` |
-| Size | `Large` | `Large`, `Medium`, `Small` |
-| Show Icon | `on` | `on`, `off` |
-| Show Text | `on` | `on`, `off` |
+| Property  | Default    | Options                            |
+| --------- | ---------- | ---------------------------------- |
+| Text      | `按鈕`     |                                    |
+| Icon      | `4581:641` |                                    |
+| Type      | `Primary`  | `Primary`, `Secondary`, `Tertiary` |
+| Size      | `Large`    | `Large`, `Medium`, `Small`         |
+| Show Icon | `on`       | `on`, `off`                        |
+| Show Text | `on`       | `on`, `off`                        |
 
 ### Variant nodes
 
@@ -58,15 +58,15 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Logo/Matters Green (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/White (`FILL`) | _待對照_ | _待補_ |
-| System/Body 1/Regular (`TEXT`) | _待對照_ | _待補_ |
-| System/Body 2/Regular (`TEXT`) | _待對照_ | _待補_ |
-| System/Small/Regular (`TEXT`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Light (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Black (`FILL`) | _待對照_ | _待補_ |
+| Figma style                    | Token (tokens.json) | Used for |
+| ------------------------------ | ------------------- | -------- |
+| Logo/Matters Green (`FILL`)    | _待對照_            | _待補_   |
+| Grey Scale/White (`FILL`)      | _待對照_            | _待補_   |
+| System/Body 1/Regular (`TEXT`) | _待對照_            | _待補_   |
+| System/Body 2/Regular (`TEXT`) | _待對照_            | _待補_   |
+| System/Small/Regular (`TEXT`)  | _待對照_            | _待補_   |
+| Grey Scale/Grey Light (`FILL`) | _待對照_            | _待補_   |
+| Grey Scale/Black (`FILL`)      | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 
@@ -76,13 +76,13 @@ _（Figma 描述為空，請日後補完）_
 
 ## States and Interactions
 
-| State | Primary | Secondary | Tertiary |
-| --- | --- | --- | --- |
-| default | bg=`brand.new.purple`, fg=`grey.white` | border+fg=`brand.new.purple`, bg=transparent | fg=`brand.new.purple`, bg=transparent |
-| hover | bg=`primary.700` | bg=`primary.0` | bg=`primary.0` |
-| active | bg=`primary.800` | bg=`primary.100` | bg=`primary.100` |
-| focus-visible | outline 2px solid `brand.new.purple`, offset 2px | 同左 | 同左 |
-| disabled | `opacity: 0.4`, `cursor: not-allowed`（套在 `:disabled` / `[aria-disabled="true"]`） | 同左 | 同左 |
+| State         | Primary                                                                              | Secondary                                    | Tertiary                              |
+| ------------- | ------------------------------------------------------------------------------------ | -------------------------------------------- | ------------------------------------- |
+| default       | bg=`brand.new.purple`, fg=`grey.white`                                               | border+fg=`brand.new.purple`, bg=transparent | fg=`brand.new.purple`, bg=transparent |
+| hover         | bg=`primary.700`                                                                     | bg=`primary.0`                               | bg=`primary.0`                        |
+| active        | bg=`primary.800`                                                                     | bg=`primary.100`                             | bg=`primary.100`                      |
+| focus-visible | outline 2px solid `brand.new.purple`, offset 2px                                     | 同左                                         | 同左                                  |
+| disabled      | `opacity: 0.4`, `cursor: not-allowed`（套在 `:disabled` / `[aria-disabled="true"]`） | 同左                                         | 同左                                  |
 
 過渡：`background-color`/`border-color`/`color` 共用 120ms ease。
 

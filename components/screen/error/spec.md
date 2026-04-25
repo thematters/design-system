@@ -15,9 +15,9 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Type | `474px+` | `474px+`, `0px-474px` |
+| Property | Default  | Options               |
+| -------- | -------- | --------------------- |
+| Type     | `474px+` | `474px+`, `0px-474px` |
 
 ### Variant nodes
 
@@ -28,14 +28,14 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Grey Scale/Grey Lighter (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/White (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/Black (`FILL`) | _待對照_ | _待補_ |
-| System/H2/Medium (`TEXT`) | _待對照_ | _待補_ |
-| Grey Scale/Grey Dark (`FILL`) | _待對照_ | _待補_ |
-| System/Body 2/Regular (`TEXT`) | _待對照_ | _待補_ |
+| Figma style                      | Token (tokens.json) | Used for |
+| -------------------------------- | ------------------- | -------- |
+| Grey Scale/Grey Lighter (`FILL`) | _待對照_            | _待補_   |
+| Grey Scale/White (`FILL`)        | _待對照_            | _待補_   |
+| Grey Scale/Black (`FILL`)        | _待對照_            | _待補_   |
+| System/H2/Medium (`TEXT`)        | _待對照_            | _待補_   |
+| Grey Scale/Grey Dark (`FILL`)    | _待對照_            | _待補_   |
+| System/Body 2/Regular (`TEXT`)   | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

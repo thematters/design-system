@@ -15,11 +15,11 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Text | `Text` |  |
-| Type | `Up` | `Down`, `Up`, `Right`, `Left` |
-| Hotkey | `Off` | `On`, `Off` |
+| Property | Default | Options                       |
+| -------- | ------- | ----------------------------- |
+| Text     | `Text`  |                               |
+| Type     | `Up`    | `Down`, `Up`, `Right`, `Left` |
+| Hotkey   | `Off`   | `On`, `Off`                   |
 
 ### Variant nodes
 
@@ -36,12 +36,12 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| Grey Scale/Black (`FILL`) | _待對照_ | _待補_ |
-| Grey Scale/White (`FILL`) | _待對照_ | _待補_ |
-| System/Body 2/Regular (`TEXT`) | _待對照_ | _待補_ |
-| Grey Scale/White 60% (`FILL`) | _待對照_ | _待補_ |
+| Figma style                    | Token (tokens.json) | Used for |
+| ------------------------------ | ------------------- | -------- |
+| Grey Scale/Black (`FILL`)      | _待對照_            | _待補_   |
+| Grey Scale/White (`FILL`)      | _待對照_            | _待補_   |
+| System/Body 2/Regular (`TEXT`) | _待對照_            | _待補_   |
+| Grey Scale/White 60% (`FILL`)  | _待對照_            | _待補_   |
 
 ### Fonts seen in tree
 

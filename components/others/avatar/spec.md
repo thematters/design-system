@@ -15,11 +15,11 @@ _（Figma 描述為空，請日後補完）_
 
 ## Variants
 
-| Property | Default | Options |
-| --- | --- | --- |
-| Style | `Standard` | `Matters Architect`, `Civic Liker`, `Civic Liker & Architect`, `Standard` |
-| Size | `72` | `72` |
-| Logbook | `Off` | `Off`, `On` |
+| Property | Default    | Options                                                                   |
+| -------- | ---------- | ------------------------------------------------------------------------- |
+| Style    | `Standard` | `Matters Architect`, `Civic Liker`, `Civic Liker & Architect`, `Standard` |
+| Size     | `72`       | `72`                                                                      |
+| Logbook  | `Off`      | `Off`, `On`                                                               |
 
 ### Variant nodes
 
@@ -36,9 +36,9 @@ _（Figma 描述為空，請日後補完）_
 
 ### Linked Figma styles
 
-| Figma style | Token (tokens.json) | Used for |
-| --- | --- | --- |
-| <unknown 2047:18843> (``) | _待對照_ | _待補_ |
+| Figma style               | Token (tokens.json) | Used for |
+| ------------------------- | ------------------- | -------- |
+| <unknown 2047:18843> (``) | _待對照_            | _待補_   |
 
 ## States and Interactions
 
