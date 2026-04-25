@@ -313,6 +313,18 @@ async function specForComponent(comp, stylesMap, isSet) {
   return lines.join('\n');
 }
 
+function uniqueFolderFor(pageDir, name, taken) {
+  let base = safeFolderName(name);
+  if (!base) base = 'unnamed';
+  let candidate = base;
+  let n = 2;
+  while (taken.has(candidate)) {
+    candidate = `${base}-${n++}`;
+  }
+  taken.add(candidate);
+  return path.join(pageDir, candidate);
+}
+
 async function writeComponentsForPages(pageList) {
   const compSets = (await loadCache('component_sets')).meta.component_sets;
   const comps = (await loadCache('components')).meta.components;
@@ -330,8 +342,11 @@ async function writeComponentsForPages(pageList) {
       continue;
     }
     console.log(`\n== ${page}: ${sets.length} sets + ${standalone.length} standalone`);
+    const pageDir = path.join(COMPONENTS_DIR, safeFolderName(page));
+    await ensureDir(pageDir);
+    const taken = new Set();
     for (const s of sets) {
-      const folder = path.join(COMPONENTS_DIR, safeFolderName(s.name));
+      const folder = uniqueFolderFor(pageDir, s.name, taken);
       await ensureDir(folder);
       const md = await specForComponent(s, stylesMap, true);
       await fs.writeFile(path.join(folder, 'spec.md'), md);
@@ -340,7 +355,7 @@ async function writeComponentsForPages(pageList) {
       console.log(`  set: ${s.name} → ${path.relative(ROOT, folder)}`);
     }
     for (const c of standalone) {
-      const folder = path.join(COMPONENTS_DIR, safeFolderName(c.name));
+      const folder = uniqueFolderFor(pageDir, c.name, taken);
       await ensureDir(folder);
       const md = await specForComponent(c, stylesMap, false);
       await fs.writeFile(path.join(folder, 'spec.md'), md);
