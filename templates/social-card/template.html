@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="ds-template-size" content="1080x1080" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/tokens.css" />
+    <link rel="stylesheet" href="../shared/template-base.css" />
+    <style>
+      .tpl-canvas {
+        width: 1080px;
+        height: 1080px;
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        background: var(--color-grey-black);
+        color: var(--color-grey-white);
+        position: relative;
+      }
+
+      /* Decorative diagonal accent strip — lime green */
+      .tpl-canvas::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 90% 10%,
+            color-mix(in srgb, var(--color-brand-new-purple) 50%, transparent) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 10% 90%,
+            color-mix(in srgb, var(--color-brand-new-green) 30%, transparent) 0%,
+            transparent 35%
+          );
+        z-index: 0;
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .eyebrow {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--color-brand-new-green);
+        text-transform: uppercase;
+      }
+      .topbrand {
+        font-size: 24px;
+      }
+      .topbrand.tpl-brand-mark {
+        color: var(--color-grey-white);
+      }
+
+      .center {
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      .quote {
+        font-family: "Noto Serif TC", serif;
+        font-size: 56px;
+        line-height: 1.45;
+        font-weight: 500;
+        margin: 0;
+        max-width: 920px;
+        /* clamp at 6 lines */
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .quote::before {
+        content: "「";
+        color: var(--color-brand-new-green);
+        font-size: 1em;
+      }
+      .quote::after {
+        content: "」";
+        color: var(--color-brand-new-green);
+        font-size: 1em;
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .author {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 999px;
+        object-fit: cover;
+        border: 2px solid var(--color-brand-new-green);
+      }
+      .author-name {
+        font-size: 26px;
+        font-weight: 600;
+      }
+      .author-handle {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 2px;
+      }
+      .read-cta {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .read-cta strong {
+        color: var(--color-brand-new-green);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tpl-canvas">
+      <div class="content">
+        <header class="top">
+          <span class="eyebrow">{{eyebrow}}</span>
+          <div class="tpl-brand-mark topbrand">Matters</div>
+        </header>
+
+        <main class="center">
+          <p class="quote">{{quote}}</p>
+        </main>
+
+        <footer class="bottom">
+          <div class="author">
+            <img class="avatar" src="{{authorAvatarUrl}}" alt="" />
+            <div>
+              <div class="author-name">{{authorName}}</div>
+              <div class="author-handle">@{{authorHandle}}</div>
+            </div>
+          </div>
+          <div class="read-cta">
+            <strong>matters.town</strong> · 點頭像看全文
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

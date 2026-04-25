@@ -28,6 +28,7 @@ Matters（馬特市，繁中創作社群，官方網址 [matters.town](https://m
 - 📚 **[Storybook docs site](https://thematters.github.io/design-system/)** — Phase 3 起公開部署，含元件 stories + tokens 視覺化（colors / typography / spacing / shadows / brand）
 - [`docs/architecture.md`](docs/architecture.md) — **Phase 1 起的 monorepo 結構與 phase plan**
 - [`docs/consume.md`](docs/consume.md) — 三種消費方式
+- [`docs/templates.md`](docs/templates.md) — OG / 社群圖 / Newsletter header 模板與 render 流程（Phase 6）
 - [`docs/releasing.md`](docs/releasing.md) — changesets 工作流 + npm publish 設定（Phase 5）
 - [`docs/visual-regression.md`](docs/visual-regression.md) — Playwright 視覺回歸（Phase 5）
 - [`docs/code-connect.md`](docs/code-connect.md) — Figma Code Connect 設定（Phase 4）
@@ -71,15 +72,15 @@ pnpm dev:storybook
 
 ## 狀態
 
-| Phase       | Scope                                                       | 狀態           |
-| ----------- | ----------------------------------------------------------- | -------------- |
-| Phase 0     | Tokens v2 + 41 specs + Button vanilla impl                  | ✅ 已合 PR #29 |
-| Phase 1     | Monorepo + Button (React) + Storybook + CI                  | ✅ 已合 PR #30 |
-| Phase 2     | TextField + Dialog + Toast + scaffold CLI                   | ✅ 已合 PR #31 |
-| Phase 3     | Storybook deploy + tokens docs site + freewrite isolation   | ✅ 已合 PR #32 |
-| Phase 4     | Avatar + Banner + ArticleCard + Figma Code Connect          | ✅ 已合 PR #34 |
-| **Phase 5** | **changesets + npm publish + Playwright visual regression** | **🚧 本 PR**   |
-| Phase 6+    | Operational templates                                       | ⏳             |
+| Phase       | Scope                                                     | 狀態           |
+| ----------- | --------------------------------------------------------- | -------------- |
+| Phase 0     | Tokens v2 + 41 specs + Button vanilla impl                | ✅ 已合 PR #29 |
+| Phase 1     | Monorepo + Button (React) + Storybook + CI                | ✅ 已合 PR #30 |
+| Phase 2     | TextField + Dialog + Toast + scaffold CLI                 | ✅ 已合 PR #31 |
+| Phase 3     | Storybook deploy + tokens docs site + freewrite isolation | ✅ 已合 PR #32 |
+| Phase 4     | Avatar + Banner + ArticleCard + Figma Code Connect        | ✅ 已合 PR #34 |
+| Phase 5     | changesets + npm publish + Playwright visual regression   | ✅ 已合 PR #35 |
+| **Phase 6** | **Operational templates (OG / social / newsletter)**      | **🚧 本 PR**   |
 
 完整 phase plan 在 [`docs/architecture.md`](docs/architecture.md)。
 

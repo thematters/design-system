@@ -29,7 +29,8 @@
     "version": "changeset version && pnpm install --lockfile-only",
     "release": "bash scripts/release.sh",
     "test:visual": "playwright test",
-    "test:visual:update": "playwright test --update-snapshots"
+    "test:visual:update": "playwright test --update-snapshots",
+    "template:render": "node scripts/render-template.mjs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
