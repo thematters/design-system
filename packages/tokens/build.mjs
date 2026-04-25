@@ -56,14 +56,21 @@ async function writeBoth(relName, contents) {
   console.log(`wrote packages/tokens/dist/${relName} + tokens/dist/${relName}`);
 }
 
+// Freewrite tokens are isolated into a separate stylesheet (see below).
+// Phase 3: stripped from main tokens.css so product code can't accidentally
+// reference --color-freewrite-* without an explicit opt-in.
+const FREEWRITE_KEY = "freewrite";
+
 // ----- tokens.css -----
 const cssLines = [];
 cssLines.push("/* Auto-generated from packages/tokens/tokens.json. Do not edit by hand. */");
 cssLines.push("/* Run `node packages/tokens/build.mjs` to regenerate. */");
+cssLines.push("/* Note: --color-freewrite-* tokens live in freewrite.css (opt-in only). */");
 cssLines.push(":root {");
 
-// colors
-const colors = flat(tokens.color, ["color"]);
+// colors (excluding freewrite)
+const { [FREEWRITE_KEY]: freewriteColors, ...productColors } = tokens.color;
+const colors = flat(productColors, ["color"]);
 cssLines.push("  /* color */");
 for (const t of colors) cssLines.push(`  ${cssVar(t.path)}: ${t.value};`);
 
@@ -118,6 +125,24 @@ for (const [name, weights] of Object.entries(tokens.typography.article)) {
 }
 
 await writeBoth("tokens.css", cssLines.join("\n") + "\n");
+
+// ----- freewrite.css (isolated, opt-in only) -----
+// Reserved for the 七日書 / Freewrite landing page. Product surfaces must
+// not import this. The values are also present in `tokens.ts` (full tree)
+// for documentation / inspection purposes, but are NOT bundled into
+// tokens.css automatically.
+if (freewriteColors) {
+  const fwLines = [];
+  fwLines.push("/* Auto-generated from packages/tokens/tokens.json. Do not edit by hand. */");
+  fwLines.push("/* Freewrite (七日書) tokens — opt-in. Import only on Freewrite surfaces. */");
+  fwLines.push("");
+  fwLines.push(":root {");
+  for (const t of flat(freewriteColors, ["color", FREEWRITE_KEY])) {
+    fwLines.push(`  ${cssVar(t.path)}: ${t.value};`);
+  }
+  fwLines.push("}");
+  await writeBoth("freewrite.css", fwLines.join("\n") + "\n");
+}
 
 // ----- tokens.ts -----
 const ts = [

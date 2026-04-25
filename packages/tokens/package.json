@@ -14,6 +14,7 @@
   "exports": {
     ".": "./dist/tokens.ts",
     "./tokens.css": "./dist/tokens.css",
+    "./freewrite.css": "./dist/freewrite.css",
     "./tailwind": "./dist/tailwind.preset.cjs",
     "./tokens.json": "./tokens.json"
   },

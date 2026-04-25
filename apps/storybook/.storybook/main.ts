@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
   stories: [
@@ -26,6 +27,13 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+  },
+  // Allow GH Pages deployment to set a sub-path base.
+  // Local dev / CI builds pass through unchanged (base: "/").
+  async viteFinal(config) {
+    return mergeConfig(config, {
+      base: process.env.STORYBOOK_BASE_PATH ?? "/",
+    });
   },
 };
 

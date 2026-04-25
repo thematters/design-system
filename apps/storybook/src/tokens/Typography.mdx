@@ -1,0 +1,42 @@
+import { Meta } from "@storybook/blocks";
+import { TypographyTable } from "./TokenViews";
+
+<Meta title="Tokens/Typography" />
+
+# Typography
+
+Two scales:
+
+- **System** — UI surfaces (h1/h2/h3/body/small/label). PingFang TC.
+- **Article** — long-form reading (title/summary/body). Noto Serif TC.
+
+Apply via the `.ds-text-*` utility classes shipped from
+`@matters/design-system-tokens/tokens.css`. The classes are also output as
+CSS variables for use in CSS Modules.
+
+## System scale
+
+<TypographyTable scope="system" />
+
+## Article scale
+
+<TypographyTable scope="article" />
+
+## Usage
+
+```html
+<h1 class="ds-text-system-h1-semibold">標題</h1>
+<p class="ds-text-system-body-1-regular">內文</p>
+
+<!-- in article context -->
+<h2 class="ds-text-article-title-medium">分節標題</h2>
+<p class="ds-text-article-body-regular">段落…</p>
+```
+
+In React with CSS Modules, prefer composing via className:
+
+```tsx
+import "@matters/design-system-tokens/tokens.css";
+
+<h1 className="ds-text-system-h1-semibold">標題</h1>;
+```

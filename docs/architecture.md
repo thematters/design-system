@@ -93,14 +93,14 @@ churn problem. pnpm is conservative and well-supported on Node 20+.
 
 ## Phase plan
 
-| Phase                 | Scope                                                              | Deliverable                                                                  |
-| --------------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
-| **Phase 1** (this PR) | Monorepo skeleton + `Button`                                       | Workspaces, tokens migration, Button impl/tests/stories, CI, docs            |
-| **Phase 2**           | TextField + Dialog + Toast; complete spec a11y/responsive sections | 3 more production components + spec backfill                                 |
-| **Phase 3**           | Storybook deploy; tokens docs site; freewrite tokens isolation     | Public docs URL; tokens reference page                                       |
-| **Phase 4**           | ArticleCard + Avatar + Banner; Code Connect mapping                | Compound components + Figma↔code sync                                        |
-| **Phase 5**           | Versioning + npm publish; visual regression                        | `@matters/design-system-react@0.x` on npm; Chromatic or Playwright snapshots |
-| **Phase 6+**          | Operational templates (`templates/`)                               | OG-image / newsletter generators                                             |
+| Phase                 | Scope                                                              | Deliverable                                                                                                                                                                                  |
+| --------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Phase 1** (this PR) | Monorepo skeleton + `Button`                                       | Workspaces, tokens migration, Button impl/tests/stories, CI, docs                                                                                                                            |
+| **Phase 2**           | TextField + Dialog + Toast; complete spec a11y/responsive sections | 3 more production components + spec backfill                                                                                                                                                 |
+| **Phase 3** ✅        | Storybook deploy; tokens docs site; freewrite tokens isolation     | Public docs at `https://thematters.github.io/design-system/`; tokens reference pages (Colors/Typography/Spacing/Shadows/Brand/Freewrite); freewrite tokens shipped as opt-in `freewrite.css` |
+| **Phase 4**           | ArticleCard + Avatar + Banner; Code Connect mapping                | Compound components + Figma↔code sync                                                                                                                                                        |
+| **Phase 5**           | Versioning + npm publish; visual regression                        | `@matters/design-system-react@0.x` on npm; Chromatic or Playwright snapshots                                                                                                                 |
+| **Phase 6+**          | Operational templates (`templates/`)                               | OG-image / newsletter generators                                                                                                                                                             |
 
 ## Where things live (cheat sheet)
 

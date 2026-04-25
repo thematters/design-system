@@ -1,0 +1,41 @@
+import { Meta } from "@storybook/blocks";
+import { ColorChip } from "./ColorChip";
+
+<Meta title="Tokens/Freewrite (七日書 only)" />
+
+# Freewrite tokens — opt-in only
+
+> ⚠️ **Reserved for the 七日書 / Freewrite landing page.** Product surfaces
+> (matters.town main app, lifeboat, fediverse-gateway) must NOT use these
+> tokens. The Phase 3 build deliberately omits them from the default
+> `tokens.css`.
+
+## Why isolated
+
+Freewrite has its own visual identity (cool blue, separate from the canonical
+purple/lime brand). Mixing it into product surfaces would cause inconsistent
+brand cues. To enforce the rule mechanically, freewrite tokens ship in a
+separate stylesheet that consumers must explicitly opt into.
+
+## Importing (opt-in)
+
+```tsx
+// Only on Freewrite landing routes:
+import "@matters/design-system-tokens/tokens.css";       // canonical
+import "@matters/design-system-tokens/freewrite.css";    // opt-in addition
+```
+
+## Tokens
+
+<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 12, margin: "16px 0" }}>
+  <ColorChip name="--color-freewrite-background" value="#F0F9FE" note="Page background" />
+  <ColorChip name="--color-freewrite-text" value="#1999D0" note="Body text" />
+  <ColorChip name="--color-freewrite-text-dark" value="#045898" note="Headings" />
+  <ColorChip name="--color-freewrite-label" value="#83BAD1" note="Labels / hints" />
+</div>
+
+## What if I need a blue in product?
+
+You don't need this blue. Use `--color-info-*` from the canonical info scale,
+or `--color-grey-*` for neutrals. If a product surface needs Freewrite-blue,
+that's a design escalation — not a token decision.

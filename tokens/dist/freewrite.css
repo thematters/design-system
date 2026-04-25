@@ -1,0 +1,9 @@
+/* Auto-generated from packages/tokens/tokens.json. Do not edit by hand. */
+/* Freewrite (七日書) tokens — opt-in. Import only on Freewrite surfaces. */
+
+:root {
+  --color-freewrite-background: #F0F9FE;
+  --color-freewrite-text: #1999D0;
+  --color-freewrite-text-dark: #045898;
+  --color-freewrite-label: #83BAD1;
+}

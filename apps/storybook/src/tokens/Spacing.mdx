@@ -1,0 +1,22 @@
+import { Meta } from "@storybook/blocks";
+import { SpacingScale } from "./TokenViews";
+
+<Meta title="Tokens/Spacing" />
+
+# Spacing
+
+8pt grid + 2-unit fine-grain. Keep margins / paddings / gaps on these
+values to stay rhythm-consistent across product surfaces.
+
+<SpacingScale />
+
+## Usage
+
+```css
+.card {
+  padding: var(--space-sp16);
+  gap: var(--space-sp8);
+}
+```
+
+In Tailwind preset, the same scale is available as `p-sp16`, `gap-sp8`, etc.
