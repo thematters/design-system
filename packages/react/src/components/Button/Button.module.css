@@ -1,21 +1,14 @@
-/* Button (DS 1.5 Buttons/Normal) implementation
- * Uses CSS custom properties from tokens/dist/tokens.css.
- * Brand color follows PM 2026-04-24 decision: canonical = New Palette purple/lime.
+/* Button (DS 1.5 Buttons/Normal) — React + CSS Modules port.
  *
- * Markup:
- *   <button class="ds-btn ds-btn--primary ds-btn--large">送出</button>
- *   <button class="ds-btn ds-btn--secondary ds-btn--medium">
- *     <span class="ds-btn__icon">…</span>取消
- *   </button>
+ * Sister implementation to components/buttons/normal/impl.css (vendored copy).
+ * Both must stay visually identical. Token references must match canonical
+ * --color-brand-new-purple (PM 2026-04-24 decision).
  *
- * Variants (from Figma):
- *   Type:      Primary | Secondary | Tertiary
- *   Size:      Large   | Medium    | Small
- *   Show Icon: optional <span class="ds-btn__icon"> child
- *   Show Text: hide text by setting aria-label and using --icon-only modifier
+ * Class names here are CSS-Module-scoped at build time; consumers see hashed
+ * classes. Do not depend on raw class names in this file.
  */
 
-.ds-btn {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -34,90 +27,99 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.ds-btn:focus-visible {
+.button:focus-visible {
   outline: 2px solid var(--color-brand-new-purple);
   outline-offset: 2px;
 }
 
-.ds-btn:disabled,
-.ds-btn[aria-disabled="true"] {
+.button:disabled,
+.button[aria-disabled="true"] {
   cursor: not-allowed;
   opacity: 0.4;
 }
 
+.button[aria-busy="true"] {
+  cursor: progress;
+}
+
 /* ---- Sizes ---- */
-.ds-btn--large {
+.large {
   font-size: 16px;
   line-height: 24px;
   padding: var(--space-sp12) var(--space-sp32);
   min-height: 48px;
 }
-.ds-btn--medium {
+.medium {
   font-size: 14px;
   line-height: 22px;
   padding: var(--space-sp8) var(--space-sp16);
   min-height: 36px;
 }
-.ds-btn--small {
+.small {
   font-size: 12px;
   line-height: 18px;
   padding: var(--space-sp4) var(--space-sp12);
   min-height: 28px;
 }
 
-/* ---- Type: Primary ---- */
-.ds-btn--primary {
+/* ---- Variant: Primary ---- */
+.primary {
   background-color: var(--color-brand-new-purple);
   color: var(--color-grey-white);
 }
-.ds-btn--primary:hover:not(:disabled):not([aria-disabled="true"]) {
+.primary:hover:not(:disabled):not([aria-disabled="true"]) {
   background-color: var(--color-primary-700);
 }
-.ds-btn--primary:active:not(:disabled):not([aria-disabled="true"]) {
+.primary:active:not(:disabled):not([aria-disabled="true"]) {
   background-color: var(--color-primary-800);
 }
 
-/* ---- Type: Secondary ---- */
-.ds-btn--secondary {
+/* ---- Variant: Secondary ---- */
+.secondary {
   background-color: transparent;
   color: var(--color-brand-new-purple);
   border-color: var(--color-brand-new-purple);
 }
-.ds-btn--secondary:hover:not(:disabled):not([aria-disabled="true"]) {
+.secondary:hover:not(:disabled):not([aria-disabled="true"]) {
   background-color: var(--color-primary-0);
 }
-.ds-btn--secondary:active:not(:disabled):not([aria-disabled="true"]) {
+.secondary:active:not(:disabled):not([aria-disabled="true"]) {
   background-color: var(--color-primary-100);
 }
 
-/* ---- Type: Tertiary ---- */
-.ds-btn--tertiary {
+/* ---- Variant: Tertiary ---- */
+.tertiary {
   background-color: transparent;
   color: var(--color-brand-new-purple);
   border-color: transparent;
 }
-.ds-btn--tertiary:hover:not(:disabled):not([aria-disabled="true"]) {
+.tertiary:hover:not(:disabled):not([aria-disabled="true"]) {
   background-color: var(--color-primary-0);
 }
-.ds-btn--tertiary:active:not(:disabled):not([aria-disabled="true"]) {
+.tertiary:active:not(:disabled):not([aria-disabled="true"]) {
   background-color: var(--color-primary-100);
 }
 
 /* ---- Icon-only (Show Text=off) ---- */
-.ds-btn--icon-only {
+.iconOnly {
   padding-left: var(--space-sp8);
   padding-right: var(--space-sp8);
   aspect-ratio: 1;
 }
-.ds-btn--icon-only.ds-btn--large {
+.iconOnly.large {
   padding: var(--space-sp12);
 }
-.ds-btn--icon-only.ds-btn--small {
+.iconOnly.small {
   padding: var(--space-sp4);
 }
 
+/* Full-width modifier (mobile) */
+.fullWidth {
+  width: 100%;
+}
+
 /* Icon slot */
-.ds-btn__icon {
+.icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -125,8 +127,38 @@
   height: 1em;
   flex-shrink: 0;
 }
-.ds-btn__icon svg {
+.icon svg {
   width: 100%;
   height: 100%;
   fill: currentColor;
+}
+
+/* Loading spinner — replaces leftIcon when loading */
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 999px;
+  animation: ds-button-spin 600ms linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ds-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide label visually while keeping it accessible (for loading state preserving label) */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

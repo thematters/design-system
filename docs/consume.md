@@ -1,5 +1,26 @@
 # Consuming the Matters Design System
 
+> **Phase 1 update (2026-04-25)**: this repo is now a monorepo. The design
+> system is shipped through **two parallel channels** — pick whichever fits
+> your consumer:
+>
+> - **Vendored copy** (this doc, unchanged) — best for static landing pages,
+>   no JS framework. Copy `tokens/dist/` and component impl files into your
+>   repo. Existing consumers (lifeboat, fediverse-gateway) continue to work
+>   without any change.
+> - **npm package** (new) — `@matters/design-system-react` for React apps,
+>   `@matters/design-system-tokens` for tokens-only. See
+>   [`packages/react/README.md`](../packages/react/README.md) and
+>   [`packages/tokens/README.md`](../packages/tokens/README.md). Phase 1
+>   ships only `Button`; full component coverage rolls out across Phase 2–4.
+> - **Copy-and-own** (planned, Phase 2) — `pnpm dlx @matters/design-system-cli
+add Button` will copy the source into your repo so you can fork it. CLI
+>   stub at [`scripts/scaffold-component.mjs`](../scripts/scaffold-component.mjs).
+>
+> Token paths are unchanged: `tokens/dist/tokens.css` still exists and is
+> still committed. The build now also writes to `packages/tokens/dist/` —
+> contents are byte-identical.
+
 本 repo 採 **vendored copy** 散布：consumer landing page 直接把 `tokens/dist/` 與需要的 `components/<page>/<name>/impl.{css,html}` 複製進自己的 repo。不依賴 npm registry，無外部 build dependency。
 
 ## 為什麼選 vendored copy
@@ -25,7 +46,7 @@ cp -r path/to/design-system/tokens/dist assets/matters-ds/tokens
 `tokens.css` 把所有 token 攤平成 `:root` 內的 `--color-*` / `--space-*` / `--shadow-*` / `--font-family-*` 變數，外加 `.ds-text-*` typography utility classes。
 
 ```html
-<link rel="stylesheet" href="/assets/matters-ds/tokens/tokens.css">
+<link rel="stylesheet" href="/assets/matters-ds/tokens/tokens.css" />
 
 <style>
   .hero {
@@ -44,10 +65,10 @@ cp -r path/to/design-system/tokens/dist assets/matters-ds/tokens
 ### 用法 — TypeScript / JavaScript
 
 ```ts
-import { tokens, colorByPath } from './assets/matters-ds/tokens/tokens';
+import { tokens, colorByPath } from "./assets/matters-ds/tokens/tokens";
 
 console.log(tokens.color.brand.new.purple.value); // "#7258FF"
-console.log(colorByPath['color.brand.new.purple']); // "#7258FF"
+console.log(colorByPath["color.brand.new.purple"]); // "#7258FF"
 ```
 
 ### 用法 — Tailwind CSS
@@ -55,7 +76,7 @@ console.log(colorByPath['color.brand.new.purple']); // "#7258FF"
 ```js
 // tailwind.config.cjs
 module.exports = {
-  presets: [require('./assets/matters-ds/tokens/tailwind.preset.cjs')],
+  presets: [require("./assets/matters-ds/tokens/tailwind.preset.cjs")],
   // ...
 };
 ```
@@ -72,8 +93,8 @@ cp design-system/components/buttons/normal/impl.css \
 ```
 
 ```html
-<link rel="stylesheet" href="/assets/matters-ds/tokens/tokens.css">
-<link rel="stylesheet" href="/assets/matters-ds/components/button.css">
+<link rel="stylesheet" href="/assets/matters-ds/tokens/tokens.css" />
+<link rel="stylesheet" href="/assets/matters-ds/components/button.css" />
 
 <button class="ds-btn ds-btn--primary ds-btn--large">送出</button>
 <button class="ds-btn ds-btn--secondary ds-btn--medium">取消</button>

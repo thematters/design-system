@@ -1,27 +1,45 @@
-# Tokens
+# tokens/ — backward-compat surface
 
-設計 tokens（色彩、字體、間距、圓角、陰影、動畫曲線等）。
+> **Source moved.** As of Phase 1 (monorepo migration), the canonical token
+> source lives at [`packages/tokens/`](../packages/tokens/).
 
-## Source of Truth
+This directory is **kept for backward compatibility** with vendored-copy
+consumers (landing pages, lifeboat, fediverse-gateway). The build still
+emits artifacts here so those consumers keep working unchanged:
 
-- **Figma Design System 1.5** — `JDKpHezhllOvJF42xbKcNN`
-- **Matters 2.0 Colors** — `wzoAKeR1Aa5PFx7zXdyLIT`（2.0 色盤升級預留）
+- `tokens/dist/tokens.css` — CSS custom properties + typography utilities
+- `tokens/dist/tokens.ts` — TypeScript export
+- `tokens/dist/tailwind.preset.cjs` — Tailwind preset
 
-## 產生流程（Phase 0 規劃）
+## What changed
 
+- `tokens/tokens.json` → moved to `packages/tokens/tokens.json`
+- `tokens/build.mjs` → now a thin forwarder; real script at `packages/tokens/build.mjs`
+- `tokens/dist/*` → still committed, still vendored, still consumed by
+  vendored-copy users. Now also mirrored to `packages/tokens/dist/` for
+  npm-package consumers.
+
+## Building
+
+Either entry point works:
+
+```bash
+node packages/tokens/build.mjs    # preferred
+node tokens/build.mjs             # legacy, still works
+pnpm build:tokens                 # via monorepo script
 ```
-Figma Variables ──[Figma MCP get_variable_defs]──▶ tokens-raw/*.json
-                                                          │
-                                               [scripts/transform.ts]
-                                                          ▼
-                                                  tokens/tokens.json   (本資料夾)
-                                                          │
-                                                     ├── CSS vars
-                                                     └── Tailwind preset
-```
 
-`tokens-raw/` 列在 `.gitignore`：只保留 transform 過的正式版本。
+Both produce identical output and write to **both** `tokens/dist/` and
+`packages/tokens/dist/`.
 
-## 現況
+## Consumption
 
-`tokens.json` 尚未產生。Phase 0 的任務：先手動從 Design System 1.5 抽一個最小可用子集（brand color、text color、font-size、spacing），跑起端到端 pipeline 後再補齊。
+- **Vendored copy** (current production path): copy `tokens/dist/tokens.css`
+  into your repo, no install. See [`docs/consume.md`](../docs/consume.md).
+- **npm package** (Phase 1+ option): `pnpm add @matters/design-system-tokens`,
+  import via `@matters/design-system-tokens/tokens.css`.
+
+## Source of truth
+
+- Figma Design System 1.5 — `JDKpHezhllOvJF42xbKcNN`
+- Matters 2.0 Colors — `wzoAKeR1Aa5PFx7zXdyLIT`

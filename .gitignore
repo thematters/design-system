@@ -9,10 +9,18 @@ tokens-raw/
 .vscode/
 .idea/
 
-# Build output
+# Build output (default ignore; specific allow-lists below)
 dist/
 build/
 *.log
+storybook-static/
+.turbo/
+coverage/
 
 # tokens/dist/ is vendored on purpose — consumers copy from there
 !tokens/dist/
+# packages/tokens/dist/ is also vendored — same reason
+!packages/tokens/dist/
+
+# packages/react built dist is NOT vendored; consumers import the package
+# (left as default-ignored above)
