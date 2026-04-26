@@ -8,33 +8,20 @@
  *     [--out <path-to-png>]      (default: templates/.example-output/<name>.png)
  *     [--scale <number>]         (output @2x for retina; default 1)
  *
- * Pipeline:
- *   1. Read templates/<name>/template.html + data JSON
- *   2. Substitute {{key}} placeholders
- *   3. Read <meta name="ds-template-size" content="WxH"> for viewport
- *   4. Open in Playwright Chromium with that viewport, wait for fonts +
- *      images to settle, screenshot the body's first child element
- *   5. Write PNG
- *
- * Why screenshot a specific element instead of fullPage:
- *   - The .tpl-canvas div has the exact declared dimensions; fullPage
- *     would include page chrome / scrollbars / margin
- *   - Element screenshot also handles rounded corners / overflow:hidden
- *     correctly without cropping the wrong region
- *
- * Requires Playwright + Chromium installed:
- *   pnpm install
- *   pnpm exec playwright install chromium
+ * Implementation lives in services/render/src/render.mjs — this script
+ * is just the CLI shell around it. The same library powers the HTTP
+ * render service, so there is exactly one renderer in the repo.
  */
 import fs from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath, pathToFileURL } from "node:url";
 import { argv, exit, cwd } from "node:process";
-import { chromium } from "@playwright/test";
-
-const HERE = path.dirname(fileURLToPath(import.meta.url));
-const REPO_ROOT = path.resolve(HERE, "..");
-const TEMPLATES = path.join(REPO_ROOT, "templates");
+import {
+  renderTemplate,
+  resolveTemplate,
+  listTemplates,
+  TemplateNotFoundError,
+  TEMPLATES_DIR,
+} from "../services/render/src/render.mjs";
 
 function parseArgs(argv) {
   const out = { _: [], scale: 1 };
@@ -55,11 +42,7 @@ function parseArgs(argv) {
 const opts = parseArgs(argv.slice(2));
 
 if (opts.help || opts._.length === 0) {
-  const list = (await safeReaddir(TEMPLATES))
-    .filter((e) => e.isDirectory())
-    .map((e) => e.name)
-    .filter((n) => !n.startsWith(".") && n !== "shared")
-    .join(", ");
+  const list = (await listTemplates()).join(", ");
   console.log(`
 render-template <template> [--data <json>] [--out <png>] [--scale <n>]
 
@@ -74,18 +57,23 @@ Examples:
 }
 
 const [name] = opts._;
-const templateDir = path.join(TEMPLATES, name);
-const templateHtml = path.join(templateDir, "template.html");
 
+let resolved;
 try {
-  await fs.access(templateHtml);
-} catch {
-  console.error(`✗ template not found: ${templateHtml}`);
-  console.error(`  expected layout: templates/<name>/template.html`);
-  exit(1);
+  resolved = await resolveTemplate(name);
+} catch (err) {
+  if (err instanceof TemplateNotFoundError) {
+    console.error(
+      `✗ template not found: ${path.join(TEMPLATES_DIR, name, "template.html")}`,
+    );
+    console.error(`  expected layout: templates/<name>/template.html`);
+    exit(1);
+  }
+  throw err;
 }
 
-const dataPath = opts.data ?? path.join(templateDir, "data.example.json");
+const dataPath =
+  opts.data ?? path.join(resolved.templateDir, "data.example.json");
 let data = {};
 try {
   data = JSON.parse(await fs.readFile(dataPath, "utf8"));
@@ -94,94 +82,20 @@ try {
   exit(1);
 }
 
-const outPath = opts.out ?? path.join(TEMPLATES, ".example-output", `${name}.png`);
+const outPath =
+  opts.out ?? path.join(TEMPLATES_DIR, ".example-output", `${name}.png`);
 await fs.mkdir(path.dirname(outPath), { recursive: true });
 
-// ---- substitute placeholders ----
-let html = await fs.readFile(templateHtml, "utf8");
-html = html.replace(/\{\{(\w+)\}\}/g, (m, key) => {
-  if (!(key in data)) {
-    console.warn(`  ! placeholder {{${key}}} has no data — leaving blank`);
-    return "";
-  }
-  // Minimal HTML-escape for safety. JSON should already be string-coerceable.
-  return String(data[key])
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+const { buffer, width, height, scale } = await renderTemplate({
+  name,
+  data,
+  scale: opts.scale,
+  onMissingKey: (key) =>
+    console.warn(`  ! placeholder {{${key}}} has no data — leaving blank`),
 });
 
-// ---- extract canvas size ----
-const sizeMatch = html.match(
-  /<meta\s+name=["']ds-template-size["']\s+content=["'](\d+)x(\d+)["']/i
+await fs.writeFile(outPath, buffer);
+
+console.log(
+  `✓ wrote ${path.relative(cwd(), outPath)}  (${width}×${height} @${scale}x)`,
 );
-if (!sizeMatch) {
-  console.error(`✗ template ${name} missing <meta name="ds-template-size" content="WxH">`);
-  exit(1);
-}
-const width = Number(sizeMatch[1]);
-const height = Number(sizeMatch[2]);
-
-// ---- write substituted HTML to a temp file so the browser can resolve
-// relative paths (../shared/tokens.css etc.) ----
-const tempHtmlPath = path.join(templateDir, ".rendered.html");
-await fs.writeFile(tempHtmlPath, html);
-
-// ---- launch browser ----
-const browser = await chromium.launch();
-const context = await browser.newContext({
-  viewport: { width, height },
-  deviceScaleFactor: opts.scale,
-});
-const page = await context.newPage();
-
-try {
-  await page.goto(pathToFileURL(tempHtmlPath).href, {
-    waitUntil: "networkidle",
-  });
-
-  // Settle: fonts + images
-  await page.evaluate(async () => {
-    if (document.fonts && document.fonts.ready) await document.fonts.ready;
-    await Promise.all(
-      Array.from(document.images)
-        .filter((i) => !i.complete)
-        .map(
-          (i) =>
-            new Promise((resolve) => {
-              i.addEventListener("load", () => resolve(undefined), {
-                once: true,
-              });
-              i.addEventListener("error", () => resolve(undefined), {
-                once: true,
-              });
-            })
-        )
-    );
-  });
-
-  // Find the canvas element (first .tpl-canvas) and screenshot just it.
-  const canvas = await page.locator(".tpl-canvas").first();
-  await canvas.screenshot({ path: outPath, type: "png" });
-
-  console.log(`✓ wrote ${path.relative(cwd(), outPath)}  (${width}×${height} @${opts.scale}x)`);
-} finally {
-  await context.close();
-  await browser.close();
-  // Clean up the temp HTML file
-  try {
-    await fs.unlink(tempHtmlPath);
-  } catch {
-    /* ignore */
-  }
-}
-
-// ---- helpers ----
-async function safeReaddir(p) {
-  try {
-    return await fs.readdir(p, { withFileTypes: true });
-  } catch {
-    return [];
-  }
-}

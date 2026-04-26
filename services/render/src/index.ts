@@ -12,11 +12,7 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { chromium, type Browser } from "@playwright/test";
-import {
-  renderInBrowser,
-  resolveTemplate,
-  TemplateNotFoundError,
-} from "./render.mjs";
+import { renderInBrowser, resolveTemplate, TemplateNotFoundError } from "./render.mjs";
 
 const PORT = Number(process.env.PORT ?? 3000);
 const CORS_ORIGIN = process.env.CORS_ORIGIN ?? "";
@@ -73,10 +69,7 @@ app.post("/render/:template", async (c) => {
   if (rawScale !== undefined) {
     const n = Number(rawScale);
     if (!Number.isFinite(n) || (n !== 1 && n !== 2)) {
-      return c.json(
-        { error: "invalid_scale", message: "scale must be 1 or 2" },
-        400,
-      );
+      return c.json({ error: "invalid_scale", message: "scale must be 1 or 2" }, 400);
     }
     scale = n;
   }
@@ -95,10 +88,7 @@ app.post("/render/:template", async (c) => {
     // Hono's c.body() type narrows on a few primitives; convert the
     // Node Buffer to an ArrayBuffer slice so it picks the right overload.
     return c.body(
-      buffer.buffer.slice(
-        buffer.byteOffset,
-        buffer.byteOffset + buffer.byteLength,
-      ) as ArrayBuffer,
+      buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength) as ArrayBuffer
     );
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);

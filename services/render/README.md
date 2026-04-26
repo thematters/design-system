@@ -24,12 +24,12 @@ retina PNG at twice the canvas DPR.
 
 ### Errors
 
-| Status | Body                                                | When                                  |
-| ------ | --------------------------------------------------- | ------------------------------------- |
-| 400    | `{"error":"invalid_json"}`                          | Body is not valid JSON                |
-| 400    | `{"error":"invalid_scale", ...}`                    | `scale` is not 1 or 2                 |
-| 404    | `{"error":"template_not_found","template":"x"}`     | `templates/<x>/template.html` missing |
-| 500    | `{"error":"render_failed","message":"..."}`         | Playwright threw                      |
+| Status | Body                                            | When                                  |
+| ------ | ----------------------------------------------- | ------------------------------------- |
+| 400    | `{"error":"invalid_json"}`                      | Body is not valid JSON                |
+| 400    | `{"error":"invalid_scale", ...}`                | `scale` is not 1 or 2                 |
+| 404    | `{"error":"template_not_found","template":"x"}` | `templates/<x>/template.html` missing |
+| 500    | `{"error":"render_failed","message":"..."}`     | Playwright threw                      |
 
 ## Local dev
 

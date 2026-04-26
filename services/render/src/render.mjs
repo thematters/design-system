@@ -65,13 +65,9 @@ export async function resolveTemplate(name) {
  * Returns { width, height } or throws.
  */
 export function extractCanvasSize(html) {
-  const m = html.match(
-    /<meta\s+name=["']ds-template-size["']\s+content=["'](\d+)x(\d+)["']/i,
-  );
+  const m = html.match(/<meta\s+name=["']ds-template-size["']\s+content=["'](\d+)x(\d+)["']/i);
   if (!m) {
-    throw new Error(
-      'template missing <meta name="ds-template-size" content="WxH">',
-    );
+    throw new Error('template missing <meta name="ds-template-size" content="WxH">');
   }
   return { width: Number(m[1]), height: Number(m[2]) };
 }
@@ -129,8 +125,8 @@ export async function renderInBrowser({
                 i.addEventListener("error", () => resolve(undefined), {
                   once: true,
                 });
-              }),
-          ),
+              })
+          )
       );
     });
 
