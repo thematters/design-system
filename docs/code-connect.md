@@ -9,16 +9,20 @@ which works). Personal/Starter plans don't expose Code Connect.
 
 ## What's wired
 
-| Component     | Mapping file                                                      | Figma node   |
-| ------------- | ----------------------------------------------------------------- | ------------ |
-| `Button`      | `packages/react/src/components/Button/Button.figma.tsx`           | `3371:23079` |
-| `Avatar`      | `packages/react/src/components/Avatar/Avatar.figma.tsx`           | `3278:8803`  |
-| `Banner`      | `packages/react/src/components/Banner/Banner.figma.tsx`           | `5251:1856`  |
-| `ArticleCard` | `packages/react/src/components/ArticleCard/ArticleCard.figma.tsx` | `4853:994`   |
+| Component       | Mapping file                                                      | Figma node   |
+| --------------- | ----------------------------------------------------------------- | ------------ |
+| `Button`        | `packages/react/src/components/Button/Button.figma.tsx`           | `3371:23079` |
+| `Avatar`        | `packages/react/src/components/Avatar/Avatar.figma.tsx`           | `3278:8803`  |
+| `Banner`        | `packages/react/src/components/Banner/Banner.figma.tsx`           | `5251:1856`  |
+| `ArticleCard`   | `packages/react/src/components/ArticleCard/ArticleCard.figma.tsx` | `4853:994`   |
+| `TextField`     | `packages/react/src/components/TextField/TextField.figma.tsx`     | `3307:19338` |
+| `Dialog`        | `packages/react/src/components/Dialog/Dialog.figma.tsx`           | `3404:1953`  |
+| `ToastProvider` | `packages/react/src/components/Toast/Toast.figma.tsx`             | `2341:14260` |
 
-`TextField`, `Dialog`, `Toast` from Phase 2 are not yet mapped — adding them
-is mechanical (copy the pattern). They'll be wired in a follow-up PR if
-designers need them.
+Toast has no JSX render entry — it's an imperative hook (`useToast().show(...)`),
+so its mapping connects to `ToastProvider` and the snippet documents the
+`useToast()` call site as an inline comment. See the file for variant→prop
+notes.
 
 ## Setup once: add `FIGMA_ACCESS_TOKEN` secret
 
