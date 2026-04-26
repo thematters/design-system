@@ -22,8 +22,9 @@ But Matters has roles where `pnpm` is not the primary tool:
 - Community manager coordinating a 七日書 launch
 
 For these roles, the library is **invisible**. They'll keep using Figma
-+ Canva + Google Slides because those tools have a UI matched to their
-workflow.
+
+- Canva + Google Slides because those tools have a UI matched to their
+  workflow.
 
 **Studio = the UI layer that exposes the library to non-engineers.**
 
@@ -34,7 +35,7 @@ tokens / components     ─┐
 templates (image)        ├─►  one web app:        ──►   PM, editor,
 slide-theme             │     dashboard +              marketing,
 page-template starters  │     forms +                  community managers
-render service          │     AI helper                
+render service          │     AI helper
                        ─┘     download / deploy
 ```
 
@@ -48,12 +49,12 @@ render service          │     AI helper
 
 Mapped to deliverables:
 
-| Goal | Studio feature | Backed by (existing) |
-|---|---|---|
-| **a** | Page wizard: pick template → fill form → preview → deploy to Cloudflare Pages with one click | `apps/page-templates/` (Phase 8b) |
-| **b1** OG / social / newsletter | Image form: template + JSON fields → live preview → download PNG | `services/render/` (Phase 7) |
-| **b2** Slides | Markdown editor + live Slidev preview + export PDF | `apps/slide-theme/` (Phase 8a) |
-| **c** Site content edits | Form-driven content editor that opens a PR against `thematters/matters-town` | (matters.town content layout — TBD) |
+| Goal                            | Studio feature                                                                               | Backed by (existing)                |
+| ------------------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------- |
+| **a**                           | Page wizard: pick template → fill form → preview → deploy to Cloudflare Pages with one click | `apps/page-templates/` (Phase 8b)   |
+| **b1** OG / social / newsletter | Image form: template + JSON fields → live preview → download PNG                             | `services/render/` (Phase 7)        |
+| **b2** Slides                   | Markdown editor + live Slidev preview + export PDF                                           | `apps/slide-theme/` (Phase 8a)      |
+| **c** Site content edits        | Form-driven content editor that opens a PR against `thematters/matters-town`                 | (matters.town content layout — TBD) |
 
 (c) is more involved than (a) and (b) because we don't yet know how
 matters.town main stores content (DB? Git-as-CMS? Headless API?). I'll
@@ -63,24 +64,25 @@ spec (c) as Phase 10+ once we have that picture. **MVP focus: (a) + (b).**
 
 ## Stack recommendation
 
-| Layer | Pick | Reason |
-|---|---|---|
-| Frontend | **Vite + React 19 + TypeScript** | Matches lifeboat & DS React package. Team's existing skill. Fast HMR. |
-| Routing | **TanStack Router** | Type-safe, file-based, no React-Router foot-guns. |
-| State | **TanStack Query** for server state, `useState` for forms | No Redux. No Zustand. Forms are local; render results come from the backend. |
-| Styling | **CSS Modules + `@matters/design-system-tokens` CSS vars** | Same as the React package. Consistent. |
-| Components | **`@matters/design-system-react`** (npm package, once published) or vendored copy until then | Re-use Button / TextField / Dialog / Toast / Avatar / Banner / ArticleCard. |
-| Backend | **Hono on Cloudflare Workers** | Edge-deployed, free tier huge. Same Hono runtime as `services/render/` so the API surface is consistent. |
-| Heavy renders (Playwright) | **Existing `services/render/` deployed to Fly.io** | Workers can't run Playwright. Studio Workers proxy POST /render to Fly. |
-| AI | **Anthropic Claude via Workers binding** | Studio backend calls Claude API; user never sees a key. Streaming via SSE. |
-| Auth | **Cloudflare Access** (zero-config, allow `*@matters.town`) | No code, no JWT plumbing, role-based via groups in CF dashboard. |
-| Persistence | **Cloudflare KV** for drafts, **Cloudflare R2** for rendered PNGs | Free tier covers initial usage. |
-| Deploy | **Cloudflare Pages** (frontend) + **Workers** (API) + **Fly.io** (render service) | Same place we already deploy lifeboat / fediverse-gateway. |
-| Repo | **New repo: `thematters/matters-studio`** | Studio is product-shaped (UI + auth + persistence). DS repo is library-shaped (no auth, no DB). Different cadences. |
+| Layer                      | Pick                                                                                         | Reason                                                                                                              |
+| -------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Frontend                   | **Vite + React 19 + TypeScript**                                                             | Matches lifeboat & DS React package. Team's existing skill. Fast HMR.                                               |
+| Routing                    | **TanStack Router**                                                                          | Type-safe, file-based, no React-Router foot-guns.                                                                   |
+| State                      | **TanStack Query** for server state, `useState` for forms                                    | No Redux. No Zustand. Forms are local; render results come from the backend.                                        |
+| Styling                    | **CSS Modules + `@matters/design-system-tokens` CSS vars**                                   | Same as the React package. Consistent.                                                                              |
+| Components                 | **`@matters/design-system-react`** (npm package, once published) or vendored copy until then | Re-use Button / TextField / Dialog / Toast / Avatar / Banner / ArticleCard.                                         |
+| Backend                    | **Hono on Cloudflare Workers**                                                               | Edge-deployed, free tier huge. Same Hono runtime as `services/render/` so the API surface is consistent.            |
+| Heavy renders (Playwright) | **Existing `services/render/` deployed to Fly.io**                                           | Workers can't run Playwright. Studio Workers proxy POST /render to Fly.                                             |
+| AI                         | **Anthropic Claude via Workers binding**                                                     | Studio backend calls Claude API; user never sees a key. Streaming via SSE.                                          |
+| Auth                       | **Cloudflare Access** (zero-config, allow `*@matters.town`)                                  | No code, no JWT plumbing, role-based via groups in CF dashboard.                                                    |
+| Persistence                | **Cloudflare KV** for drafts, **Cloudflare R2** for rendered PNGs                            | Free tier covers initial usage.                                                                                     |
+| Deploy                     | **Cloudflare Pages** (frontend) + **Workers** (API) + **Fly.io** (render service)            | Same place we already deploy lifeboat / fediverse-gateway.                                                          |
+| Repo                       | **New repo: `thematters/matters-studio`**                                                    | Studio is product-shaped (UI + auth + persistence). DS repo is library-shaped (no auth, no DB). Different cadences. |
 
 ### Why not Next.js?
 
 Next.js is the obvious default but:
+
 - App Router is heavier than what Studio needs
 - RSC + Server Actions add cognitive load for a small app
 - Vercel deploy is fine but we already use Cloudflare for everything else (lifeboat, fediverse-gateway, soon render service)
@@ -226,15 +228,15 @@ Each step ~half-day. Total MVP ~1.5 weeks.
 
 ## Open questions for you to decide
 
-| Question | Default I'd pick if you don't reply | Why |
-|---|---|---|
-| Repo name | `matters-studio` | Maps to `studio.matters.town` |
-| Repo owner | `thematters/` | Org-owned for discoverability |
-| Repo visibility | **public** | DS is public, Studio is companion. Hides nothing important. |
-| Subdomain | `studio.matters.town` | Already provisioned for `matters.town` zone presumably |
-| Auth allowlist | `*@matters.town` + `mashbean@gmail.com` | All staff + you |
-| AI provider | Anthropic Claude (via API key in Workers env) | We have access; quality matches the writing tone |
-| MVP scope | OG Image only | Smallest dogfoodable surface |
+| Question        | Default I'd pick if you don't reply           | Why                                                         |
+| --------------- | --------------------------------------------- | ----------------------------------------------------------- |
+| Repo name       | `matters-studio`                              | Maps to `studio.matters.town`                               |
+| Repo owner      | `thematters/`                                 | Org-owned for discoverability                               |
+| Repo visibility | **public**                                    | DS is public, Studio is companion. Hides nothing important. |
+| Subdomain       | `studio.matters.town`                         | Already provisioned for `matters.town` zone presumably      |
+| Auth allowlist  | `*@matters.town` + `mashbean@gmail.com`       | All staff + you                                             |
+| AI provider     | Anthropic Claude (via API key in Workers env) | We have access; quality matches the writing tone            |
+| MVP scope       | OG Image only                                 | Smallest dogfoodable surface                                |
 
 If any of those land wrong for Matters' constraints, push back on this
 PR. Once merged, I start on `thematters/matters-studio` repo creation.

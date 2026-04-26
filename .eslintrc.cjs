@@ -38,5 +38,8 @@ module.exports = {
     "packages/tokens/dist/**",
     "components/**/impl.html",
     "**/*.css",
+    // Astro auto-generates these in apps/page-templates/*/src/env.d.ts
+    "apps/page-templates/**/src/env.d.ts",
+    "apps/page-templates/**/.astro/**",
   ],
 };

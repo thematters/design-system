@@ -1,0 +1,144 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import MissionStatement from "../components/MissionStatement.astro";
+import TimelineSection from "../components/TimelineSection.astro";
+import TeamGrid from "../components/TeamGrid.astro";
+import { page } from "../content/page";
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<PageLayout
+  title={page.pageTitle}
+  description={page.pageDescription}
+  lang={page.lang}
+>
+  <header class="about-header">
+    <div class="about-header__inner">
+      <a class="about-header__brand" href={page.brand.href}>
+        <img src={`${baseUrl}matters-mark-color.svg`} alt="Matters logo" />
+        <span>{page.brand.label}</span>
+      </a>
+      <nav class="about-header__nav" aria-label="page sections">
+        <ul>
+          {page.nav.map((link) => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <MissionStatement hero={page.hero} />
+
+    <section class="section section--alt" id="pillars" aria-labelledby="pillars-title">
+      <div class="section__inner">
+        <p class="eyebrow">{page.pillars.eyebrow}</p>
+        <h2 class="section__title" id="pillars-title">{page.pillars.title}</h2>
+        <div class="pillars">
+          {page.pillars.items.map((p) => (
+            <article class="pillar">
+              <h3>{p.title}</h3>
+              <p>{p.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <TimelineSection timeline={page.timeline} />
+
+    <TeamGrid team={page.team} />
+
+    {
+      page.partners && page.partners.items.length > 0 && (
+        <section class="section section--alt" id="partners" aria-labelledby="partners-title">
+          <div class="section__inner">
+            <p class="eyebrow">{page.partners.eyebrow}</p>
+            <h2 class="section__title" id="partners-title">{page.partners.title}</h2>
+            <ul class="partners" role="list">
+              {page.partners.items.map((p) => (
+                <li class="partner">
+                  {p.href ? (
+                    <a href={p.href} target="_blank" rel="noopener">
+                      {p.logo ? <img src={p.logo} alt={p.name} loading="lazy" /> : <span>{p.name}</span>}
+                    </a>
+                  ) : p.logo ? (
+                    <img src={p.logo} alt={p.name} loading="lazy" />
+                  ) : (
+                    <span>{p.name}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+  </main>
+
+  <footer class="about-footer">
+    <div class="about-footer__inner">
+      <span>{page.footer.copyright}</span>
+      <ul>
+        <li><a href={`mailto:${page.footer.contactEmail}`}>{page.footer.contactEmail}</a></li>
+        {page.footer.socialLinks.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </footer>
+</PageLayout>
+
+<style>
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-sp32);
+  }
+
+  .pillar h3 {
+    font-family: var(--font-reading);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: var(--ink);
+  }
+
+  .pillar p {
+    margin: 0;
+    color: var(--ink-muted);
+    line-height: 1.8;
+  }
+
+  .partners {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-sp32);
+    align-items: center;
+  }
+
+  .partner a,
+  .partner span {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--font-reading);
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .partner a:hover {
+    color: var(--brand-purple);
+  }
+
+  .partner img {
+    max-width: 160px;
+    max-height: 48px;
+    object-fit: contain;
+  }
+</style>

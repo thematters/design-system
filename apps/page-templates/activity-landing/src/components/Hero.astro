@@ -1,0 +1,62 @@
+---
+import type { ActivityLandingContent } from "../content/page";
+import ParticipantWall from "./ParticipantWall.astro";
+
+interface Props {
+  hero: ActivityLandingContent["hero"];
+  participants: ActivityLandingContent["participants"];
+}
+
+const { hero, participants } = Astro.props;
+---
+
+<section class="board hero" aria-labelledby="hero-title">
+  <p class="eyebrow">{hero.eyebrow}</p>
+  <h1 class="hero__title" id="hero-title">{hero.title}</h1>
+  <p class="hero__subtitle">{hero.subtitle}</p>
+
+  <div class="hero__cta">
+    <a class="btn btn--primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
+    {
+      hero.secondaryCta && (
+        <a class="btn btn--ghost" href={hero.secondaryCta.href}>
+          {hero.secondaryCta.label}
+        </a>
+      )
+    }
+  </div>
+
+  <ParticipantWall participants={participants} />
+</section>
+
+<style>
+  .hero__title {
+    font-family: var(--font-reading);
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 var(--space-sp16) 0;
+  }
+
+  .hero__subtitle {
+    font-size: clamp(15px, 2vw, 18px);
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin: 0 0 var(--space-sp32) 0;
+    max-width: 60ch;
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sp12);
+    margin-bottom: var(--space-sp32);
+  }
+
+  @media (max-width: 480px) {
+    .hero__cta {
+      flex-direction: column;
+    }
+  }
+</style>

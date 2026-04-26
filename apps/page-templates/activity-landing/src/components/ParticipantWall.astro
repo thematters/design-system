@@ -1,0 +1,111 @@
+---
+import type { ActivityLandingContent } from "../content/page";
+
+interface Props {
+  participants: ActivityLandingContent["participants"];
+}
+
+const { participants } = Astro.props;
+const visible = participants.avatars.slice(0, 24);
+const formattedCount = new Intl.NumberFormat("zh-Hant").format(participants.count);
+
+function initials(name: string): string {
+  return name.slice(0, 2);
+}
+---
+
+<div class="wall" aria-label={`${participants.label}：${formattedCount} ${participants.countSuffix}`}>
+  <div class="wall__count">
+    <span class="wall__label">{participants.label}</span>
+    <strong class="wall__num">{formattedCount}</strong>
+    <span class="wall__suffix">{participants.countSuffix}</span>
+  </div>
+
+  <ul class="wall__avatars" role="list">
+    {
+      visible.map((a) => (
+        <li class="wall__av">
+          {a.src ? (
+            <img src={a.src} alt={a.name} loading="lazy" />
+          ) : (
+            <span class="wall__fallback" aria-hidden="true">
+              {initials(a.name)}
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .wall {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sp16);
+  }
+
+  .wall__count {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sp8);
+    flex-wrap: wrap;
+  }
+
+  .wall__label {
+    color: var(--ink-muted);
+    font-size: 14px;
+  }
+
+  .wall__num {
+    font-family: var(--font-reading);
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    color: var(--brand-purple);
+    line-height: 1;
+  }
+
+  .wall__suffix {
+    color: var(--ink-muted);
+    font-size: 14px;
+  }
+
+  .wall__avatars {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .wall__av {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--color-primary-100, #eae7ff);
+    border: 2px solid var(--board-bg);
+    box-shadow: 0 0 0 1px var(--line);
+    margin-left: -6px;
+    display: grid;
+    place-items: center;
+    color: var(--brand-purple);
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .wall__av:first-child {
+    margin-left: 0;
+  }
+
+  .wall__av img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .wall__fallback {
+    user-select: none;
+  }
+</style>

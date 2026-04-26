@@ -1,0 +1,46 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import CountdownTimer from "../components/CountdownTimer.astro";
+import EmailWaitlistForm from "../components/EmailWaitlistForm.astro";
+import { page } from "../content/page";
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<PageLayout
+  title={page.pageTitle}
+  description={page.pageDescription}
+  lang={page.lang}
+>
+  <main class="shell">
+    <a class="shell__brand" href={page.brand.href}>
+      <img src={`${baseUrl}matters-mark-color.svg`} alt="Matters logo" />
+      <span>{page.brand.label}</span>
+    </a>
+
+    <p class="shell__eyebrow">{page.eyebrow}</p>
+    <h1 class="shell__headline">{page.headline}</h1>
+    <p class="shell__lead">{page.lead}</p>
+
+    {page.launchAt && <CountdownTimer launchAt={page.launchAt} />}
+
+    {page.waitlist.enabled && page.waitlist.endpoint && <EmailWaitlistForm waitlist={page.waitlist} />}
+  </main>
+
+  <footer class="shell__footer">
+    <span>{page.footer.copyright}</span>
+    {
+      page.footer.links && page.footer.links.length > 0 && (
+        <nav aria-label="footer">
+          <ul>
+            {page.footer.links.map((link) => (
+              <li>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+  </footer>
+</PageLayout>

@@ -1,0 +1,114 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import Hero from "../components/Hero.astro";
+import DayPromptRow from "../components/DayPromptRow.astro";
+import EntryCard from "../components/EntryCard.astro";
+import RulesAccordion from "../components/RulesAccordion.astro";
+import ClosingCta from "../components/ClosingCta.astro";
+import { page } from "../content/page";
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<PageLayout
+  title={page.pageTitle}
+  description={page.pageDescription}
+  lang={page.lang}
+>
+  <div class="page">
+    <header class="page__header">
+      <a class="page__brand" href="https://matters.town">
+        <img src={`${baseUrl}matters-mark-color.svg`} alt="Matters logo" />
+        <span>matters.town</span>
+      </a>
+    </header>
+
+    <main class="page__main">
+      <Hero hero={page.hero} participants={page.participants} />
+
+      {page.dayPrompts && <DayPromptRow dayPrompts={page.dayPrompts} />}
+
+      <section class="board entries" aria-labelledby="entries-title">
+        <p class="eyebrow">{page.entries.eyebrow}</p>
+        <h2 class="entries__title" id="entries-title">{page.entries.title}</h2>
+        <div class="entries__grid">
+          {page.entries.items.map((entry) => <EntryCard entry={entry} />)}
+        </div>
+        {
+          page.entries.moreLink && (
+            <p class="entries__more">
+              <a href={page.entries.moreLink.href}>
+                {page.entries.moreLink.label}
+              </a>
+            </p>
+          )
+        }
+      </section>
+
+      {page.faq && <RulesAccordion faq={page.faq} />}
+
+      <ClosingCta closing={page.closing} />
+    </main>
+
+    <footer class="page__footer">
+      <span>{page.footer.note}</span>
+      {
+        page.footer.links && page.footer.links.length > 0 && (
+          <nav aria-label="footer">
+            <ul>
+              {page.footer.links.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )
+      }
+    </footer>
+  </div>
+</PageLayout>
+
+<style>
+  .entries__title {
+    font-family: var(--font-reading);
+    font-size: clamp(22px, 3.2vw, 28px);
+    font-weight: 700;
+    margin: 0 0 var(--space-sp32) 0;
+    color: var(--ink);
+  }
+
+  .entries__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-sp16);
+  }
+
+  .entries__more {
+    margin: var(--space-sp32) 0 0 0;
+    text-align: center;
+  }
+
+  .entries__more a {
+    color: var(--brand-purple);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .page__footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--space-sp16);
+  }
+
+  .page__footer a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+
+  .page__footer a:hover {
+    color: var(--brand-purple);
+  }
+</style>

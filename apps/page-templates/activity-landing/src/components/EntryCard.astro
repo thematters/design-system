@@ -1,0 +1,66 @@
+---
+import type { Entry } from "../content/page";
+
+interface Props {
+  entry: Entry;
+}
+
+const { entry } = Astro.props;
+---
+
+<a class="entry" href={entry.href} target="_blank" rel="noopener">
+  <h3 class="entry__title">{entry.title}</h3>
+  <p class="entry__excerpt">{entry.excerpt}</p>
+  <p class="entry__author">{entry.author}</p>
+</a>
+
+<style>
+  .entry {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sp8);
+    padding: var(--space-sp16);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--board-bg);
+    color: inherit;
+    text-decoration: none;
+    transition:
+      transform 0.12s ease,
+      border-color 0.12s ease,
+      box-shadow 0.12s ease;
+  }
+
+  .entry:hover {
+    transform: translateY(-2px);
+    border-color: var(--brand-purple);
+    box-shadow: 0 8px 16px rgba(114, 88, 255, 0.08);
+  }
+
+  .entry__title {
+    font-family: var(--font-reading);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .entry__excerpt {
+    color: var(--ink-muted);
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .entry__author {
+    color: var(--brand-purple);
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+  }
+</style>

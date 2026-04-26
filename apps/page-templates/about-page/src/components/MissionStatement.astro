@@ -1,0 +1,41 @@
+---
+import type { AboutContent } from "../content/page";
+
+interface Props {
+  hero: AboutContent["hero"];
+}
+
+const { hero } = Astro.props;
+---
+
+<section class="section mission" aria-labelledby="mission-title">
+  <div class="section__inner">
+    <p class="eyebrow">{hero.eyebrow}</p>
+    <h1 class="mission__statement" id="mission-title">{hero.statement}</h1>
+    <p class="mission__lead">{hero.lead}</p>
+  </div>
+</section>
+
+<style>
+  .mission {
+    padding-top: clamp(80px, 12vw, 160px);
+  }
+
+  .mission__statement {
+    font-family: var(--font-reading);
+    font-size: clamp(36px, 7vw, 72px);
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0 0 var(--space-sp32) 0;
+    color: var(--ink);
+    max-width: 16ch;
+  }
+
+  .mission__lead {
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--ink-muted);
+    line-height: 1.8;
+    max-width: 60ch;
+    margin: 0;
+  }
+</style>

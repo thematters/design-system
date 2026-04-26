@@ -1,0 +1,226 @@
+/*
+ * Matters page-template — activity-landing.
+ *
+ * Tokens are vendored from @matters/design-system-tokens at:
+ *   src/styles/vendor/tokens.css   (canonical CSS variables + .ds-text-*)
+ *   src/styles/vendor/freewrite.css (opt-in 七日書 palette)
+ *
+ * Re-vendor by running:
+ *   cp packages/tokens/dist/tokens.css \
+ *     apps/page-templates/activity-landing/src/styles/vendor/tokens.css
+ * from the design-system monorepo root, or from the published
+ * @matters/design-system-tokens package.
+ */
+
+@import "./vendor/tokens.css";
+@import "./vendor/freewrite.css";
+
+:root {
+  /* semantic aliases */
+  --page-bg: var(--color-grey-grey-lighter, #f7f7f7);
+  --board-bg: var(--color-grey-white, #ffffff);
+  --ink: var(--color-grey-black);
+  --ink-muted: var(--color-grey-grey-darker);
+  --line: var(--color-grey-grey-light);
+
+  /* brand-canonical accents (PM 2026-04-24) */
+  --brand-purple: var(--color-brand-new-purple); /* #7258FF */
+  --brand-lime: var(--color-brand-new-green); /* #C3F432 */
+
+  --board-radius: 16px;
+  --board-max: 1080px;
+  --board-pad-x: clamp(20px, 5vw, 48px);
+  --board-pad-y: clamp(32px, 6vw, 56px);
+  --board-gap: var(--space-sp32);
+
+  --font-ui: "Noto Sans TC", var(--font-family-ui, system-ui), -apple-system, sans-serif;
+  --font-reading: "Noto Serif TC", var(--font-family-reading, serif), "Source Han Serif TC", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-bg: #1a1a1a;
+    --board-bg: #232323;
+    --ink: #f0f0f0;
+    --ink-muted: #b3b3b3;
+    --line: #3a3a3a;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--page-bg);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--brand-purple);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-purple);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Page shell */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--board-max);
+  margin: 0 auto;
+  padding: var(--space-sp32) var(--board-pad-x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--board-gap);
+}
+
+.page__header,
+.page__footer {
+  width: 100%;
+  max-width: var(--board-max);
+  margin: 0 auto;
+  padding: var(--space-sp16) var(--board-pad-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sp16);
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+.page__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sp8);
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.page__brand img {
+  width: 28px;
+  height: 28px;
+}
+
+.page__footer {
+  border-top: 1px solid var(--line);
+  margin-top: var(--space-sp32);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sp8);
+}
+
+@media (min-width: 720px) {
+  .page__footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Reusable Board (white card) */
+.board {
+  background: var(--board-bg);
+  border-radius: var(--board-radius);
+  box-shadow: var(--shadow-shadow1, 0 4px 8px rgba(0, 0, 0, 0.08));
+  padding: var(--board-pad-y) var(--board-pad-x);
+}
+
+@media (prefers-color-scheme: dark) {
+  .board {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sp8);
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    background 0.12s ease,
+    color 0.12s ease;
+}
+
+.btn--primary {
+  background: var(--brand-purple);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  background: var(--color-primary-700, #5a43e5);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn--ghost:hover {
+  border-color: var(--brand-purple);
+  color: var(--brand-purple);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sp8);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--brand-purple);
+  text-transform: uppercase;
+  margin: 0 0 var(--space-sp8) 0;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand-lime);
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

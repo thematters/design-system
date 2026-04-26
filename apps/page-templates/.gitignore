@@ -1,0 +1,6 @@
+# Astro auto-generated
+**/.astro/
+**/dist/
+
+# Build output
+**/node_modules/
