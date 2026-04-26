@@ -1,5 +1,18 @@
 # @matters/design-system-react
 
+## 0.2.1
+
+### Patch Changes
+
+- b46040a: `ArticleCard`: fix cover image overhang when the title fits in a single
+  line. The text column now has `min-height` matching the cover size
+  (76px small / 106px big) with vertically centered content, so the cover
+  no longer orphans below the text on wider viewports.
+- ad21b9f: Add Figma Code Connect mappings for `TextField`, `Dialog`, and `Toast` (via
+  `ToastProvider`). Dev-time metadata only — package bundle and tokens are
+  unchanged. Designers will see live React snippets in Figma Dev Mode for
+  these components after the next manual `figma:connect:publish` run.
+
 ## 0.2.0
 
 ### Minor Changes
