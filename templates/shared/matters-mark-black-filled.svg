@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385.45 265">
+  <!--
+    Modified Matters.News mark for small-size rendering on light backgrounds.
+    Both circles solid (vs. official asset which leaves the right circle as
+    a hollow ring — invisible at icon sizes ≤ 32px).
+    Path data sourced from the official Color variant; fills replaced with #333.
+  -->
+  <path fill="#333" d="M265.83,251.75c66.07,0,119.62-53.39,119.62-119.25S331.9,13.25,265.83,13.25s-119.62,53.39-119.62,119.25,53.55,119.25,119.62,119.25Z"/>
+  <path fill="#333" d="M132.92,265c73.41,0,132.92-59.32,132.92-132.5S206.33,0,132.92,0,0,59.32,0,132.5s59.5,132.5,132.92,132.5Z"/>
+</svg>
