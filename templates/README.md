@@ -24,6 +24,11 @@ Each template directory has:
 - `data.example.json` — sample data envelope
 - `README.md` — input schema + design notes
 
+Plus shared resources:
+
+- [`shared/`](shared/) — `tokens.css` (DS canonical tokens), `template-base.css` (resets + brand-mark utility), and the official **Matters.News logo SVGs** (`matters-mark-black.svg`, `matters-mark-white.svg`, `matters-mark-color.svg`, plus letterings)
+- [`library/`](library/) — pre-approved background images (covers, posters) sourced from the design handoff. Ops can use these directly as `imageSrc` / `backgroundUrl` in template renders without going to Figma. See [`library/README.md`](library/README.md).
+
 ## Render one
 
 ```bash
