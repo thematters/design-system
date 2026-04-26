@@ -1,0 +1,171 @@
+/* Matters Slidev Theme — base typography, scrim, brand mark.
+ *
+ * The Slidev runtime renders each slide into a fixed canvas (default 1280x720).
+ * We deliberately avoid `vh` / `vw` so `slidev export` (PDF) renders cleanly.
+ */
+
+:root {
+  /* theme-local aliases that map to canonical tokens */
+  --m-bg: var(--color-grey-white);
+  --m-fg: var(--color-grey-black);
+  --m-muted: var(--color-grey-grey-darker);
+  --m-rule: var(--color-grey-grey-light);
+  --m-accent: var(--color-brand-new-purple);
+  --m-accent-soft: var(--color-primary-100);
+  --m-secondary: var(--color-brand-new-green);
+  --m-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  --m-sans: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --m-serif: "Noto Serif TC", "Source Han Serif TC", serif;
+}
+
+/* Slidev wraps each slide in a `.slidev-slide` container. */
+.slidev-layout {
+  font-family: var(--m-sans);
+  color: var(--m-fg);
+  background: var(--m-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* keep generous whitespace — Matters reading aesthetic */
+  padding: 56px 72px;
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  font-family: var(--m-sans);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  color: var(--m-fg);
+}
+
+.slidev-layout h1 {
+  font-size: 44px;
+  line-height: 1.25;
+}
+.slidev-layout h2 {
+  font-size: 32px;
+  line-height: 1.3;
+}
+.slidev-layout h3 {
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.slidev-layout p,
+.slidev-layout li {
+  font-size: 22px;
+  line-height: 1.65;
+  color: var(--m-fg);
+  margin: 0 0 12px;
+}
+
+.slidev-layout ul,
+.slidev-layout ol {
+  margin: 0 0 16px;
+  padding-left: 1.4em;
+}
+.slidev-layout li::marker {
+  color: var(--m-accent);
+}
+
+.slidev-layout a {
+  color: var(--m-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.slidev-layout strong {
+  color: var(--m-fg);
+  background: linear-gradient(transparent 65%, var(--m-secondary) 65%);
+  padding: 0 2px;
+  font-weight: 600;
+}
+
+.slidev-layout code {
+  font-family: var(--m-mono);
+  font-size: 0.9em;
+  background: var(--color-grey-grey-lighter);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.slidev-layout pre,
+.slidev-layout pre.shiki {
+  font-family: var(--m-mono);
+  font-size: 18px;
+  line-height: 1.55;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 0 0 16px;
+  overflow: hidden;
+}
+
+/* Tables — used by the quarterly-review KPI deck */
+.slidev-layout table {
+  border-collapse: collapse;
+  font-size: 20px;
+  width: 100%;
+  margin: 16px 0;
+}
+.slidev-layout th,
+.slidev-layout td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--m-rule);
+}
+.slidev-layout th {
+  font-weight: 600;
+  color: var(--m-muted);
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Brand mark (bottom-right corner for default slides). */
+.matters-brand-mark {
+  position: absolute;
+  right: 32px;
+  bottom: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--m-sans);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--m-muted);
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+.matters-brand-mark img {
+  height: 18px;
+  width: auto;
+  display: block;
+}
+
+/* Inverted variant (dark backgrounds / full-image / cover-on-dark). */
+.slidev-layout.is-inverse,
+.slidev-layout.is-inverse h1,
+.slidev-layout.is-inverse h2,
+.slidev-layout.is-inverse h3,
+.slidev-layout.is-inverse p,
+.slidev-layout.is-inverse li {
+  color: var(--color-grey-white);
+}
+.slidev-layout.is-inverse .matters-brand-mark {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Dark mode (Slidev built-in toggle adds `.dark` to <html>). */
+html.dark .slidev-layout {
+  --m-bg: var(--color-grey-black);
+  --m-fg: var(--color-grey-white);
+  --m-muted: var(--color-grey-grey-light);
+  --m-rule: var(--color-grey-grey-darker);
+}
+html.dark .slidev-layout code {
+  background: rgba(255, 255, 255, 0.08);
+}
+html.dark .matters-brand-mark {
+  color: var(--color-grey-grey-light);
+}

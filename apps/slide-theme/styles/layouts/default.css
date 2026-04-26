@@ -1,0 +1,35 @@
+/* Default layout — title at top, body content below.
+ * Used for: bullet slides, narrative paragraphs, tables. */
+
+.slidev-layout.matters-default {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  background: var(--m-bg);
+}
+
+.slidev-layout.matters-default .matters-default__eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--m-accent);
+  margin-bottom: 12px;
+}
+
+.slidev-layout.matters-default .matters-default__rule {
+  width: 48px;
+  height: 4px;
+  background: var(--m-accent);
+  border: 0;
+  margin: 0 0 24px;
+}
+
+.slidev-layout.matters-default .matters-default__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 1040px;
+}
