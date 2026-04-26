@@ -32,7 +32,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@playwright/test": "^1.48.0",
+    "@playwright/test": "1.48.2",
     "hono": "^4.6.0",
     "@hono/node-server": "^1.13.0"
   },
