@@ -11,6 +11,7 @@ design-system/
 ├── packages/tokens/    ← layer 2a: canonical tokens (CSS / TS / Tailwind)
 ├── packages/react/     ← layer 2b: React component library
 ├── apps/storybook/     ← docs site for layer 2
+├── apps/slide-theme/   ← Slidev Matters theme + example decks (Phase 8a)
 ├── tokens/             ← legacy mirror of packages/tokens/dist (back-compat)
 └── docs/, scripts/, templates/
 ```
@@ -101,7 +102,10 @@ churn problem. pnpm is conservative and well-supported on Node 20+.
 | **Phase 4** ✅         | ArticleCard + Avatar + Banner; Figma Code Connect mappings         | 3 compound components (97/97 tests). `<Name>.figma.tsx` mapping files for Button + Avatar + Banner + ArticleCard. Manual-trigger publish workflow at `.github/workflows/figma-code-connect.yml`. See [`docs/code-connect.md`](./code-connect.md)                                                                                                                  |
 | **Phase 5** ✅         | Versioning + npm publish; visual regression                        | Changesets workflow ([`docs/releasing.md`](./releasing.md)); release CI auto-publishes `@matters/design-system-{tokens,react}@0.x` on merging the version PR; Playwright visual regression with Linux-pinned snapshots ([`docs/visual-regression.md`](./visual-regression.md))                                                                                    |
 | **Phase 6** ✅         | Operational templates (`templates/`)                               | 3 image templates (OG 1200×630 / social 1080² / newsletter 600×200) + Playwright-based renderer at `scripts/render-template.mjs`. `pnpm template:render <name> --data <json>` produces deterministic PNG. Tokens-aligned, no Figma seat needed. See [`docs/templates.md`](./templates.md)                                                                         |
+| **Phase 7** ✅         | HTTP render service (`services/render/`)                           | Hono-on-Node wrapper around the Phase 6 renderer. `POST /render/<template>` with JSON body returns a PNG. Browser launched once per process, fresh context per request. Multi-stage Dockerfile on `mcr.microsoft.com/playwright`. Lets matters.town backend (or any service) auto-generate OG images.                                                             |
+| **Phase 8a** ✅        | Slidev Matters theme (`apps/slide-theme/`)                         | Private workspace package `@matters/slide-theme-slidev` with 4 layouts (default/cover/two-column/full-image) + 3 real example decks (product pitch / 七日書啟動會 / quarterly review). Reuses `packages/tokens/dist/tokens.css` + brand SVGs from `templates/shared/`. Slidev declared as optional peer dep — consumers run via `pnpm dlx @slidev/cli`.           |
 | **Phase 8b** (this PR) | Astro page-template starters (`apps/page-templates/`)              | 3 starter projects (`activity-landing` / `coming-soon` / `about-page`). Each is a self-contained Astro 4 static site that consumes vendored DS tokens and a typed `src/content/page.ts` config — non-designers can ship a Matters-branded landing page by editing one file, running `pnpm build`, and deploying `dist/` to Cloudflare Pages / GH Pages / Netlify. |
+| **Phase 9** 📝         | Matters Studio — web UI for non-designers (spec only)              | Spec at [`docs/phase-9-matters-studio.md`](./phase-9-matters-studio.md). Not yet implemented; pending review and `thematters/matters-studio` repo bootstrap.                                                                                                                                                                                                      |
 
 ## Where things live (cheat sheet)
 

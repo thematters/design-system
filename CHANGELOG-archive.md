@@ -250,16 +250,16 @@ visual / token deltas.
 
 ## Cheat sheet
 
-| Want to… | Do this |
-|---|---|
-| Change a token value | edit `packages/tokens/tokens.json` → `pnpm build:tokens` |
-| Add a new React component | `packages/react/src/components/<Name>/` + `components/<group>/<name>/spec.md` (sister files) |
-| Edit Storybook | `apps/storybook/.storybook/` or any component's `*.stories.tsx` |
-| Add a Figma↔code mapping | `<Component>.figma.tsx` next to the component; see `docs/code-connect.md` |
-| Render an OG image | `pnpm template:render og-image --data my.json --out my.png` |
-| Cut a release | `pnpm changeset` per PR; merge the auto-opened Version PR; `NPM_TOKEN` does the publish |
-| Update visual regression baseline | Actions → Visual regression → Run workflow → `update=true` |
-| See what shipped when | `packages/<name>/CHANGELOG.md` (auto), GitHub Releases, this file |
+| Want to…                          | Do this                                                                                      |
+| --------------------------------- | -------------------------------------------------------------------------------------------- |
+| Change a token value              | edit `packages/tokens/tokens.json` → `pnpm build:tokens`                                     |
+| Add a new React component         | `packages/react/src/components/<Name>/` + `components/<group>/<name>/spec.md` (sister files) |
+| Edit Storybook                    | `apps/storybook/.storybook/` or any component's `*.stories.tsx`                              |
+| Add a Figma↔code mapping          | `<Component>.figma.tsx` next to the component; see `docs/code-connect.md`                    |
+| Render an OG image                | `pnpm template:render og-image --data my.json --out my.png`                                  |
+| Cut a release                     | `pnpm changeset` per PR; merge the auto-opened Version PR; `NPM_TOKEN` does the publish      |
+| Update visual regression baseline | Actions → Visual regression → Run workflow → `update=true`                                   |
+| See what shipped when             | `packages/<name>/CHANGELOG.md` (auto), GitHub Releases, this file                            |
 
 ---
 

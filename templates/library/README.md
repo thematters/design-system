@@ -61,8 +61,15 @@ To swap it for a library poster:
    ```
 3. CSS:
    ```css
-   .bg { position: absolute; inset: 0; width: 100%; height: 100%;
-         object-fit: cover; z-index: -2; opacity: 0.5; }
+   .bg {
+     position: absolute;
+     inset: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     z-index: -2;
+     opacity: 0.5;
+   }
    ```
 4. Render with `"backgroundImage": "../library/posters/poster-2.jpg"`
 

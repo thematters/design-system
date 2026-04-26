@@ -1,0 +1,45 @@
+/* Two-column layout — 50/50 split via Slidev `::left::` / `::right::` slots. */
+
+.slidev-layout.matters-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: stretch;
+  position: relative;
+  background: var(--m-bg);
+}
+
+.slidev-layout.matters-two-column .matters-two-column__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.slidev-layout.matters-two-column .matters-two-column__col + .matters-two-column__col {
+  border-left: 1px solid var(--m-rule);
+  padding-left: 56px;
+}
+
+.slidev-layout.matters-two-column h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+/* Heading on the page (top, spans both columns) */
+.slidev-layout.matters-two-column .matters-two-column__title {
+  grid-column: 1 / span 2;
+  font-size: 36px;
+  line-height: 1.3;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.slidev-layout.matters-two-column .matters-two-column__eyebrow {
+  grid-column: 1 / span 2;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--m-accent);
+  margin-bottom: 0;
+}

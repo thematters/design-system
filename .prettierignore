@@ -11,3 +11,6 @@ apps/page-templates/**/.astro/**
 apps/page-templates/**/src/env.d.ts
 # Tokens are vendored verbatim from packages/tokens/dist
 apps/page-templates/**/src/styles/vendor/**
+# Slidev decks use `---` as slide separators. Prettier reformats them as
+# YAML document delimiters and breaks the deck. Author them by hand.
+apps/slide-theme/examples/**/*.md

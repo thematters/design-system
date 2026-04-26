@@ -43,7 +43,8 @@ packages/
 ├── tokens/             # 設計 tokens（canonical）
 └── react/              # React 元件 library（@matters/design-system-react）
 apps/
-└── storybook/          # 元件 docs site（Phase 1 本機；Phase 3 上架）
+├── storybook/          # 元件 docs site（Phase 1 本機；Phase 3 上架）
+└── slide-theme/        # Slidev Matters theme + 範例簡報（Phase 8a）
 components/             # 設計 spec：Figma 取出的 41 份 component reference
 tokens/                 # tokens/dist/* — vendored copy 用的 back-compat 鏡射
 docs/                   # 工作流、phase plan、handoff 規範
@@ -81,7 +82,10 @@ pnpm dev:storybook
 | Phase 4      | Avatar + Banner + ArticleCard + Figma Code Connect                | ✅ 已合 PR #34 |
 | Phase 5      | changesets + npm publish + Playwright visual regression           | ✅ 已合 PR #35 |
 | Phase 6      | Operational templates (OG / social / newsletter)                  | ✅ 已合 PR #39 |
+| Phase 7      | HTTP render service (wraps Phase 6 templates)                     | ✅ 已合 PR #43 |
+| Phase 8a     | Slidev Matters theme + 3 example decks                            | ✅ 已合 PR #49 |
 | **Phase 8b** | **Astro page-template starters (activity / coming-soon / about)** | **🚧 本 PR**   |
+| Phase 9      | Matters Studio — web UI for non-designers (spec only)             | 📝 PR #50      |
 
 完整 phase plan 在 [`docs/architecture.md`](docs/architecture.md)。
 

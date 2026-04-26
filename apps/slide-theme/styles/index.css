@@ -1,0 +1,19 @@
+/* Matters Slidev Theme — entry stylesheet.
+ *
+ * Loaded by Slidev once per deck. Order matters:
+ *   1. tokens (CSS variables, single source of truth)
+ *   2. Google Fonts (Noto Sans TC + Noto Serif TC + JetBrains Mono for code)
+ *   3. base typography + brand-mark utilities
+ *   4. per-layout styles (default / cover / two-column / full-image)
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;700;900&display=swap");
+
+/* Resolve tokens via the workspace package (Slidev's Vite resolves bare imports) */
+@import "@matters/design-system-tokens/dist/tokens.css";
+
+@import "./base.css";
+@import "./layouts/default.css";
+@import "./layouts/cover.css";
+@import "./layouts/two-column.css";
+@import "./layouts/full-image.css";
