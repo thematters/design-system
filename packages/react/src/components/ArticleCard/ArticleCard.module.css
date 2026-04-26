@@ -59,7 +59,19 @@ a.root:focus-visible {
   color: var(--color-grey-grey-light);
 }
 
-/* Content row: text column + cover image. */
+/* Content row: text column + cover image.
+ *
+ * Phase 6 follow-up: previously, when the title fit in 1 line on a wide
+ * viewport, the text column was shorter than the cover (esp. at "big"
+ * size, 106px cover vs ~76px text), and the cover hung 30px below the
+ * text — visually orphaned.
+ *
+ * Fix: give the text column a min-height matching the cover, and center
+ * its content vertically. When the title wraps to 2 lines (the dominant
+ * case in feeds), text grows past the cover height and they top-align
+ * naturally. When the title is shorter, the text + cover stay equal-tall,
+ * no overhang.
+ */
 .content {
   display: flex;
   align-items: flex-start;
@@ -73,6 +85,11 @@ a.root:focus-visible {
   display: flex;
   flex-direction: column;
   gap: var(--space-sp8);
+  justify-content: center;
+  min-height: 76px; /* matches small cover */
+}
+.big .text {
+  min-height: 106px; /* matches big cover */
 }
 
 .title {
