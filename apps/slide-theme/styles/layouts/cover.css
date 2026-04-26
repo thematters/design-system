@@ -1,0 +1,58 @@
+/* Cover layout — title slides + chapter breaks.
+ * Big serif title, eyebrow above, optional subtitle. */
+
+.slidev-layout.matters-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 88px 96px;
+  background: var(--m-bg);
+}
+
+.slidev-layout.matters-cover .matters-cover__eyebrow {
+  font-family: var(--m-sans);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--m-accent);
+  margin-bottom: 24px;
+}
+
+.slidev-layout.matters-cover .matters-cover__title {
+  font-family: var(--m-serif);
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 1.18;
+  margin: 0 0 28px;
+  color: var(--m-fg);
+  letter-spacing: -0.01em;
+  max-width: 1080px;
+}
+
+.slidev-layout.matters-cover .matters-cover__subtitle {
+  font-family: var(--m-sans);
+  font-size: 24px;
+  line-height: 1.55;
+  color: var(--m-muted);
+  margin: 0;
+  max-width: 880px;
+}
+
+.slidev-layout.matters-cover .matters-cover__meta {
+  position: absolute;
+  left: 96px;
+  bottom: 56px;
+  font-size: 14px;
+  color: var(--m-muted);
+  letter-spacing: 0.04em;
+}
+
+/* When the cover slide opts into the inverse / dark variant. */
+.slidev-layout.matters-cover.is-inverse {
+  background: var(--color-grey-black);
+}
+.slidev-layout.matters-cover.is-inverse .matters-cover__eyebrow {
+  color: var(--m-secondary);
+}

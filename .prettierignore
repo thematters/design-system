@@ -6,3 +6,6 @@ pnpm-lock.yaml
 tokens/dist/**
 packages/tokens/dist/**
 components/**/figma-preview.png
+# Slidev decks use `---` as slide separators. Prettier reformats them as
+# YAML document delimiters and breaks the deck. Author them by hand.
+apps/slide-theme/examples/**/*.md
