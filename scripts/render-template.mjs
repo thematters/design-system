@@ -63,17 +63,14 @@ try {
   resolved = await resolveTemplate(name);
 } catch (err) {
   if (err instanceof TemplateNotFoundError) {
-    console.error(
-      `✗ template not found: ${path.join(TEMPLATES_DIR, name, "template.html")}`,
-    );
+    console.error(`✗ template not found: ${path.join(TEMPLATES_DIR, name, "template.html")}`);
     console.error(`  expected layout: templates/<name>/template.html`);
     exit(1);
   }
   throw err;
 }
 
-const dataPath =
-  opts.data ?? path.join(resolved.templateDir, "data.example.json");
+const dataPath = opts.data ?? path.join(resolved.templateDir, "data.example.json");
 let data = {};
 try {
   data = JSON.parse(await fs.readFile(dataPath, "utf8"));
@@ -82,20 +79,16 @@ try {
   exit(1);
 }
 
-const outPath =
-  opts.out ?? path.join(TEMPLATES_DIR, ".example-output", `${name}.png`);
+const outPath = opts.out ?? path.join(TEMPLATES_DIR, ".example-output", `${name}.png`);
 await fs.mkdir(path.dirname(outPath), { recursive: true });
 
 const { buffer, width, height, scale } = await renderTemplate({
   name,
   data,
   scale: opts.scale,
-  onMissingKey: (key) =>
-    console.warn(`  ! placeholder {{${key}}} has no data — leaving blank`),
+  onMissingKey: (key) => console.warn(`  ! placeholder {{${key}}} has no data — leaving blank`),
 });
 
 await fs.writeFile(outPath, buffer);
 
-console.log(
-  `✓ wrote ${path.relative(cwd(), outPath)}  (${width}×${height} @${scale}x)`,
-);
+console.log(`✓ wrote ${path.relative(cwd(), outPath)}  (${width}×${height} @${scale}x)`);

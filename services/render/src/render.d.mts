@@ -23,7 +23,7 @@ export interface ResolvedTemplate {
 export function substitutePlaceholders(
   html: string,
   data: Record<string, unknown>,
-  onMissing?: (key: string) => void,
+  onMissing?: (key: string) => void
 ): string;
 
 export function resolveTemplate(name: string): Promise<ResolvedTemplate>;
@@ -42,9 +42,7 @@ export interface RenderInBrowserArgs {
   onMissingKey?: (key: string) => void;
 }
 
-export function renderInBrowser(
-  args: RenderInBrowserArgs,
-): Promise<RenderResult>;
+export function renderInBrowser(args: RenderInBrowserArgs): Promise<RenderResult>;
 
 export interface RenderTemplateArgs {
   name: string;
@@ -53,8 +51,6 @@ export interface RenderTemplateArgs {
   onMissingKey?: (key: string) => void;
 }
 
-export function renderTemplate(
-  args: RenderTemplateArgs,
-): Promise<RenderResult>;
+export function renderTemplate(args: RenderTemplateArgs): Promise<RenderResult>;
 
 export function listTemplates(): Promise<string[]>;
