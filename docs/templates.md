@@ -62,9 +62,10 @@ for f in /tmp/articles/*.json; do
 done
 ```
 
-The Playwright browser is launched/closed per-call. For very high
-volume, refactor `render-template.mjs` to accept a list and reuse the
-browser context — Phase 7+ optimisation, deferred.
+The CLI launches/closes Playwright per call (~1s overhead each).
+For high volume, hit the long-running [render service](../services/render)
+instead — it keeps one Chromium hot and spins up a fresh Context
+per request.
 
 ## Adding a new template
 
@@ -125,15 +126,47 @@ templates by directory.
 For matters.town to auto-generate OG images at write time:
 
 1. Backend collects the article's data (title, summary, author, etc.)
-2. POSTs to a small render service that runs `render-template.mjs`
-3. Service uploads the PNG to S3 / R2 / IPFS and returns the URL
-4. Backend stores the URL in the article's `og:image` field
+2. POSTs to the render service in [`services/render/`](../services/render)
+3. Service returns PNG bytes; backend uploads to S3 / R2 / IPFS and
+   stores the resulting URL on the article's `og:image` field
 
-This service doesn't exist yet. When it does, the same templates here
-become its input — no parallel implementation needed.
+The service is a Phase 7 skeleton — works end-to-end for one template
+at a time, but auth, rate limits, and the S3 upload step are deferred
+to Phase 8+ (see its [README](../services/render/README.md)).
+
+```
+POST /render/og-image
+Content-Type: application/json
+Body: { ...same shape as templates/og-image/data.example.json,
+        scale?: 1 | 2 }
+→ 200 OK, image/png
+```
+
+The service imports the same `render.mjs` library that
+`pnpm template:render` uses, so there is exactly one renderer
+implementation — templates render identically from the CLI and the API.
+
+### Deploy
+
+```bash
+# build context = monorepo root
+docker build -f services/render/Dockerfile -t matters-render .
+docker run --rm -p 3000:3000 matters-render
+
+# probe
+curl http://localhost:3000/healthz                       # → ok
+curl -X POST http://localhost:3000/render/og-image \
+  -H "Content-Type: application/json" \
+  -d @templates/og-image/data.example.json \
+  -o /tmp/og.png
+```
+
+Env vars: `PORT` (default `3000`), `CORS_ORIGIN` (optional — when set,
+the service replies with `Access-Control-Allow-Origin: <value>`).
 
 For seasonal campaigns (七日書, 徵文), the manual `pnpm template:render`
-loop is enough; ops generates the assets and uploads them.
+loop is still the right tool; ops generates the assets and uploads
+them by hand.
 
 ## Operational workflow
 
