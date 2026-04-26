@@ -1,0 +1,42 @@
+{
+  "name": "@matters/slide-theme-slidev",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Slidev theme that renders Markdown decks in the Matters visual language. Phase 8a.",
+  "license": "Apache-2.0",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "matters",
+    "design-system",
+    "presentation"
+  ],
+  "slidev": {
+    "defaults": {
+      "aspectRatio": "16/9",
+      "canvasWidth": 1280,
+      "fonts": {
+        "sans": "Noto Sans TC",
+        "serif": "Noto Serif TC",
+        "mono": "JetBrains Mono"
+      },
+      "colorSchema": "light",
+      "highlighter": "shiki",
+      "lineNumbers": false
+    },
+    "colorSchema": "both"
+  },
+  "files": [
+    "layouts",
+    "styles",
+    "public",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "node -e \"console.log('apps/slide-theme: Slidev .vue files are typechecked at runtime by Slidev/Vue, skipping tsc.')\"",
+    "dev": "pnpm dlx @slidev/cli@0.50 examples/product-pitch.md --port 3030",
+    "build": "pnpm dlx @slidev/cli@0.50 build examples/product-pitch.md",
+    "export": "pnpm dlx @slidev/cli@0.50 export examples/product-pitch.md"
+  }
+}
