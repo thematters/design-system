@@ -1,0 +1,58 @@
+# Fly.io config for the render service (services/render/).
+#
+# The render service is a Node + Playwright HTTP wrapper around the
+# Phase 6 template renderer. It can't run on Cloudflare Workers because
+# Workers don't ship Chromium, so we deploy it as a tiny Fly VM and let
+# matters-studio's API Worker proxy `/render-image` requests to it.
+#
+# Layout:
+#   - Build context = monorepo root (Dockerfile reads templates/, packages/)
+#   - Dockerfile    = services/render/Dockerfile
+#   - One service in this repo, so fly.toml lives at root by convention
+#
+# Deploy:
+#   fly launch --no-deploy --copy-config   # one-time, creates the app
+#   fly deploy                              # subsequent deploys
+#
+# After first deploy, set the resulting URL on matters-studio's API
+# Worker as RENDER_SERVICE_URL.
+
+app = "matters-render"
+
+# nrt (Tokyo) is the closest Fly region to Taipei, giving ~50ms RTT.
+# Other reasonable picks: hkg (Hong Kong), sin (Singapore).
+primary_region = "nrt"
+
+[build]
+  dockerfile = "services/render/Dockerfile"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  # Scale to zero when idle. Cold start adds ~3-5s on first request,
+  # acceptable for OG image generation. Saves ~$5/mo vs always-on.
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 5
+    hard_limit = 10
+
+# Health check via the service's /healthz endpoint.
+# Cheap (no Chromium launch), so safe to poll frequently.
+[[http_service.checks]]
+  grace_period = "30s"
+  interval = "15s"
+  method = "GET"
+  path = "/healthz"
+  protocol = "http"
+  timeout = "5s"
+
+[[vm]]
+  # Chromium needs ~512MB resident; 1GB gives headroom for one concurrent
+  # render. Bump to 2GB if we start seeing OOM kills under load.
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024

@@ -64,6 +64,36 @@ curl http://localhost:3000/healthz
 Base image: `mcr.microsoft.com/playwright:v1.48.0-jammy` — ships
 Chromium + Linux deps, so cold-start doesn't reinstall anything.
 
+## Deploy on Fly.io
+
+`fly.toml` lives at the monorepo root (build context = monorepo root,
+matching the Dockerfile). One-time setup:
+
+```bash
+# from monorepo root
+brew install flyctl                  # or: curl -L https://fly.io/install.sh | sh
+fly auth signup                      # or: fly auth login
+fly launch --no-deploy --copy-config # creates the app, reads existing fly.toml
+fly deploy
+```
+
+After first deploy you get `https://matters-render.fly.dev`. Verify:
+
+```bash
+curl https://matters-render.fly.dev/healthz   # → ok
+```
+
+Set that URL on matters-studio's API Worker as `RENDER_SERVICE_URL`,
+then `wrangler deploy` the Worker so the new var binding lands.
+
+Subsequent deploys: just `fly deploy` from the monorepo root.
+
+The default config:
+
+- Region `nrt` (Tokyo) — closest to Taipei
+- 1 GB RAM (Chromium needs ~512 MB resident)
+- Auto-stops when idle (cold start ~3–5s)
+
 ## Configuration
 
 | Env var       | Default | Notes                                                  |
