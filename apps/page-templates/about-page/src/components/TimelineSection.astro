@@ -1,0 +1,85 @@
+---
+import type { AboutContent } from "../content/page";
+
+interface Props {
+  timeline: AboutContent["timeline"];
+}
+
+const { timeline } = Astro.props;
+---
+
+<section class="section section--alt" id="timeline" aria-labelledby="timeline-title">
+  <div class="section__inner">
+    <p class="eyebrow">{timeline.eyebrow}</p>
+    <h2 class="section__title" id="timeline-title">{timeline.title}</h2>
+
+    <ol class="timeline" role="list">
+      {
+        timeline.items.map((item) => (
+          <li class="timeline__item">
+            <div class="timeline__year">{item.year}</div>
+            <div class="timeline__body">
+              <h3 class="timeline__title">{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline__item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: var(--space-sp32);
+    padding: var(--space-sp32) 0;
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+
+  .timeline__item:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .timeline__year {
+    font-family: var(--font-reading);
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+    color: var(--brand-purple);
+    line-height: 1;
+  }
+
+  .timeline__title {
+    font-family: var(--font-reading);
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: var(--ink);
+  }
+
+  .timeline__body p {
+    margin: 0;
+    color: var(--ink-muted);
+    line-height: 1.8;
+    max-width: 60ch;
+  }
+
+  @media (max-width: 600px) {
+    .timeline__item {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: var(--space-sp16) 0;
+    }
+  }
+</style>

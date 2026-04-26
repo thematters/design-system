@@ -1,0 +1,131 @@
+---
+interface Props {
+  /** ISO 8601 launch time. */
+  launchAt: string;
+}
+
+const { launchAt } = Astro.props;
+---
+
+<section class="countdown" aria-live="polite">
+  <ol class="countdown__cells" role="list" data-launch-at={launchAt}>
+    <li class="cell">
+      <strong data-role="days">--</strong>
+      <span>天</span>
+    </li>
+    <li class="cell">
+      <strong data-role="hours">--</strong>
+      <span>時</span>
+    </li>
+    <li class="cell">
+      <strong data-role="minutes">--</strong>
+      <span>分</span>
+    </li>
+    <li class="cell">
+      <strong data-role="seconds">--</strong>
+      <span>秒</span>
+    </li>
+  </ol>
+</section>
+
+<style>
+  .countdown {
+    display: flex;
+    justify-content: center;
+  }
+
+  .countdown__cells {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(64px, 96px));
+    gap: 12px;
+  }
+
+  .cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 8px;
+    backdrop-filter: blur(6px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .cell {
+      background: rgba(255, 255, 255, 0.04);
+    }
+  }
+
+  .cell strong {
+    font-family: var(--font-reading);
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cell span {
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+  }
+</style>
+
+<script>
+  type Cells = {
+    days: HTMLElement | null;
+    hours: HTMLElement | null;
+    minutes: HTMLElement | null;
+    seconds: HTMLElement | null;
+  };
+
+  function pad(n: number): string {
+    return String(Math.max(0, Math.floor(n))).padStart(2, "0");
+  }
+
+  function update(root: HTMLElement, target: number) {
+    const now = Date.now();
+    const diff = Math.max(0, target - now);
+    const totalSeconds = Math.floor(diff / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    const cells: Cells = {
+      days: root.querySelector('[data-role="days"]'),
+      hours: root.querySelector('[data-role="hours"]'),
+      minutes: root.querySelector('[data-role="minutes"]'),
+      seconds: root.querySelector('[data-role="seconds"]'),
+    };
+
+    if (cells.days) cells.days.textContent = pad(days);
+    if (cells.hours) cells.hours.textContent = pad(hours);
+    if (cells.minutes) cells.minutes.textContent = pad(minutes);
+    if (cells.seconds) cells.seconds.textContent = pad(seconds);
+
+    return diff;
+  }
+
+  document.querySelectorAll<HTMLElement>(".countdown__cells").forEach((root) => {
+    const launchAt = root.dataset.launchAt;
+    if (!launchAt) return;
+    const target = new Date(launchAt).getTime();
+    if (Number.isNaN(target)) return;
+
+    const tick = () => {
+      const remaining = update(root, target);
+      if (remaining <= 0) {
+        clearInterval(timer);
+      }
+    };
+    tick();
+    const timer = window.setInterval(tick, 1000);
+  });
+</script>

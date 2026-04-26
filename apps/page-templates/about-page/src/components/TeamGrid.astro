@@ -1,0 +1,88 @@
+---
+import type { AboutContent } from "../content/page";
+
+interface Props {
+  team: AboutContent["team"];
+}
+
+const { team } = Astro.props;
+
+function initials(name: string): string {
+  return name.slice(0, 2);
+}
+---
+
+<section class="section" id="team" aria-labelledby="team-title">
+  <div class="section__inner">
+    <p class="eyebrow">{team.eyebrow}</p>
+    <h2 class="section__title" id="team-title">{team.title}</h2>
+
+    <ul class="team" role="list">
+      {
+        team.members.map((member) => (
+          <li class="team__member">
+            <div class="team__avatar">
+              {member.avatar ? (
+                <img src={member.avatar} alt={member.name} loading="lazy" />
+              ) : (
+                <span aria-hidden="true">{initials(member.name)}</span>
+              )}
+            </div>
+            <div>
+              <p class="team__name">{member.name}</p>
+              <p class="team__role">{member.role}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .team {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-sp32);
+  }
+
+  .team__member {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sp16);
+  }
+
+  .team__avatar {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--color-primary-100, #eae7ff);
+    display: grid;
+    place-items: center;
+    color: var(--brand-purple);
+    font-weight: 700;
+  }
+
+  .team__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .team__name {
+    margin: 0;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .team__role {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 14px;
+  }
+</style>

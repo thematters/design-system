@@ -72,15 +72,16 @@ pnpm dev:storybook
 
 ## 狀態
 
-| Phase       | Scope                                                     | 狀態           |
-| ----------- | --------------------------------------------------------- | -------------- |
-| Phase 0     | Tokens v2 + 41 specs + Button vanilla impl                | ✅ 已合 PR #29 |
-| Phase 1     | Monorepo + Button (React) + Storybook + CI                | ✅ 已合 PR #30 |
-| Phase 2     | TextField + Dialog + Toast + scaffold CLI                 | ✅ 已合 PR #31 |
-| Phase 3     | Storybook deploy + tokens docs site + freewrite isolation | ✅ 已合 PR #32 |
-| Phase 4     | Avatar + Banner + ArticleCard + Figma Code Connect        | ✅ 已合 PR #34 |
-| Phase 5     | changesets + npm publish + Playwright visual regression   | ✅ 已合 PR #35 |
-| **Phase 6** | **Operational templates (OG / social / newsletter)**      | **🚧 本 PR**   |
+| Phase        | Scope                                                             | 狀態           |
+| ------------ | ----------------------------------------------------------------- | -------------- |
+| Phase 0      | Tokens v2 + 41 specs + Button vanilla impl                        | ✅ 已合 PR #29 |
+| Phase 1      | Monorepo + Button (React) + Storybook + CI                        | ✅ 已合 PR #30 |
+| Phase 2      | TextField + Dialog + Toast + scaffold CLI                         | ✅ 已合 PR #31 |
+| Phase 3      | Storybook deploy + tokens docs site + freewrite isolation         | ✅ 已合 PR #32 |
+| Phase 4      | Avatar + Banner + ArticleCard + Figma Code Connect                | ✅ 已合 PR #34 |
+| Phase 5      | changesets + npm publish + Playwright visual regression           | ✅ 已合 PR #35 |
+| Phase 6      | Operational templates (OG / social / newsletter)                  | ✅ 已合 PR #39 |
+| **Phase 8b** | **Astro page-template starters (activity / coming-soon / about)** | **🚧 本 PR**   |
 
 完整 phase plan 在 [`docs/architecture.md`](docs/architecture.md)。
 

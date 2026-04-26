@@ -1,0 +1,182 @@
+---
+import type { ComingSoonContent } from "../content/page";
+
+interface Props {
+  waitlist: ComingSoonContent["waitlist"];
+}
+
+const { waitlist } = Astro.props;
+---
+
+{
+  waitlist.enabled && waitlist.endpoint && (
+    <form
+      class="waitlist"
+      action={waitlist.endpoint}
+      method={waitlist.method ?? "POST"}
+      data-success-msg={waitlist.successMessage}
+      data-error-msg={waitlist.errorMessage}
+    >
+      <label class="waitlist__field">
+        <span class="visually-hidden">Email address</span>
+        <input
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          placeholder={waitlist.placeholder}
+        />
+        <button type="submit">{waitlist.submitLabel}</button>
+      </label>
+      <p class="waitlist__status" role="status" aria-live="polite" />
+      {waitlist.note && <p class="waitlist__note">{waitlist.note}</p>}
+    </form>
+  )
+}
+
+<style>
+  .waitlist {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .waitlist__field {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 6px 6px 18px;
+    align-items: center;
+    transition: border-color 0.12s ease;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .waitlist__field {
+      background: rgba(255, 255, 255, 0.06);
+    }
+  }
+
+  .waitlist__field:focus-within {
+    border-color: var(--brand-purple);
+  }
+
+  .waitlist__field input {
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    padding: 10px 0;
+    outline: none;
+    min-width: 0;
+  }
+
+  .waitlist__field button {
+    border: 0;
+    background: var(--brand-purple);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.12s ease;
+    white-space: nowrap;
+  }
+
+  .waitlist__field button:hover {
+    background: var(--color-primary-700, #5a43e5);
+  }
+
+  .waitlist__note {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .waitlist__status {
+    margin: 0;
+    font-size: 14px;
+    color: var(--brand-purple);
+    min-height: 1.2em;
+  }
+
+  .waitlist__status[data-state="error"] {
+    color: var(--color-red-600, #d04444);
+  }
+
+  @media (max-width: 480px) {
+    .waitlist__field {
+      grid-template-columns: 1fr;
+      border-radius: 16px;
+      padding: 8px;
+    }
+
+    .waitlist__field button {
+      padding: 12px 20px;
+    }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>("form.waitlist").forEach((form) => {
+    const status = form.querySelector<HTMLElement>(".waitlist__status");
+    const successMsg = form.dataset.successMsg ?? "Thanks!";
+    const errorMsg = form.dataset.errorMsg ?? "Something went wrong.";
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (button) button.disabled = true;
+      if (status) {
+        status.removeAttribute("data-state");
+        status.textContent = "送出中⋯";
+      }
+
+      try {
+        const params: Record<string, string> = {};
+        data.forEach((value, key) => {
+          if (typeof value === "string") params[key] = value;
+        });
+        const res = await fetch(form.action, {
+          method: form.method.toUpperCase() === "GET" ? "GET" : "POST",
+          body:
+            form.method.toUpperCase() === "GET"
+              ? undefined
+              : new URLSearchParams(params),
+          headers: { Accept: "application/json" },
+          mode: "no-cors",
+        });
+        // `no-cors` opaque response: assume success when fetch did not throw.
+        if (status) status.textContent = successMsg;
+        form.reset();
+        void res;
+      } catch (_err) {
+        if (status) {
+          status.dataset.state = "error";
+          status.textContent = errorMsg;
+        }
+      } finally {
+        if (button) button.disabled = false;
+      }
+    });
+  });
+</script>

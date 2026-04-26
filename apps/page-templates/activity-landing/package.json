@@ -1,0 +1,19 @@
+{
+  "name": "@matters/page-template-activity-landing",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Astro starter for Matters-branded activity / event landing pages. Phase 8b.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check"
+  },
+  "dependencies": {
+    "astro": "4.16.18",
+    "@astrojs/check": "0.9.4",
+    "typescript": "5.5.4"
+  }
+}

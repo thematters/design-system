@@ -1,0 +1,71 @@
+---
+import type { ActivityLandingContent } from "../content/page";
+
+interface Props {
+  closing: ActivityLandingContent["closing"];
+}
+
+const { closing } = Astro.props;
+---
+
+<section class="board closing" aria-labelledby="closing-title">
+  <p class="eyebrow">{closing.eyebrow}</p>
+  <h2 class="closing__title" id="closing-title">{closing.title}</h2>
+
+  <div class="closing__cta">
+    <a class="btn btn--primary" href={closing.primaryCta.href}>
+      {closing.primaryCta.label}
+    </a>
+    {
+      closing.secondaryCta && (
+        <a class="btn btn--ghost" href={closing.secondaryCta.href}>
+          {closing.secondaryCta.label}
+        </a>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .closing {
+    text-align: center;
+    background: linear-gradient(
+      180deg,
+      var(--color-primary-0, #f5f3ff) 0%,
+      var(--board-bg) 100%
+    );
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .closing {
+      background: linear-gradient(
+        180deg,
+        rgba(114, 88, 255, 0.12) 0%,
+        var(--board-bg) 100%
+      );
+    }
+  }
+
+  .closing__title {
+    font-family: var(--font-reading);
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    margin: 0 auto var(--space-sp32);
+    color: var(--ink);
+    max-width: 24ch;
+    line-height: 1.4;
+  }
+
+  .closing__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sp12);
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    .closing__cta {
+      flex-direction: column;
+    }
+  }
+</style>

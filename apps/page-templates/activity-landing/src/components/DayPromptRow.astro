@@ -1,0 +1,103 @@
+---
+import type { ActivityLandingContent } from "../content/page";
+
+interface Props {
+  dayPrompts: NonNullable<ActivityLandingContent["dayPrompts"]>;
+}
+
+const { dayPrompts } = Astro.props;
+---
+
+<section class="board day-row" aria-labelledby="day-row-title">
+  <p class="eyebrow">{dayPrompts.eyebrow}</p>
+  <h2 class="day-row__title" id="day-row-title">{dayPrompts.title}</h2>
+
+  <ol class="chips" role="list">
+    {
+      dayPrompts.days.map((d) => (
+        <li class={`chip chip--${d.state ?? "open"}`}>
+          <span class="chip__day">{d.day}</span>
+          <span class="chip__prompt">{d.prompt}</span>
+          {d.state === "today" && <span class="chip__badge">今天</span>}
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .day-row__title {
+    font-family: var(--font-reading);
+    font-size: clamp(22px, 3.2vw, 28px);
+    font-weight: 700;
+    margin: 0 0 var(--space-sp32) 0;
+    color: var(--ink);
+  }
+
+  .chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-sp12);
+  }
+
+  .chip {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: var(--space-sp16);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    background: var(--board-bg);
+    transition: border-color 0.12s ease;
+  }
+
+  .chip:hover {
+    border-color: var(--brand-purple);
+  }
+
+  .chip__day {
+    font-weight: 700;
+    color: var(--ink-muted);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  .chip__prompt {
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .chip--today {
+    border-color: var(--brand-purple);
+    background: linear-gradient(
+      180deg,
+      var(--color-primary-0, #f5f3ff) 0%,
+      var(--board-bg) 100%
+    );
+  }
+
+  .chip--today .chip__day {
+    color: var(--brand-purple);
+  }
+
+  .chip--locked {
+    opacity: 0.55;
+  }
+
+  .chip__badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--brand-lime);
+    color: var(--color-grey-black);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+</style>
