@@ -1,0 +1,55 @@
+/* Shared base styles for all templates.
+ * Loaded after tokens.css. Provides:
+ *   - reset
+ *   - Noto fonts (load via Google Fonts in template.html <head>)
+ *   - typography utility classes specific to image rendering
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans TC", system-ui, sans-serif;
+  color: var(--color-grey-black);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.tpl-canvas {
+  /* Set explicit width/height on the canvas div via inline style;
+   * Playwright takes a screenshot at this exact size. */
+  position: relative;
+  overflow: hidden;
+  background: var(--color-grey-white);
+}
+
+.tpl-serif {
+  font-family: "Noto Serif TC", serif;
+}
+
+/* Brand mark — a simple two-circle Matters glyph (purple+lime).
+ * Templates use it as a watermark / corner brand. */
+.tpl-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 600;
+  color: var(--color-grey-black);
+}
+.tpl-brand-mark::before {
+  content: "";
+  display: block;
+  width: 1.5em;
+  height: 1em;
+  background-image:
+    radial-gradient(circle at 70% 50%, var(--color-brand-new-green) 35%, transparent 36%),
+    radial-gradient(circle at 30% 50%, var(--color-brand-new-purple) 45%, transparent 46%);
+}

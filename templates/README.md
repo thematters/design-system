@@ -1,24 +1,70 @@
 # Templates
 
-運營（Ops / Marketing）使用的模板集合。
+Operational (Ops / Marketing) templates rendered to PNG via Playwright +
+Matters Design System tokens. Pure HTML/CSS + a JSON data envelope —
+ops can edit copy and re-render without touching Figma.
 
-## Source of Truth
+## Source of truth
 
-Figma `CC & Branding`（fileKey: `HQ5Y6bBc9dVDT99u8Qvkb5`）。原本運營會用自己的帳號登入 Figma 複製修改；此處要把「可程式化」的模板抽出來做成資料驅動版本。
+Figma `CC & Branding` (fileKey `HQ5Y6bBc9dVDT99u8Qvkb5`) is the visual
+reference. Templates here are programmatic ports — change visual = update
+both, with Figma as ground truth.
 
-## 模板類型
+## What's shipped
 
-- 社群圖（IG post / story、Threads 縮圖、Twitter card）
-- 活動宣傳圖（七日書、徵文、主題週）
-- OG-image（文章分享縮圖）
-- Email newsletter header
+| Template                                   | Output size | Use case                                  |
+| ------------------------------------------ | ----------- | ----------------------------------------- |
+| [`og-image/`](og-image/)                   | 1200 × 630  | OG / Twitter card for an article share    |
+| [`social-card/`](social-card/)             | 1080 × 1080 | Square share — Threads, IG post, Mastodon |
+| [`newsletter-header/`](newsletter-header/) | 600 × 200   | Email newsletter banner                   |
 
-## OG-image generator plan
+Each template directory has:
 
-1. 模板以 HTML/CSS + 變數（title / author / tag / cover）描述
-2. `scripts/og.ts` 用 satori 或 playwright 把模板 render 成 PNG
-3. 接到站台文章頁，上傳時自動產生預設 OG
+- `template.html` — the renderable HTML (uses `{{placeholder}}` substitution)
+- `data.example.json` — sample data envelope
+- `README.md` — input schema + design notes
 
-## 現況
+## Render one
 
-Phase 0：尚未填入任何模板。下一步先手動從 CC & Branding 挑 1–2 個高頻模板轉成 HTML 版本作 PoC。
+```bash
+# From repo root
+pnpm template:render og-image \
+  --data templates/og-image/data.example.json \
+  --out /tmp/og.png
+
+# Quick: use the example data (default)
+pnpm template:render og-image
+# → writes templates/.example-output/og-image.png
+```
+
+The render script (`scripts/render-template.mjs`) uses Playwright (already
+installed for visual regression). It opens `template.html`, substitutes
+`{{key}}` with values from the data JSON, sets the viewport to the
+template's declared size, waits for fonts + images, then screenshots.
+
+## Add a new template
+
+1. `mkdir templates/<name>/` and put `template.html` + `data.example.json` + `README.md` inside
+2. In `template.html`, declare the canvas size via a `<meta>` tag:
+   ```html
+   <meta name="ds-template-size" content="1200x630" />
+   ```
+3. Reference tokens via `<link rel="stylesheet" href="../shared/tokens.css">` (path to the canonical tokens — see existing templates)
+4. Use Google Fonts for typography (Noto Sans TC + Noto Serif TC) — these render consistently across macOS / Linux / CI
+5. Add a story to `tests/visual/templates.spec.ts` if you want CI to lock down its visual output (Phase 7+)
+
+## Why HTML + Playwright over Figma direct export?
+
+- Editable by anyone with text editor — ops doesn't need a Figma seat
+- Version-controlled — every visual change has a git commit
+- Data-driven — same template renders 100 article OG images in a loop
+- Locale-friendly — swap PingFang TC ↔ Noto Sans TC for CI stability
+
+## Why Google Fonts (Noto) and not PingFang TC?
+
+PingFang TC is an Apple system font; it's not on Linux / cloud render
+servers. Templates need to render the same regardless of where the
+script runs (your Mac, GitHub Actions, a Cloudflare Worker, an ops
+person's Windows laptop). Noto Sans TC + Noto Serif TC are open and
+cover the same character ranges. Visual difference vs. PingFang is
+small; consistency matters more for shareable images.
