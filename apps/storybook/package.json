@@ -1,6 +1,6 @@
 {
   "name": "@matters/design-system-storybook",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "description": "Storybook docs site for @matters/design-system-react. Phase 1: local-only; Phase 3 will deploy.",
   "type": "module",

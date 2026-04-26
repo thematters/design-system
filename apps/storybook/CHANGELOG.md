@@ -1,5 +1,12 @@
 # @matters/design-system-storybook
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [94675c3]
+  - @matters/design-system-react@0.2.2
+
 ## 0.0.2
 
 ### Patch Changes
