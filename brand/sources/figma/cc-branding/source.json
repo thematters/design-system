@@ -1,0 +1,12 @@
+{
+  "name": "CC & Branding",
+  "fileKey": "HQ5Y6bBc9dVDT99u8Qvkb5",
+  "figmaUrl": "https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding",
+  "project": "CC & Branding",
+  "role": "Primary reference for Matters promotional graphics, social cards, campaign backgrounds, and operational brand guidance.",
+  "access": {
+    "browserFetch": "May return 403 or require login.",
+    "automation": "Use Figma REST API with FIGMA_TOKEN and scripts/extract-brand-figma.mjs."
+  }
+}
+

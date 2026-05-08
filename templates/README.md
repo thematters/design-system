@@ -17,6 +17,7 @@ both, with Figma as ground truth.
 | [`og-image/`](og-image/)                   | 1200 × 630  | OG / Twitter card for an article share    |
 | [`social-card/`](social-card/)             | 1080 × 1080 | Square share — Threads, IG post, Mastodon |
 | [`newsletter-header/`](newsletter-header/) | 600 × 200   | Email newsletter banner                   |
+| [`ai-background-card/`](ai-background-card/) | 1080 × 1080 | OpenAI-generated background + deterministic Matters campaign layout |
 
 Each template directory has:
 
@@ -40,6 +41,9 @@ pnpm template:render og-image \
 # Quick: use the example data (default)
 pnpm template:render og-image
 # → writes templates/.example-output/og-image.png
+
+# Full campaign visual pipeline; uses a committed job JSON
+pnpm visual:create -- --job brand/jobs/background-card.example.json
 ```
 
 The render script (`scripts/render-template.mjs`) uses Playwright (already

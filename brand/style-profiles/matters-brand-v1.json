@@ -1,0 +1,67 @@
+{
+  "id": "matters-brand-v1",
+  "name": "Matters promotional visual profile",
+  "sourceFiles": [
+    {
+      "name": "CC & Branding",
+      "fileKey": "HQ5Y6bBc9dVDT99u8Qvkb5"
+    },
+    {
+      "name": "Design System 1.5",
+      "fileKey": "JDKpHezhllOvJF42xbKcNN"
+    }
+  ],
+  "palette": {
+    "canonical": {
+      "purple": "#7258FF",
+      "green": "#C3F432",
+      "black": "#000000",
+      "white": "#FFFFFF"
+    },
+    "usage": [
+      "Use purple and lime as the strongest brand signal.",
+      "Use black or white as the main text surface.",
+      "Keep legacy green or gold only for archived references unless a source file explicitly requires it."
+    ]
+  },
+  "typography": {
+    "production": [
+      "Noto Sans TC",
+      "Noto Serif TC"
+    ],
+    "notes": [
+      "Prefer Noto Sans TC for labels, metadata, buttons, and UI text.",
+      "Use Noto Serif TC for editorial headlines, quotes, and literary campaign tone.",
+      "Do not ask the image model to render final Chinese text; render text through templates."
+    ]
+  },
+  "composition": {
+    "principles": [
+      "Strong editorial focal point with generous breathing room.",
+      "Use deterministic text-safe areas for headlines and CTAs.",
+      "Prefer one hero idea over many decorative elements.",
+      "Brand mark should be applied by template, not generated into the image."
+    ],
+    "safeAreas": {
+      "square": "Reserve at least 30% of the canvas for text overlay.",
+      "landscape": "Reserve either left 42% or right 42% for headline and metadata."
+    }
+  },
+  "imageGeneration": {
+    "defaultModel": "gpt-image-2",
+    "fallbackModel": "gpt-image-1",
+    "accessNote": "gpt-image-2 may require OpenAI Organization verification before the API accepts requests.",
+    "backgroundRules": [
+      "Generate text-free backgrounds.",
+      "Avoid fake UI, fake logos, fake app screenshots, QR codes, and unreadable pseudo text.",
+      "Leave clear negative space for overlaid copy.",
+      "Use visual metaphors related to writing, publishing, reading, public conversation, archive, or digital commons."
+    ]
+  },
+  "reviewChecklist": [
+    "Does the result still read as Matters without relying on random purple-green decoration?",
+    "Is all visible text rendered by HTML/CSS, not by the image model?",
+    "Is there enough contrast for Chinese text?",
+    "Can the same job be rerun with a different title without reworking the layout?"
+  ]
+}

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="ds-template-size" content="1080x1080" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Noto+Serif+TC:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/tokens.css" />
+    <link rel="stylesheet" href="../shared/template-base.css" />
+    <style>
+      .tpl-canvas {
+        width: 1080px;
+        height: 1080px;
+        position: relative;
+        overflow: hidden;
+        background: var(--color-grey-black);
+        color: var(--color-grey-white);
+      }
+
+      .background {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .veil {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.56) 42%, rgba(0, 0, 0, 0.18) 100%),
+          radial-gradient(circle at 14% 16%, rgba(195, 244, 50, 0.38), transparent 28%),
+          radial-gradient(circle at 86% 86%, rgba(114, 88, 255, 0.46), transparent 34%);
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        padding: 72px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .kicker {
+        color: var(--color-brand-new-green);
+        font-size: 24px;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .brand {
+        color: var(--color-grey-white);
+        font-size: 24px;
+        flex: 0 0 auto;
+      }
+
+      .main {
+        max-width: 720px;
+      }
+
+      .headline {
+        margin: 0;
+        font-family: "Noto Serif TC", serif;
+        font-size: 66px;
+        line-height: 1.18;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-wrap: balance;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .deck {
+        width: 640px;
+        margin: 28px 0 0;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 26px;
+        line-height: 1.5;
+        font-weight: 500;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .rule {
+        width: 84px;
+        height: 5px;
+        background: var(--color-brand-new-green);
+      }
+
+      .cta {
+        font-size: 24px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tpl-canvas">
+      <img class="background" src="{{backgroundUrl}}" alt="" />
+      <div class="veil"></div>
+      <div class="content">
+        <header class="top">
+          <div class="kicker">{{kicker}}</div>
+          <div class="tpl-brand-mark tpl-brand-mark--inverse brand">
+            <img class="tpl-brand-mark__icon" src="../shared/matters-mark-white-filled.svg" alt="" />
+            Matters
+          </div>
+        </header>
+
+        <main class="main">
+          <h1 class="headline">{{headline}}</h1>
+          <p class="deck">{{deck}}</p>
+        </main>
+
+        <footer class="bottom">
+          <div class="rule"></div>
+          <div class="cta">{{cta}}</div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
+

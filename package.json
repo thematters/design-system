@@ -30,7 +30,11 @@
     "release": "bash scripts/release.sh",
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots",
-    "template:render": "node scripts/render-template.mjs"
+    "template:render": "node scripts/render-template.mjs",
+    "brand:figma": "node scripts/extract-brand-figma.mjs",
+    "brand:catalog": "node scripts/build-brand-catalog.mjs",
+    "image:background": "node scripts/generate-background.mjs",
+    "visual:create": "node scripts/create-campaign-visual.mjs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
