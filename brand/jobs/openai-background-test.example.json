@@ -1,0 +1,20 @@
+{
+  "template": "ai-background-card",
+  "out": "templates/.generated/openai-background-test.png",
+  "data": {
+    "kicker": "Matters Campaign",
+    "headline": "讓背景交給模型，讓文字與版型回到設計系統",
+    "deck": "這張圖用 OpenAI 生成背景，再由 Matters Design System 套上字體、logo、安全區與排版。",
+    "cta": "matters.town",
+    "backgroundUrl": "../library/posters/poster-1.jpg"
+  },
+  "background": {
+    "mode": "generate",
+    "brief": "A text-free editorial background for Matters, a Taiwanese long-form writing community and digital commons. Abstract reading room, paper, light, subtle network geometry, confident but quiet. Use Matters purple and lime as accents. Leave the left half darker and clean for Traditional Chinese headline overlay. No words, no logos, no UI, no QR code.",
+    "out": "templates/.generated/backgrounds/matters-editorial-test.png",
+    "model": "gpt-image-2",
+    "fallbackModel": "gpt-image-1",
+    "size": "1024x1024",
+    "quality": "auto"
+  }
+}

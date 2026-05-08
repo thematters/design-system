@@ -1,0 +1,19 @@
+{
+  "template": "ai-background-card",
+  "out": "templates/.generated/background-card-example.png",
+  "data": {
+    "kicker": "Matters Campaign",
+    "headline": "把長文、公共討論與創作者社群重新放回同一張圖裡",
+    "deck": "這張圖示範未來的自動生成流程：背景由 OpenAI Image API 生成，文字與版面由 Matters Design System 控制。",
+    "cta": "matters.town",
+    "backgroundUrl": "../library/posters/poster-1.jpg"
+  },
+  "background": {
+    "mode": "asset",
+    "brief": "A thoughtful editorial background for a public writing community, abstract digital commons, purple and lime accents, text-safe area on the left.",
+    "out": "templates/.generated/backgrounds/background-card-example.png",
+    "size": "2048x2048",
+    "quality": "auto"
+  }
+}
+

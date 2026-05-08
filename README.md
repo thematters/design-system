@@ -29,6 +29,12 @@ Matters（馬特市，繁中創作社群，官方網址 [matters.town](https://m
 - [`docs/architecture.md`](docs/architecture.md) — **Phase 1 起的 monorepo 結構與 phase plan**
 - [`docs/consume.md`](docs/consume.md) — 三種消費方式
 - [`docs/templates.md`](docs/templates.md) — OG / 社群圖 / Newsletter header 模板與 render 流程（Phase 6）
+- [`docs/brand-intelligence.md`](docs/brand-intelligence.md) — Matters 宣傳圖素材 / 規則 / prompt / 一鍵生成流程
+- [`docs/cc-branding-style-catalog.md`](docs/cc-branding-style-catalog.md) — CC & Branding 的活動分類、版型、底圖與文字規則
+- [`docs/cc-branding-newcomer-guide.md`](docs/cc-branding-newcomer-guide.md) — 新手按需求選模板與出圖的快速指南
+- [`docs/cc-branding-studio-workflow.md`](docs/cc-branding-studio-workflow.md) — Matters Studio 製圖流程契約
+- [`docs/cc-branding-image2-prompts.md`](docs/cc-branding-image2-prompts.md) — 各分類 OpenAI Image 2 prompt 起點
+- [`docs/image-generation-workflow.md`](docs/image-generation-workflow.md) — OpenAI Image API 背景圖生成工作流
 - [`docs/releasing.md`](docs/releasing.md) — changesets 工作流 + npm publish 設定（Phase 5）
 - [`docs/visual-regression.md`](docs/visual-regression.md) — Playwright 視覺回歸（Phase 5）
 - [`docs/code-connect.md`](docs/code-connect.md) — Figma Code Connect 設定（Phase 4）
@@ -50,6 +56,7 @@ tokens/                 # tokens/dist/* — vendored copy 用的 back-compat 鏡
 docs/                   # 工作流、phase plan、handoff 規範
 scripts/                # token 抽取、scaffold CLI
 templates/              # 運營模板（Phase 6+）
+brand/                  # 宣傳設計素材、風格規則、prompt recipes、生成 job
 .github/workflows/      # CI（lint / typecheck / test / build / storybook）
 ```
 
@@ -67,6 +74,12 @@ pnpm --filter @matters/design-system-react test
 
 # 開 Storybook
 pnpm dev:storybook
+
+# 生成「背景圖 + Matters 排版」的完整宣傳圖
+pnpm visual:create -- --job brand/jobs/background-card.example.json
+
+# 依 Figma CC & Branding 重建分類 catalog
+pnpm brand:catalog
 ```
 
 需要 Node ≥ 20、pnpm ≥ 9。

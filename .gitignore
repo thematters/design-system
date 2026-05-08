@@ -4,6 +4,7 @@ node_modules/
 !.env.example
 .DS_Store
 tokens-raw/
+brand/sources/figma/**/cache/
 
 # IDE
 .vscode/
@@ -31,6 +32,7 @@ test-results/
 
 # Template renderer outputs (smoke-tested locally; commit-on-demand)
 templates/.example-output/
+templates/.generated/
 templates/**/.rendered.html
 # Non-Linux visual snapshots — only the Linux baseline is committed
 tests/visual/__snapshots__/**/*-darwin.png
