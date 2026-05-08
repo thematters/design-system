@@ -29,6 +29,7 @@ Matters（馬特市，繁中創作社群，官方網址 [matters.town](https://m
 - [`docs/architecture.md`](docs/architecture.md) — **Phase 1 起的 monorepo 結構與 phase plan**
 - [`docs/consume.md`](docs/consume.md) — 三種消費方式
 - [`docs/templates.md`](docs/templates.md) — OG / 社群圖 / Newsletter header 模板與 render 流程（Phase 6）
+- [`docs/freewrite-design-system/`](docs/freewrite-design-system/README.md) — 七日書 / 自由寫專屬設計資料庫（15 Figma page 拆解、7 元件 spec、6 原則 doc）
 - [`docs/brand-intelligence.md`](docs/brand-intelligence.md) — Matters 宣傳圖素材 / 規則 / prompt / 一鍵生成流程
 - [`docs/cc-branding-style-catalog.md`](docs/cc-branding-style-catalog.md) — CC & Branding 的活動分類、版型、底圖與文字規則
 - [`docs/cc-branding-newcomer-guide.md`](docs/cc-branding-newcomer-guide.md) — 新手按需求選模板與出圖的快速指南

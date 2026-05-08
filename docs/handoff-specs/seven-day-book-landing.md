@@ -14,6 +14,8 @@
 > **視覺定稿**：`claude-design-output/seven-day-book-landing-c.html`（concept；live 版以此為起點再擴充）
 > **方向比較 canvas**：`claude-design-output/seven-day-book-exploration.html`（A / B / C 三方向並排，存檔備查）
 > **色系決議**：PM 2026-04-24 裁示 — 七日書主題用 `color.freewrite.*`（option A：`#045898` textDark 為主 CTA / 文字以通過 AAA，`#1999D0` text 降為 accent / hover）。Brand 紫/綠只保留在 `pulse-dot` 一處做識別。
+>
+> **關聯資料庫**：本 spec 是 freewrite design system 的 landing-page 落地版。完整元件規格、版型原則、字型、色彩、插畫風格、各季索引在 [`docs/freewrite-design-system/`](../freewrite-design-system/README.md)。設計新元件 / 改版時先看那邊的原則。
 
 ---
 

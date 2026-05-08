@@ -70,6 +70,11 @@ If a non-Freewrite surface references `--color-freewrite-*`, the variable
 will be undefined and CSS will fall back to its inherited value — that's
 the intended failure mode.
 
+For the full freewrite design database (15 Figma pages, 7 component specs,
+6 design-principle docs) and proposed extensions to the 4-token palette,
+see [`docs/freewrite-design-system/`](../../docs/freewrite-design-system/README.md)
+and [`docs/freewrite-design-system/color-usage.md`](../../docs/freewrite-design-system/color-usage.md).
+
 ## Building
 
 ```bash
