@@ -5,6 +5,9 @@ node_modules/
 .DS_Store
 tokens-raw/
 brand/sources/figma/**/cache/
+# Bulk PNG extraction outputs (1088 frames × ~1MB) — keep manifest, ignore raster
+brand/sources/figma/cc-branding/exports/all-frames/*/
+!brand/sources/figma/cc-branding/exports/all-frames/manifest.json
 
 # IDE
 .vscode/
