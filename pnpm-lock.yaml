@@ -78,6 +78,18 @@ importers:
         specifier: 5.5.4
         version: 5.5.4
 
+  apps/page-templates/community-watch:
+    dependencies:
+      '@astrojs/check':
+        specifier: 0.9.4
+        version: 0.9.4(prettier@3.8.3)(typescript@5.5.4)
+      astro:
+        specifier: 4.16.18
+        version: 4.16.18(@types/node@20.19.39)(rollup@4.60.2)(typescript@5.5.4)
+      typescript:
+        specifier: 5.5.4
+        version: 5.5.4
+
   apps/slide-theme: {}
 
   apps/storybook:

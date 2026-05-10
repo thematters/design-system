@@ -1,0 +1,689 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { page } from "../content/page";
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<PageLayout
+  title={page.pageTitle}
+  description={page.pageDescription}
+  lang={page.lang}
+>
+  <div class="page">
+    <header class="page__header">
+      <a class="page__brand" href="https://matters.town">
+        <img src={`${baseUrl}matters-lettering-black.svg`} alt="Matters" />
+        <span aria-hidden="true"></span>
+        <strong>守望相助隊</strong>
+      </a>
+      <nav class="page__nav" aria-label="主要導覽">
+        <a href="#watch-log">處理紀錄</a>
+        <a href="#appeal">申訴</a>
+        <a href="https://matters.town/billboard">Billboard</a>
+      </nav>
+    </header>
+
+    <main class="page__main">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero__image"
+          src={`${baseUrl}images/community-watch-hero-v2.png`}
+          alt={page.hero.imageAlt}
+          width="1717"
+          height="916"
+        />
+        <div class="hero__content">
+          <h1 id="hero-title">{page.hero.title}</h1>
+          <p class="hero__slogan">{page.hero.slogan}</p>
+          <p class="hero__subtitle">{page.hero.subtitle}</p>
+          <div class="hero__actions" aria-label="主要操作">
+            <a class="btn btn--primary" href={page.hero.primaryCta.href}>{page.hero.primaryCta.label}</a>
+            {
+              page.hero.secondaryCta && (
+                <a class="btn btn--ghost" href={page.hero.secondaryCta.href}>
+                  {page.hero.secondaryCta.label}
+                </a>
+              )
+            }
+          </div>
+          <p class="hero__note">{page.hero.note}</p>
+        </div>
+      </section>
+
+      <section class="metric-strip" aria-label="目前處理統計">
+        {page.metrics.map((metric) => (
+          <article class="metric">
+            <span>{metric.label}</span>
+            <strong>{metric.value}</strong>
+            <small>{metric.note}</small>
+          </article>
+        ))}
+      </section>
+
+      <section class="board watch-log" id="watch-log" aria-labelledby="watch-log-title">
+        <div class="section-heading">
+          <p class="eyebrow">{page.log.eyebrow}</p>
+          <h2 id="watch-log-title">{page.log.title}</h2>
+          <p>{page.log.description}</p>
+        </div>
+
+        <div class="case-list">
+          {page.log.cases.map((watchCase) => (
+            <article class="case-row" id={`case-${watchCase.id}`}>
+              <div class="case-row__main">
+                <header class="case-row__header">
+                  <div class="case-row__source">
+                    <span class="case-row__type">{watchCase.sourceType}</span>
+                    <h3>{watchCase.sourceTitle}</h3>
+                  </div>
+                  <span class={`reason reason--${watchCase.reason === "色情廣告" ? "adult" : "spam"}`}>
+                    {watchCase.reason}
+                  </span>
+                </header>
+
+                <div class="case-row__notice">
+                  <span>{watchCase.publicNotice}</span>
+                  <a href={`#case-${watchCase.id}`}>#{watchCase.id}</a>
+                </div>
+
+                <div class="case-row__content">
+                  <div class="case-row__content-header">
+                    <span class="case-row__label">原留言</span>
+                    <button
+                      class="case-row__toggle"
+                      type="button"
+                      data-watch-toggle
+                      aria-expanded="false"
+                    >
+                      顯示全文
+                    </button>
+                  </div>
+                  <p class="case-row__body is-blurred" data-watch-body>{watchCase.commentPreview}</p>
+                </div>
+              </div>
+
+              <dl class="case-row__meta" aria-label="處理資訊">
+                <div>
+                  <dt>處理人</dt>
+                  <dd>{watchCase.watcher}</dd>
+                </div>
+                <div>
+                  <dt>日期</dt>
+                  <dd>{watchCase.handledAt}</dd>
+                </div>
+                <div>
+                  <dt>申訴狀態</dt>
+                  <dd>{watchCase.appealStatus}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="info-grid" aria-label="申訴與未來規劃">
+        <article class="board info-panel" id="appeal">
+          <p class="eyebrow">{page.appeal.eyebrow}</p>
+          <h2>{page.appeal.title}</h2>
+          <p>{page.appeal.body}</p>
+          <a class="mail-link" href={`mailto:${page.appeal.email}`}>{page.appeal.email}</a>
+          <ol class="step-list">
+            {page.appeal.steps.map((step) => (
+              <li>
+                <strong>{step.title}</strong>
+                <span>{step.body}</span>
+              </li>
+            ))}
+          </ol>
+        </article>
+
+        <article class="board info-panel">
+          <p class="eyebrow">{page.training.eyebrow}</p>
+          <h2>{page.training.title}</h2>
+          <p>{page.training.body}</p>
+          <ol class="step-list">
+            {page.training.steps.map((step) => (
+              <li>
+                <strong>{step.title}</strong>
+                <span>{step.body}</span>
+              </li>
+            ))}
+          </ol>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page__footer">
+      <span>{page.footer.note}</span>
+      {
+        page.footer.links && page.footer.links.length > 0 && (
+          <nav aria-label="footer">
+            <ul>
+              {page.footer.links.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )
+      }
+    </footer>
+  </div>
+</PageLayout>
+
+<script>
+  document.querySelectorAll("[data-watch-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const content = button.closest(".case-row__content")?.querySelector("[data-watch-body]");
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+      content?.classList.toggle("is-blurred", isExpanded);
+      button.setAttribute("aria-expanded", String(!isExpanded));
+      button.textContent = isExpanded ? "顯示全文" : "收起全文";
+    });
+  });
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100vw;
+    min-height: clamp(560px, 74vh, 760px);
+    margin-left: calc(50% - 50vw);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--color-grey-white);
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.99) 34%,
+        rgba(255, 255, 255, 0.88) 54%,
+        rgba(255, 255, 255, 0.58) 72%,
+        rgba(255, 255, 255, 0.18) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(247, 247, 247, 0.56) 100%
+      );
+    pointer-events: none;
+  }
+
+  .hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: 66% center;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    width: min(var(--board-max), 100%);
+    margin: 0 auto;
+    padding: clamp(var(--space-sp32), 8vw, 96px) var(--board-pad-x);
+  }
+
+  .hero h1 {
+    max-width: 540px;
+    font-family: var(--font-reading);
+    font-size: clamp(40px, 5vw, 56px);
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-grey-black);
+  }
+
+  .hero__slogan {
+    max-width: 560px;
+    margin: var(--space-sp16) 0 0;
+    color: var(--brand-purple);
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .hero__subtitle {
+    max-width: 540px;
+    margin: var(--space-watch-24) 0 0;
+    color: var(--color-grey-grey-darker);
+    font-size: 18px;
+    line-height: 1.56;
+    white-space: pre-line;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sp12);
+    margin: var(--space-sp32) 0 0;
+  }
+
+  .hero__note {
+    max-width: 560px;
+    margin: var(--space-watch-24) 0 0;
+    border-left: 4px solid var(--brand-lime);
+    padding-left: var(--space-sp12);
+    color: var(--color-grey-black);
+    font-weight: 600;
+    white-space: pre-line;
+  }
+
+  .hero .btn--ghost {
+    color: var(--color-grey-black);
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .metric-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--board-bg);
+    overflow: hidden;
+  }
+
+  .metric {
+    min-height: 124px;
+    border-right: 1px solid var(--line);
+    padding: var(--space-watch-20);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .metric:last-child {
+    border-right: 0;
+  }
+
+  .metric span {
+    color: var(--ink-muted);
+    font-weight: 700;
+  }
+
+  .metric strong {
+    color: var(--brand-purple);
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1;
+  }
+
+  .metric small {
+    color: var(--ink-muted);
+    font-size: 14px;
+  }
+
+  .section-heading {
+    max-width: 720px;
+    margin-bottom: var(--space-sp32);
+  }
+
+  .section-heading h2,
+  .info-panel h2 {
+    font-family: var(--font-reading);
+    font-size: clamp(28px, 4vw, 36px);
+    line-height: 1.34;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .section-heading p:not(.eyebrow),
+  .info-panel p {
+    color: var(--ink-muted);
+    margin: var(--space-sp12) 0 0;
+  }
+
+  .case-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--board-bg);
+  }
+
+  .case-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(176px, 0.28fr);
+    gap: var(--space-watch-20);
+    border-bottom: 1px solid var(--line);
+    padding: var(--space-watch-20);
+    background: var(--board-bg);
+  }
+
+  .case-row:last-child {
+    border-bottom: 0;
+  }
+
+  .case-row__main {
+    min-width: 0;
+  }
+
+  .case-row__header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-sp16);
+    align-items: start;
+  }
+
+  .case-row__source {
+    min-width: 0;
+  }
+
+  .case-row__type,
+  .case-row__label {
+    display: block;
+    color: var(--ink-muted);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .case-row h3 {
+    margin: var(--space-sp4) 0 0;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .reason {
+    flex: 0 0 auto;
+    border-radius: 6px;
+    padding: var(--space-sp4) var(--space-sp10);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .reason--adult {
+    background: var(--adult-bg);
+    color: var(--adult-ink);
+  }
+
+  .reason--spam {
+    background: var(--spam-bg);
+    color: var(--spam-ink);
+  }
+
+  .case-row__notice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sp8);
+    align-items: center;
+    margin: var(--space-sp16) 0;
+    border-left: 3px solid var(--brand-lime);
+    padding: var(--space-sp8) 0 var(--space-sp8) var(--space-sp12);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .case-row__notice a {
+    font-family: var(--font-family-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .case-row__content {
+    display: block;
+  }
+
+  .case-row__content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sp12);
+    margin-bottom: var(--space-sp8);
+  }
+
+  .case-row__body {
+    min-height: 64px;
+    margin: 0;
+    border-radius: 8px;
+    padding: var(--space-sp14);
+    background: var(--surface-muted);
+    border: 1px solid var(--line);
+    transition: filter 0.16s ease, opacity 0.16s ease;
+  }
+
+  .case-row__body.is-blurred {
+    filter: blur(6px);
+    opacity: 0.58;
+    user-select: none;
+  }
+
+  .case-row__toggle {
+    min-width: 88px;
+    min-height: 36px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--board-bg);
+    color: var(--ink);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .case-row__toggle:hover {
+    border-color: var(--brand-purple);
+    color: var(--brand-purple);
+  }
+
+  .case-row__meta {
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sp12);
+    margin: 0;
+    padding-left: var(--space-watch-20);
+    border-left: 1px solid var(--line);
+  }
+
+  .case-row__meta div {
+    min-width: 0;
+  }
+
+  .case-row__meta dt {
+    color: var(--ink-muted);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .case-row__meta dd {
+    margin: var(--space-sp2) 0 0;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-sp16);
+  }
+
+  .info-panel {
+    border-radius: 8px;
+  }
+
+  .mail-link {
+    display: inline-flex;
+    margin-top: var(--space-sp16);
+    color: var(--brand-purple);
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .step-list {
+    margin: var(--space-watch-24) 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sp12);
+    counter-reset: steps;
+  }
+
+  .step-list li {
+    counter-increment: steps;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: var(--space-sp12);
+  }
+
+  .step-list li::before {
+    content: counter(steps);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--brand-lime);
+    color: var(--color-grey-black);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+  }
+
+  .step-list strong,
+  .step-list span {
+    grid-column: 2;
+  }
+
+  .step-list strong {
+    line-height: 1.3;
+  }
+
+  .step-list span {
+    color: var(--ink-muted);
+  }
+
+  .page__footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sp16);
+  }
+
+  .page__footer a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+
+  .page__footer a:hover {
+    color: var(--brand-purple);
+  }
+
+  @media (max-width: 880px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      min-height: 640px;
+      align-items: flex-start;
+    }
+
+    .hero::after {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 0.98) 42%,
+          rgba(255, 255, 255, 0.76) 70%,
+          rgba(255, 255, 255, 0.22) 100%
+        );
+    }
+
+    .hero__image {
+      object-position: 62% center;
+    }
+
+    .hero__content {
+      padding-top: var(--space-watch-48);
+      padding-bottom: var(--space-watch-48);
+    }
+
+    .case-row {
+      grid-template-columns: 1fr;
+    }
+
+    .case-row__meta {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding-left: 0;
+      padding-top: var(--space-sp16);
+      border-left: 0;
+      border-top: 1px solid var(--line);
+    }
+  }
+
+  @media (max-width: 620px) {
+    .board {
+      padding: var(--space-watch-24) var(--space-sp16);
+    }
+
+    .hero__actions,
+    .hero__actions .btn {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 700px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      line-height: 1.22;
+    }
+
+    .hero__slogan {
+      font-size: 22px;
+    }
+
+    .hero__subtitle {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .hero__actions .btn {
+      justify-content: center;
+    }
+
+    .metric-strip,
+    .case-row__meta {
+      grid-template-columns: 1fr;
+    }
+
+    .metric {
+      min-height: 112px;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric:last-child {
+      border-bottom: 0;
+    }
+
+    .case-row__header {
+      grid-template-columns: 1fr;
+      gap: var(--space-sp12);
+    }
+
+    .case-row__meta {
+      gap: var(--space-sp8);
+    }
+  }
+</style>
