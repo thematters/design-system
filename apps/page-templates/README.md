@@ -9,9 +9,12 @@ re-run the dev server, ship.
 | Starter                                   | Use case                                          | Sections                                                         |
 | ----------------------------------------- | ------------------------------------------------- | ---------------------------------------------------------------- |
 | [`activity-landing/`](./activity-landing) | Activity / event landing (七日書, 馬拉松, 季活動) | hero · participant wall · day prompts · entries grid · FAQ · CTA |
-| [`community-watch/`](./community-watch)   | 守望相助隊公開透明頁                              | hero · metrics · action log · appeal · bot planning · footer     |
 | [`coming-soon/`](./coming-soon)           | Single-screen waitlist / launch teaser            | brand · headline · countdown · email form · footer               |
 | [`about-page/`](./about-page)             | Institutional about page (mission / history)      | hero · pillars · timeline · team · partners · footer             |
+
+Moved to product repo:
+
+- Community Watch public page: https://github.com/thematters/community-watch
 
 ## Quick start
 
@@ -20,7 +23,6 @@ From the design-system monorepo:
 ```bash
 pnpm install
 pnpm --filter @matters/page-template-activity-landing dev   # → :4321
-pnpm --filter @matters/page-template-community-watch dev     # → :4321
 ```
 
 Or copy a starter out as a standalone project:
