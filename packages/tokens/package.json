@@ -35,6 +35,7 @@
     "typecheck": "node -e \"console.log('packages/tokens: no TS sources, skipping')\""
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   }
 }
