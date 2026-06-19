@@ -3,6 +3,11 @@ name: Release
 on:
   push:
     branches: [main]
+  # Manual trigger — re-run a publish without a new commit, e.g. after fixing
+  # the NPM_TOKEN secret or to re-attempt a failed `changeset publish`.
+  # Actions → Release → Run workflow. (changesets only publishes versions not
+  # already on npm, so re-running when everything is published is a no-op.)
+  workflow_dispatch:
 
 concurrency:
   group: release-${{ github.ref }}
