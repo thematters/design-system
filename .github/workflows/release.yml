@@ -17,17 +17,15 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # Full history needed so changesets can compute changelogs
           # against the previous version tags.
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.0
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "20"
           cache: pnpm
@@ -55,4 +53,10 @@ jobs:
           title: "chore(release): version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Two names for one secret, on purpose:
+          #  - NPM_TOKEN       → read by changesets/action (writes ~/.npmrc if none)
+          #  - NODE_AUTH_TOKEN → resolves the ${NODE_AUTH_TOKEN} placeholder that
+          #    actions/setup-node's `registry-url` writes into .npmrc. Without it
+          #    the publish hits E401 even though NPM_TOKEN is set.
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
