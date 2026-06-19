@@ -15,22 +15,24 @@
 
 ## Variants
 
-| Tier         | 顯示文字色 | Label 色  | 背景紋理 imageHash | 用途           | Figma node |
-| ------------ | ---------- | --------- | ------------------ | -------------- | ---------- |
-| 參加獎       | `#07294b`  | `#0f76b7` | `7e04d167…`        | 完成 1+ 篇即可 | `5658:2`   |
-| 大滿貫       | `#ffffff`  | `#ffe367` | `b28b5ace…`        | 連續完賽 7 天  | `5658:12`  |
-| 改字模板     | `#07294b`  | `#0f76b7` | `7e04d167…`        | 給營運改字     | `5652:267` |
-| 大滿貫 alt   | —          | —         | —                  | 大滿貫替代版   | `5666:3`   |
+| Tier       | 顯示文字色 | Label 色  | 背景紋理 imageHash | 用途           | Figma node |
+| ---------- | ---------- | --------- | ------------------ | -------------- | ---------- |
+| 參加獎     | `#07294b`  | `#0f76b7` | `7e04d167…`        | 完成 1+ 篇即可 | `5658:2`   |
+| 大滿貫     | `#ffffff`  | `#ffe367` | `b28b5ace…`        | 連續完賽 7 天  | `5658:12`  |
+| 改字模板   | `#07294b`  | `#0f76b7` | `7e04d167…`        | 給營運改字     | `5652:267` |
+| 大滿貫 alt | —          | —         | —                  | 大滿貫替代版   | `5666:3`   |
 
 ## Asset files
 
 PNG 預覽（每張 ~1.4 MB，1024×1024）：
+
 - [`participation-prize__5658-2.png`](../../../brand/sources/figma/cc-branding/exports/freewrite/seven-day-book/poap/participation-prize__5658-2.png)
 - [`grand-slam__5658-12.png`](../../../brand/sources/figma/cc-branding/exports/freewrite/seven-day-book/poap/grand-slam__5658-12.png)
 - [`grand-slam-alt__5666-3.png`](../../../brand/sources/figma/cc-branding/exports/freewrite/seven-day-book/poap/grand-slam-alt__5666-3.png)
 - [`operations-text-edit__5652-267.png`](../../../brand/sources/figma/cc-branding/exports/freewrite/seven-day-book/poap/operations-text-edit__5652-267.png)
 
 裝飾向量 SVG（重複出現於所有 frame）：
+
 - [`decorative-scribble-bottom-left.svg`](../../../brand/sources/figma/cc-branding/exports/freewrite/seven-day-book/poap/decorative-scribble-bottom-left.svg)
 - [`decorative-scribble-top-right.svg`](../../../brand/sources/figma/cc-branding/exports/freewrite/seven-day-book/poap/decorative-scribble-top-right.svg)
 
@@ -51,13 +53,13 @@ frame 2000×2000
 
 ## Tokens used
 
-| 角色         | 參加獎                  | 大滿貫                  | 對應 design-system token (待核對) |
-| ------------ | ----------------------- | ----------------------- | --------------------------------- |
-| 標題文字色   | `#07294b`               | `#ffffff`               | （未定）                          |
-| Label 填色   | `#0f76b7`               | `#ffe367`               | `--color-freewrite-text` (#1999D0) **不同** |
-| 背景紋理     | imageHash `7e04d167…`   | imageHash `b28b5ace…`   | 非 token，是 raster asset         |
-| 裝飾線       | `#0F76B7`               | `#0F76B7`               | （未定）                          |
-| 字型 family  | `jf-jinxuan` Bold 220px | 同左                     | `--font-family-display` (待新增)  |
+| 角色        | 參加獎                  | 大滿貫                | 對應 design-system token (待核對)           |
+| ----------- | ----------------------- | --------------------- | ------------------------------------------- |
+| 標題文字色  | `#07294b`               | `#ffffff`             | （未定）                                    |
+| Label 填色  | `#0f76b7`               | `#ffe367`             | `--color-freewrite-text` (#1999D0) **不同** |
+| 背景紋理    | imageHash `7e04d167…`   | imageHash `b28b5ace…` | 非 token，是 raster asset                   |
+| 裝飾線      | `#0F76B7`               | `#0F76B7`             | （未定）                                    |
+| 字型 family | `jf-jinxuan` Bold 220px | 同左                  | `--font-family-display` (待新增)            |
 
 > 注意：POAP 的藍 `#0f76b7` 與既有 `--color-freewrite-text` (`#1999D0`)
 > 是**不同色** — POAP 用了更深、更飽和的藍。這暗示 freewrite palette

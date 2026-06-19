@@ -159,13 +159,6 @@ async function crossCheck() {
 }
 
 // ------- component spec generation -------
-function isIconPage(name) {
-  return name === "Icons";
-}
-function isSkippedPage(name) {
-  return ["---", "草稿", "Thumbnail", "Z-INDEX（制作中）"].includes(name);
-}
-
 async function fetchNodeDeep(nodeId) {
   const data = await api(
     `/v1/files/${FILE_KEY}/nodes?ids=${encodeURIComponent(nodeId)}&depth=4&geometry=paths`

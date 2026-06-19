@@ -4,29 +4,29 @@
 
 ## 季節索引
 
-| Season            | Page node    | Hero IMAGE imageHash 範例   | 子節點數 | 敘事角色                | 詳細 MANIFEST |
-| ----------------- | ------------ | --------------------------- | -------: | ----------------------- | ------------- |
-| 2024 冬           | `4198:1377`  | 多種（pre-template）         |       30 | 萌芽前奏、首次有 freewrite 季節體系 | [`seasonal/2024-winter/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2024-winter/MANIFEST.md) |
-| 2025 春           | `4249:134`   | `f178f939…`、`14a781fd…`     |     ~190 | **設計工程化的第一季**、SECTION 結構出現 | [`seasonal/2025-spring/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-spring/MANIFEST.md) |
-| 2025 夏           | `4904:2`     | `e42d919d…`、`87049d6e…`     |       64 | 跨 6/7/8 月的多月活動    | [`seasonal/2025-summer/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-summer/MANIFEST.md) |
-| 2025 8-9 月（兩廳院）| `5047:2`  | `2c878196…`、`ae4c9b8f…`     |  **166** | **freewrite 史上最大 campaign**，含 1920×1440 wide format | [`seasonal/2025-aug-sep-tcc/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-aug-sep-tcc/MANIFEST.md) |
-| 2025 秋           | `5412:6972`  | （引用春的 imageHash）        |       31 | 「用春天的模板」 — 版型穩定後的回收      | [`seasonal/2025-autumn/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-autumn/MANIFEST.md) |
-| 2025 總結         | `5495:2`     | `e9e287cf…`（主視覺宣言大圖）|       36 | 年度回顧 + participant wall | [`seasonal/2025-summary/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-summary/MANIFEST.md) |
-| 2026 春           | `5495:203`   | `a942a797…`、`921287c6…`     |       77 | 新一年開季，sister page = Q2 七日書模板   | [`seasonal/2026-spring/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2026-spring/MANIFEST.md) |
+| Season                | Page node   | Hero IMAGE imageHash 範例     | 子節點數 | 敘事角色                                                  | 詳細 MANIFEST                                                                                                                 |
+| --------------------- | ----------- | ----------------------------- | -------: | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 2024 冬               | `4198:1377` | 多種（pre-template）          |       30 | 萌芽前奏、首次有 freewrite 季節體系                       | [`seasonal/2024-winter/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2024-winter/MANIFEST.md)           |
+| 2025 春               | `4249:134`  | `f178f939…`、`14a781fd…`      |     ~190 | **設計工程化的第一季**、SECTION 結構出現                  | [`seasonal/2025-spring/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-spring/MANIFEST.md)           |
+| 2025 夏               | `4904:2`    | `e42d919d…`、`87049d6e…`      |       64 | 跨 6/7/8 月的多月活動                                     | [`seasonal/2025-summer/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-summer/MANIFEST.md)           |
+| 2025 8-9 月（兩廳院） | `5047:2`    | `2c878196…`、`ae4c9b8f…`      |  **166** | **freewrite 史上最大 campaign**，含 1920×1440 wide format | [`seasonal/2025-aug-sep-tcc/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-aug-sep-tcc/MANIFEST.md) |
+| 2025 秋               | `5412:6972` | （引用春的 imageHash）        |       31 | 「用春天的模板」 — 版型穩定後的回收                       | [`seasonal/2025-autumn/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-autumn/MANIFEST.md)           |
+| 2025 總結             | `5495:2`    | `e9e287cf…`（主視覺宣言大圖） |       36 | 年度回顧 + participant wall                               | [`seasonal/2025-summary/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2025-summary/MANIFEST.md)         |
+| 2026 春               | `5495:203`  | `a942a797…`、`921287c6…`      |       77 | 新一年開季，sister page = Q2 七日書模板                   | [`seasonal/2026-spring/`](../../brand/sources/figma/cc-branding/exports/freewrite/seasonal/2026-spring/MANIFEST.md)           |
 
 ## 跨季節元件 reuse 表
 
 | 元件             | 2024 冬 | 2025 春 | 2025 夏 | 2025 秋 | 2025 8-9 | 2025 總結 | 2026 春 |
 | ---------------- | :-----: | :-----: | :-----: | :-----: | :------: | :-------: | :-----: |
-| Day prompt card  |   ✅    |   ✅    |   ✅    |   ✅    |    ✅    |     —    |   ✅    |
-| IG Post promo    |   ✅    |   ✅    |   ✅    |   ✅    |    ✅    |     —    |   ✅    |
-| FB Cover         |   ✅    |   ✅    |   ✅    |   ✅    |    ✅    |     —    |   ✅    |
-| 站上封面 (2000²) |   —     |   —     |   —     |   —     |    —     |     —    |   ✅ (Q2)|
-| 兩廳院 wide      |   —     |   —     |   —     |   —     |   ✅     |     —    |   —     |
-| 作家講座         |   —     |   —     |   —     |   —     |   ✅     |     —    |   —     |
-| 徵文版           |   —     |   —     |   —     |   —     |   ✅     |     —    |   —     |
-| Participant wall |   —     |   —     |   —     |   —     |    —     |    ✅    |   —     |
-| Writers wall     |   —     |   —     |   —     |   —     |    —     |    ✅    |   —     |
+| Day prompt card  |   ✅    |   ✅    |   ✅    |   ✅    |    ✅    |     —     |   ✅    |
+| IG Post promo    |   ✅    |   ✅    |   ✅    |   ✅    |    ✅    |     —     |   ✅    |
+| FB Cover         |   ✅    |   ✅    |   ✅    |   ✅    |    ✅    |     —     |   ✅    |
+| 站上封面 (2000²) |    —    |    —    |    —    |    —    |    —     |     —     | ✅ (Q2) |
+| 兩廳院 wide      |    —    |    —    |    —    |    —    |    ✅    |     —     |    —    |
+| 作家講座         |    —    |    —    |    —    |    —    |    ✅    |     —     |    —    |
+| 徵文版           |    —    |    —    |    —    |    —    |    ✅    |     —     |    —    |
+| Participant wall |    —    |    —    |    —    |    —    |    —     |    ✅     |    —    |
+| Writers wall     |    —    |    —    |    —    |    —    |    —     |    ✅     |    —    |
 
 ## 設計演進關鍵時刻
 

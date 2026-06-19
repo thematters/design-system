@@ -55,8 +55,7 @@ frame 1080 × 1350
 
 2025 總結頁中還有「邀約過的 14 位作家集結圖」frame (`5495:40`)，這是
 另一種 participant wall variant — **多人聚合**型（14 位作家排成 grid），
-非單人 quote。可以視為 `participant-wall` 的 **layout="grid-multi"`
-vs. `layout="single-quote"` 兩種模式。
+非單人 quote。可以視為 `participant-wall` 的 \*\*layout="grid-multi"`vs.`layout="single-quote"` 兩種模式。
 
 ## Usage rules
 

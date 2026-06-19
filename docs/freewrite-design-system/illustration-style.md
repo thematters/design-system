@@ -18,7 +18,7 @@ POAP frame 的兩個裝飾向量是 freewrite 抽象視覺語彙的**最 canonic
 → [`brand/sources/figma/cc-branding/exports/freewrite/seven-day-book/poap/decorative-scribble-bottom-left.svg`](../../brand/sources/figma/cc-branding/exports/freewrite/seven-day-book/poap/decorative-scribble-bottom-left.svg)
 是這個風格的 reference SVG。
 
-新插畫須**保留這種「人手書寫感」**，避免過於幾何 / 規則 / 
+新插畫須**保留這種「人手書寫感」**，避免過於幾何 / 規則 /
 illustration-y 的 vector style。
 
 ### B. 紋理化 raster 背景（imageHash 系列）
@@ -35,7 +35,7 @@ SVG。觀察特徵：
 - `7e04d167…`（POAP 參加獎）— 淺色紋理、可能米白底
 - `b28b5ace…`（POAP 大滿貫）— 深色紋理
 - `e42d919d…`（2025 夏）— 綠調
-- `1ffa4466…`（2025 秋 IG_題目）— 秋調
+- `1ffa4466…`（2025 秋 IG\_題目）— 秋調
 - `85bb0af6…`（週年慶 4 themes）— 治療性氛圍
 
 ## 2. 風格 do's
@@ -62,15 +62,15 @@ SVG。觀察特徵：
 
 從 15 個 page 的 page-preview.png 整理（細節見每個 page 的 MANIFEST）：
 
-| Season               | 觀察                                              |
-| -------------------- | ------------------------------------------------- |
-| 2024 冬              | 深冷色，每張 hero 獨立背景（pre-engineering 期）   |
-| 2025 春              | 春色淺綠 + 米白，**設計工程化開始**               |
-| 2025 夏              | 綠調主導，跨月變體（6/7/8 月）                     |
-| 2025 秋              | **使用春天模板**，只換 imageHash，無新插畫        |
-| 2025 8-9（兩廳院）    | 多了 1920×1440 wide format，外部聯名所以視覺更formal |
-| 2025 總結            | 主視覺（宣言大圖）`5495:4` — 年度敘事 hero        |
-| 2026 春              | 春色（待抽 dominant color）                        |
+| Season             | 觀察                                                 |
+| ------------------ | ---------------------------------------------------- |
+| 2024 冬            | 深冷色，每張 hero 獨立背景（pre-engineering 期）     |
+| 2025 春            | 春色淺綠 + 米白，**設計工程化開始**                  |
+| 2025 夏            | 綠調主導，跨月變體（6/7/8 月）                       |
+| 2025 秋            | **使用春天模板**，只換 imageHash，無新插畫           |
+| 2025 8-9（兩廳院） | 多了 1920×1440 wide format，外部聯名所以視覺更formal |
+| 2025 總結          | 主視覺（宣言大圖）`5495:4` — 年度敘事 hero           |
+| 2026 春            | 春色（待抽 dominant color）                          |
 
 → 設計新季節 hero 時，建議參照前一年同季 hero 而非當前所有 hero
 平均，以保持季節辨識度。

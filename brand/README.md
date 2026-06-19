@@ -15,12 +15,12 @@ Figma REST API with `FIGMA_TOKEN`.
 
 ## Folder Map
 
-| Path | Purpose |
-| --- | --- |
+| Path                         | Purpose                                                                                             |
+| ---------------------------- | --------------------------------------------------------------------------------------------------- |
 | `sources/figma/cc-branding/` | Cached Figma metadata and exported node images. Raw cache is ignored until intentionally committed. |
-| `style-profiles/` | Machine-readable visual rules learned from brand assets. |
-| `prompts/` | Prompt recipes for OpenAI image generation. |
-| `jobs/` | One-click generation job files. |
+| `style-profiles/`            | Machine-readable visual rules learned from brand assets.                                            |
+| `prompts/`                   | Prompt recipes for OpenAI image generation.                                                         |
+| `jobs/`                      | One-click generation job files.                                                                     |
 
 ## Working Model
 
@@ -33,4 +33,3 @@ The generation flow separates image and typography:
 
 This keeps words and layout deterministic while still using image generation
 for atmospheric or editorial backgrounds.
-
