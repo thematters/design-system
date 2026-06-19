@@ -23,24 +23,24 @@
 6. murmur             × 4   ← 站內隨筆 / 短語
 ```
 
-> **「2. 七日書題目_IG_1」共 35 個 instance** — 這是整個 freewrite
+> **「2. 七日書題目\_IG_1」共 35 個 instance** — 這是整個 freewrite
 > 資料庫中最大的元件群，是 day-prompt-card 元件 spec 最 canonical 的來源。
 
 ## 結構分組
 
-| 群組                          | 數量 | 尺寸             | 主背景                  | 用途                  |
-| ----------------------------- | ---: | ---------------- | ----------------------- | --------------------- |
-| 1. 好文精選推薦_IG            |   22 | 1080 × 1350      | 純白 `#ffffff`          | 編輯精選文章卡        |
-| 2. 七日書題目_IG_1            |   35 | 1080 × 1350      | **GRADIENT_LINEAR**     | 七日書 day prompt 主版 |
-| 3. 文章金句_IG                |   18 | 1080 × 1350      | `bcdfcf51…`             | 金句卡片              |
-| 4. 書後感關鍵字               |    2 | 1080 × 1350      | 純白                    | 讀後感 keyword viz    |
-| 5. 講座摘要                   |    6 | 1080 × 1350      | `a5f8ee0c…`             | 講座資訊卡            |
-| 6. murmur                     |    4 | 1080 × 1350      | `bb1f726b…`             | 站內隨筆              |
-| Avatar                        |    7 | 1080 × 1080      | 純白                    | 用戶頭像 placeholder   |
-| FB Cover                      |    7 | 2500 × 925       | `ea565a3a…`             | FB 封面               |
-| Newsletter Cover              |    2 | 600 × 200        | `8f832db8…`             | Email newsletter banner |
-| Conversation                  |    6 | ~877 × varies    | (透明)                  | 對話泡泡（Conversation 元件） |
-| 標籤 TEXT                     |   ~3 |                  | `#333333`               | "Archive"、"Latest"、"運營改字用" |
+| 群組                | 數量 | 尺寸          | 主背景              | 用途                              |
+| ------------------- | ---: | ------------- | ------------------- | --------------------------------- |
+| 1. 好文精選推薦\_IG |   22 | 1080 × 1350   | 純白 `#ffffff`      | 編輯精選文章卡                    |
+| 2. 七日書題目\_IG_1 |   35 | 1080 × 1350   | **GRADIENT_LINEAR** | 七日書 day prompt 主版            |
+| 3. 文章金句\_IG     |   18 | 1080 × 1350   | `bcdfcf51…`         | 金句卡片                          |
+| 4. 書後感關鍵字     |    2 | 1080 × 1350   | 純白                | 讀後感 keyword viz                |
+| 5. 講座摘要         |    6 | 1080 × 1350   | `a5f8ee0c…`         | 講座資訊卡                        |
+| 6. murmur           |    4 | 1080 × 1350   | `bb1f726b…`         | 站內隨筆                          |
+| Avatar              |    7 | 1080 × 1080   | 純白                | 用戶頭像 placeholder              |
+| FB Cover            |    7 | 2500 × 925    | `ea565a3a…`         | FB 封面                           |
+| Newsletter Cover    |    2 | 600 × 200     | `8f832db8…`         | Email newsletter banner           |
+| Conversation        |    6 | ~877 × varies | (透明)              | 對話泡泡（Conversation 元件）     |
+| 標籤 TEXT           |   ~3 |               | `#333333`           | "Archive"、"Latest"、"運營改字用" |
 
 ## 重要設計選擇
 
@@ -73,7 +73,7 @@
 ## Phase F 待補（資料庫最重要的待辦）
 
 1. **`components/freewrite/day-prompt-card/spec.md` 主源**：抽 35 個
-   「2. 七日書題目_IG_1」frame 的：
+   「2. 七日書題目\_IG_1」frame 的：
    - 共用 LINEAR_GRADIENT fill 的 stops
    - 內部 children 結構（推測：日期 / D1-7 標籤 / 題目主文 / 七日書 logo / 裝飾）
    - 跨 35 個 instance 的差異點（哪些是固定、哪些是變數）

@@ -9,6 +9,7 @@ layout are applied later by repo templates.
 Create a Matters-style editorial background image.
 
 Visual direction:
+
 - public writing community, long-form reading, thoughtful civic conversation
 - modern digital commons, quiet but energetic
 - confident use of Matters purple `#7258FF` and lime `#C3F432`
@@ -16,6 +17,7 @@ Visual direction:
 - elegant editorial composition, not a marketing stock image
 
 Hard constraints:
+
 - no readable text
 - no logos or fake brand marks
 - no UI screenshots
@@ -24,4 +26,3 @@ Hard constraints:
 - keep a clear text-safe area as specified by the job
 
 Output should work under deterministic HTML/CSS typography and logo overlays.
-

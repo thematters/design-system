@@ -6,15 +6,15 @@
 
 freewrite 全部素材幾乎都落在三個尺寸群組之一：
 
-| 群組      | 尺寸           | Aspect | 用途                                        |
-| --------- | -------------- | ------ | ------------------------------------------- |
-| **IG-P**  | 1080 × 1350    | 4:5    | IG portrait（main），day-prompt-card 主版   |
-| **IG-S**  | 1080 × 1080    | 1:1    | IG/FB square，FB_題目，公告卡               |
-| **FB-C**  | 2500 × 925     | 27:10  | FB Cover banner（月份封面）                 |
-| **TCW**   | 1920 × 1440    | 4:3    | 兩廳院聯名（外部官網用，唯一橫式 wide）      |
-| **POAP**  | 2000 × 2000    | 1:1    | 鏈上 NFT，站上封面                          |
-| **MTB**   | 688 × 160      | 4.3:1  | matters.town 圍爐 banner                    |
-| **NL**    | 600 × 200      | 3:1    | Newsletter header                           |
+| 群組     | 尺寸        | Aspect | 用途                                      |
+| -------- | ----------- | ------ | ----------------------------------------- |
+| **IG-P** | 1080 × 1350 | 4:5    | IG portrait（main），day-prompt-card 主版 |
+| **IG-S** | 1080 × 1080 | 1:1    | IG/FB square，FB\_題目，公告卡            |
+| **FB-C** | 2500 × 925  | 27:10  | FB Cover banner（月份封面）               |
+| **TCW**  | 1920 × 1440 | 4:3    | 兩廳院聯名（外部官網用，唯一橫式 wide）   |
+| **POAP** | 2000 × 2000 | 1:1    | 鏈上 NFT，站上封面                        |
+| **MTB**  | 688 × 160   | 4.3:1  | matters.town 圍爐 banner                  |
+| **NL**   | 600 × 200   | 3:1    | Newsletter header                         |
 
 → 設計時**不可創造新尺寸**，必須對齊既有 7 個。例外只有跨域聯名（如
 兩廳院）需求新尺寸時，加入第 8 個並文件化。
@@ -24,6 +24,7 @@ freewrite 全部素材幾乎都落在三個尺寸群組之一：
 freewrite 設計工作流明確分兩條：
 
 ### A. 模板軌（template path）
+
 - 主源：[`brand/sources/figma/cc-branding/exports/freewrite/core/`](../../brand/sources/figma/cc-branding/exports/freewrite/core/)
   （品牌模板 page，`3902:223`）
 - 用 **LINEAR_GRADIENT** 背景（不是 raster）
@@ -32,6 +33,7 @@ freewrite 設計工作流明確分兩條：
 - 對應元件：day-prompt-card、quote-card、feature-card
 
 ### B. 主視覺軌（hero path）
+
 - 主源：每季 page 的 IG Post_1 / 站上封面 / FB Cover
 - 用 **IMAGE fill**（每季新繪 raster），imageHash 為唯一識別
 - 每季只 1-2 張 hero，不是模板
@@ -119,15 +121,15 @@ page (TEXT 標題)
 從 2024 冬 → 2025 春/夏/秋 → 2025 總結 → 2026 春 看出 freewrite 把
 一年作為一個敘事單位：
 
-| 季節            | 敘事角色              |
-| --------------- | --------------------- |
-| 春              | 萌發 / 季初預告       |
-| 夏              | 高峰 / 多月跨度       |
-| 秋              | 沉澱（用春天模板）    |
-| 8-9 月（兩廳院）| 對外聯名 / 高光時刻    |
-| 冬              | 總結前奏              |
-| 年度總結        | participant wall + writer wall + stats infographic |
-| 週年慶          | 治療性反思（4 themes）|
+| 季節             | 敘事角色                                           |
+| ---------------- | -------------------------------------------------- |
+| 春               | 萌發 / 季初預告                                    |
+| 夏               | 高峰 / 多月跨度                                    |
+| 秋               | 沉澱（用春天模板）                                 |
+| 8-9 月（兩廳院） | 對外聯名 / 高光時刻                                |
+| 冬               | 總結前奏                                           |
+| 年度總結         | participant wall + writer wall + stats infographic |
+| 週年慶           | 治療性反思（4 themes）                             |
 
 → 設計新季節活動時，需了解**這一季在年度敘事中的定位**，避免和
 既有季節調性衝突。
@@ -136,11 +138,11 @@ page (TEXT 標題)
 
 每條原則都來自具體 Figma 證據：
 
-| 原則 | 主要證據                                  |
-| ---- | ----------------------------------------- |
-| 1    | 全部 15 page MANIFEST 尺寸統計            |
-| 2    | 品牌模板 (LINEAR_GRADIENT) vs 季節 (IMAGE)|
-| 3    | 2024 冬 (平鋪) vs 2025 春+ (SECTION)      |
+| 原則 | 主要證據                                   |
+| ---- | ------------------------------------------ |
+| 1    | 全部 15 page MANIFEST 尺寸統計             |
+| 2    | 品牌模板 (LINEAR_GRADIENT) vs 季節 (IMAGE) |
+| 3    | 2024 冬 (平鋪) vs 2025 春+ (SECTION)       |
 | 4    | 品牌模板 6 類命名                          |
 | 5    | 「運營改字用」TEXT 在 14/15 季節 page 出現 |
 | 6    | logo Figma 抽出後的位置一致性              |

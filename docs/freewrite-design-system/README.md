@@ -55,14 +55,14 @@ docs/freewrite-design-system/
 
 ## Phase plan
 
-| Phase | 內容                             | 狀態         |
-| ----- | -------------------------------- | ------------ |
-| A     | brand/ 子系統 baseline           | ✅ 已 commit  |
-| C     | 目錄骨架 + 3 份索引              | 🚧 本 commit |
-| D     | 479 freewrite frame PNG（REST）  | 📦 待 token   |
-| E     | 16 頁 SVG / code / tokens（MCP） | 📝 待開始     |
-| F     | 7 個元件 spec.md                 | 📝 待開始     |
-| G     | 6 份原則 / 風格 / 字型 doc       | 📝 待開始     |
-| H     | cross-link 既有 handoff/Storybook | 📝 待開始     |
+| Phase | 內容                              | 狀態         |
+| ----- | --------------------------------- | ------------ |
+| A     | brand/ 子系統 baseline            | ✅ 已 commit |
+| C     | 目錄骨架 + 3 份索引               | 🚧 本 commit |
+| D     | 479 freewrite frame PNG（REST）   | 📦 待 token  |
+| E     | 16 頁 SVG / code / tokens（MCP）  | 📝 待開始    |
+| F     | 7 個元件 spec.md                  | 📝 待開始    |
+| G     | 6 份原則 / 風格 / 字型 doc        | 📝 待開始    |
+| H     | cross-link 既有 handoff/Storybook | 📝 待開始    |
 
 完整 phase 進度由 todo list 維護。

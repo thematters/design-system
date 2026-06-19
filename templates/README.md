@@ -12,11 +12,11 @@ both, with Figma as ground truth.
 
 ## What's shipped
 
-| Template                                   | Output size | Use case                                  |
-| ------------------------------------------ | ----------- | ----------------------------------------- |
-| [`og-image/`](og-image/)                   | 1200 × 630  | OG / Twitter card for an article share    |
-| [`social-card/`](social-card/)             | 1080 × 1080 | Square share — Threads, IG post, Mastodon |
-| [`newsletter-header/`](newsletter-header/) | 600 × 200   | Email newsletter banner                   |
+| Template                                     | Output size | Use case                                                            |
+| -------------------------------------------- | ----------- | ------------------------------------------------------------------- |
+| [`og-image/`](og-image/)                     | 1200 × 630  | OG / Twitter card for an article share                              |
+| [`social-card/`](social-card/)               | 1080 × 1080 | Square share — Threads, IG post, Mastodon                           |
+| [`newsletter-header/`](newsletter-header/)   | 600 × 200   | Email newsletter banner                                             |
 | [`ai-background-card/`](ai-background-card/) | 1080 × 1080 | OpenAI-generated background + deterministic Matters campaign layout |
 
 Each template directory has:

@@ -66,7 +66,9 @@ async function loadEnv(p) {
 function requireFigmaToken() {
   const token = process.env.FIGMA_TOKEN;
   if (!token) {
-    console.error("FIGMA_TOKEN missing. Copy .env.example to .env and add a Figma personal access token.");
+    console.error(
+      "FIGMA_TOKEN missing. Copy .env.example to .env and add a Figma personal access token."
+    );
     exit(1);
   }
   return token;
@@ -156,7 +158,9 @@ async function inventory(fileKey) {
   const file = await readCache("file.depth2");
   const styles = await readCache("styles").catch(() => ({ meta: { styles: [] } }));
   const components = await readCache("components").catch(() => ({ meta: { components: [] } }));
-  const componentSets = await readCache("component_sets").catch(() => ({ meta: { component_sets: [] } }));
+  const componentSets = await readCache("component_sets").catch(() => ({
+    meta: { component_sets: [] },
+  }));
   const canvases = collectCanvases(file);
 
   const lines = [];
@@ -171,7 +175,9 @@ async function inventory(fileKey) {
   lines.push("| Page | Node | Children | URL |");
   lines.push("| --- | --- | ---: | --- |");
   for (const page of canvases) {
-    lines.push(`| ${escapePipe(page.name)} | \`${page.id}\` | ${page.childCount} | ${figmaUrl(fileKey, page.id)} |`);
+    lines.push(
+      `| ${escapePipe(page.name)} | \`${page.id}\` | ${page.childCount} | ${figmaUrl(fileKey, page.id)} |`
+    );
   }
   lines.push("");
   lines.push("## Published Inventory");
@@ -185,7 +191,9 @@ async function inventory(fileKey) {
   lines.push("Export representative frames with:");
   lines.push("");
   lines.push("```bash");
-  lines.push("pnpm brand:figma -- render-node <node-id-or-figma-url> --out brand/sources/figma/cc-branding/exports/<name>.png");
+  lines.push(
+    "pnpm brand:figma -- render-node <node-id-or-figma-url> --out brand/sources/figma/cc-branding/exports/<name>.png"
+  );
   lines.push("```");
 
   const out = path.join(OUT_DIR, "inventory.md");
@@ -207,7 +215,9 @@ async function renderNode(fileKey, nodeInput, outPath, scale = 2) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} while downloading rendered node`);
   const buffer = Buffer.from(await res.arrayBuffer());
-  const finalOut = path.resolve(outPath || path.join(EXPORT_DIR, `${nodeId.replace(":", "-")}.png`));
+  const finalOut = path.resolve(
+    outPath || path.join(EXPORT_DIR, `${nodeId.replace(":", "-")}.png`)
+  );
   await ensureDir(path.dirname(finalOut));
   await fs.writeFile(finalOut, buffer);
   console.log(`wrote ${path.relative(cwd(), finalOut)}`);
@@ -274,7 +284,9 @@ async function renderAllFrames({
   }
   await writeManifest(manifestPath, catalog, [...manifestById.values()]);
 
-  console.log(`exporting ${selected.length} frame(s) to ${path.relative(cwd(), finalOutDir)} @${scale}x`);
+  console.log(
+    `exporting ${selected.length} frame(s) to ${path.relative(cwd(), finalOutDir)} @${scale}x`
+  );
   if (manifestOnly) {
     console.log(`wrote ${path.relative(cwd(), manifestPath)}`);
     return;

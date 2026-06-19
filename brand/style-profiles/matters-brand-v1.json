@@ -25,10 +25,7 @@
     ]
   },
   "typography": {
-    "production": [
-      "Noto Sans TC",
-      "Noto Serif TC"
-    ],
+    "production": ["Noto Sans TC", "Noto Serif TC"],
     "notes": [
       "Prefer Noto Sans TC for labels, metadata, buttons, and UI text.",
       "Use Noto Serif TC for editorial headlines, quotes, and literary campaign tone.",

@@ -15,14 +15,14 @@ sources.
 
 ## What We Learn From Existing Materials
 
-| Layer | Stored as | Owner |
-| --- | --- | --- |
-| Brand source files | `docs/figma-inventory.md`, `brand/sources/**` | Design system |
-| Color, typography, spacing rules | `tokens/**`, `brand/style-profiles/**` | Design system |
+| Layer                                     | Stored as                                                | Owner                  |
+| ----------------------------------------- | -------------------------------------------------------- | ---------------------- |
+| Brand source files                        | `docs/figma-inventory.md`, `brand/sources/**`            | Design system          |
+| Color, typography, spacing rules          | `tokens/**`, `brand/style-profiles/**`                   | Design system          |
 | Activity categories and template families | `brand/catalogs/**`, `docs/cc-branding-style-catalog.md` | Design system / Studio |
-| Repeatable image prompts | `brand/prompts/**` | Design system |
-| One-click generation jobs | `brand/jobs/**` | Ops / design |
-| Deterministic layout | `templates/**` | Design system |
+| Repeatable image prompts                  | `brand/prompts/**`                                       | Design system          |
+| One-click generation jobs                 | `brand/jobs/**`                                          | Ops / design           |
+| Deterministic layout                      | `templates/**`                                           | Design system          |
 
 ## Current Primary Source
 

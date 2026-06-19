@@ -91,19 +91,13 @@
         "guidance": []
       },
       "studioWorkflow": {
-        "inputs": [
-          "category",
-          "useCase",
-          "outputSize"
-        ],
+        "inputs": ["category", "useCase", "outputSize"],
         "steps": [
           "先選活動家族與需求，不直接從空白畫布開始。",
           "閱讀該類別的常用尺寸、文字安全區、logo 規則。",
           "若要改字或換圖，只改 template data；不要手動改最終 PNG。"
         ],
-        "layoutRules": [
-          "新手指南本身不出圖，應變成 Studio onboarding 與欄位提示。"
-        ],
+        "layoutRules": ["新手指南本身不出圖，應變成 Studio onboarding 與欄位提示。"],
         "prompt": "No image-generation prompt. This category is onboarding and usage guidance only."
       },
       "notes": [
@@ -627,10 +621,7 @@
             "count": 1
           }
         ],
-        "textSamples": [
-          "一覺醒來，馬特市不太一樣了！",
-          "金萱可以用了！！！"
-        ],
+        "textSamples": ["一覺醒來，馬特市不太一樣了！", "金萱可以用了！！！"],
         "textNodeCount": 2,
         "guidance": [
           "標題可用 serif 表現 editorial 語氣；metadata / CTA 用 sans。",
@@ -700,13 +691,7 @@
         ]
       },
       "studioWorkflow": {
-        "inputs": [
-          "headline",
-          "summary",
-          "cta",
-          "background",
-          "outputSize"
-        ],
+        "inputs": ["headline", "summary", "cta", "background", "outputSize"],
         "steps": [
           "先選輸出尺寸：站內發文 1594x900、社媒 1000x1000、OG 1200x630、banner 1600x613。",
           "把主標限制在 1-2 行，副標或 CTA 放在次層。",
@@ -1179,11 +1164,7 @@
           "count": 5
         }
       ],
-      "layoutFamilies": [
-        "quote-square",
-        "image-quote-square",
-        "multi-image-post"
-      ],
+      "layoutFamilies": ["quote-square", "image-quote-square", "multi-image-post"],
       "typography": {
         "extractedFromSamples": true,
         "fonts": [
@@ -1317,13 +1298,7 @@
         ]
       },
       "studioWorkflow": {
-        "inputs": [
-          "quote",
-          "authorName",
-          "sourceTitle",
-          "tone",
-          "background"
-        ],
+        "inputs": ["quote", "authorName", "sourceTitle", "tone", "background"],
         "steps": [
           "先判斷嚴肅版、輕鬆版或圖片版。",
           "金句切成 3-6 行；作者與來源縮到次層。",
@@ -3855,14 +3830,7 @@
         ]
       },
       "studioWorkflow": {
-        "inputs": [
-          "campaignName",
-          "headline",
-          "deck",
-          "date",
-          "cta",
-          "outputSet"
-        ],
+        "inputs": ["campaignName", "headline", "deck", "date", "cta", "outputSet"],
         "steps": [
           "先定義 campaign 主題與輸出組：IG、FB、站內 banner、newsletter。",
           "先設計 square 或 portrait 主視覺，再派生 banner。",
@@ -5957,12 +5925,7 @@
           "count": 4
         }
       ],
-      "layoutFamilies": [
-        "event-og",
-        "speaker-poster",
-        "weekly-schedule",
-        "event-carousel"
-      ],
+      "layoutFamilies": ["event-og", "speaker-poster", "weekly-schedule", "event-carousel"],
       "typography": {
         "extractedFromSamples": true,
         "fonts": [
@@ -6168,15 +6131,7 @@
         ]
       },
       "studioWorkflow": {
-        "inputs": [
-          "eventTitle",
-          "date",
-          "time",
-          "speakers",
-          "host",
-          "platform",
-          "cta"
-        ],
+        "inputs": ["eventTitle", "date", "time", "speakers", "host", "platform", "cta"],
         "steps": [
           "先選活動型態：Twitter Space、AMA、speaker poster、weekly schedule。",
           "建立資訊層級：活動名 > 日期時間 > speaker > host/platform > CTA。",
@@ -7550,14 +7505,7 @@
         ]
       },
       "studioWorkflow": {
-        "inputs": [
-          "format",
-          "title",
-          "authorName",
-          "excerpt",
-          "month",
-          "cta"
-        ],
+        "inputs": ["format", "title", "authorName", "excerpt", "month", "cta"],
         "steps": [
           "先選自由寫格式：好文推薦、文章金句、題目卡、講座摘要、murmur。",
           "以 1080x1350 IG portrait 為主，必要時派生 square 與 banner。",
@@ -10255,14 +10203,7 @@
         ]
       },
       "studioWorkflow": {
-        "inputs": [
-          "season",
-          "month",
-          "topic",
-          "seriesName",
-          "dateRange",
-          "cta"
-        ],
+        "inputs": ["season", "month", "topic", "seriesName", "dateRange", "cta"],
         "steps": [
           "先選 season kit：春、夏、秋、冬、周年、總結、問卷。",
           "建立同一季主視覺：色盤、插畫元素、背景材質、題號位置。",
@@ -10607,12 +10548,7 @@
           "count": 1
         }
       ],
-      "layoutFamilies": [
-        "daily-topic-square",
-        "monthly-promo-portrait",
-        "facebook-cover",
-        "poap"
-      ],
+      "layoutFamilies": ["daily-topic-square", "monthly-promo-portrait", "facebook-cover", "poap"],
       "typography": {
         "extractedFromSamples": true,
         "fonts": [
@@ -10778,13 +10714,7 @@
         ]
       },
       "studioWorkflow": {
-        "inputs": [
-          "season",
-          "month",
-          "dayNumber",
-          "topic",
-          "batchTopics"
-        ],
+        "inputs": ["season", "month", "dayNumber", "topic", "batchTopics"],
         "steps": [
           "先選月份與 season kit，再輸入 7 題。",
           "批次產生 7 張題目卡，固定題號、月份與題目位置。",
@@ -10844,9 +10774,7 @@
           "count": 1
         }
       ],
-      "layoutFamilies": [
-        "event-og"
-      ],
+      "layoutFamilies": ["event-og"],
       "typography": {
         "extractedFromSamples": true,
         "fonts": [
@@ -10900,9 +10828,7 @@
           "COCO"
         ],
         "textNodeCount": 13,
-        "guidance": [
-          "先沿用 Matters Lab event hierarchy，再視後續素材補強。"
-        ]
+        "guidance": ["先沿用 Matters Lab event hierarchy，再視後續素材補強。"]
       },
       "backgrounds": {
         "colors": [
@@ -10931,26 +10857,16 @@
         ],
         "imageFillCount": 4,
         "gradientFillCount": 0,
-        "guidance": [
-          "The Space 目前樣本少，先歸入活動海報族群，保留獨立品牌欄位。"
-        ]
+        "guidance": ["The Space 目前樣本少，先歸入活動海報族群，保留獨立品牌欄位。"]
       },
       "studioWorkflow": {
-        "inputs": [
-          "eventTitle",
-          "date",
-          "time",
-          "speaker",
-          "platform"
-        ],
+        "inputs": ["eventTitle", "date", "time", "speaker", "platform"],
         "steps": [
           "先沿用 event poster 流程，將 The Space 作為獨立品牌欄位。",
           "輸出 1200x630，保持活動主標與日期平台資訊清楚。",
           "樣本少，先作為 Matters Lab event template 的變體。"
         ],
-        "layoutRules": [
-          "主標、speaker、日期平台三層即可，不做過度裝飾。"
-        ],
+        "layoutRules": ["主標、speaker、日期平台三層即可，不做過度裝飾。"],
         "prompt": "Create a text-free event background for The Space by Matters. Intimate online talk, open conversation, calm dark stage, subtle spatial geometry, enough safe area for event title and date. Use restrained purple and lime accents. No readable text, no logo."
       },
       "notes": []
@@ -10974,41 +10890,29 @@
       ],
       "sampleFrames": [],
       "commonOutputSizes": [],
-      "layoutFamilies": [
-        "asset-library"
-      ],
+      "layoutFamilies": ["asset-library"],
       "typography": {
         "extractedFromSamples": false,
         "fonts": [],
         "fontSizes": [],
         "textSamples": [],
         "textNodeCount": 0,
-        "guidance": [
-          "先不要做成 Studio 預設模板，等素材庫整理完成。"
-        ]
+        "guidance": ["先不要做成 Studio 預設模板，等素材庫整理完成。"]
       },
       "backgrounds": {
         "colors": [],
         "fillTypes": [],
         "imageFillCount": 0,
         "gradientFillCount": 0,
-        "guidance": [
-          "目前頁面偏素材庫，需後續挑選可生成化的 frame。"
-        ]
+        "guidance": ["目前頁面偏素材庫，需後續挑選可生成化的 frame。"]
       },
       "studioWorkflow": {
-        "inputs": [
-          "theme",
-          "destination",
-          "caption"
-        ],
+        "inputs": ["theme", "destination", "caption"],
         "steps": [
           "目前先當素材庫，不作為 Studio 預設模板。",
           "待 Figma 有可出圖 frame 後，再補 square / portrait variants。"
         ],
-        "layoutRules": [
-          "先保留分類與素材索引，不開放一鍵生成。"
-        ],
+        "layoutRules": ["先保留分類與素材索引，不開放一鍵生成。"],
         "prompt": "Create a text-free Traveloggers background. Travel writing, playful exploration, maps, postcards, routes, memory fragments, warm social journey atmosphere. Leave room for title and caption. No readable text, no logo."
       },
       "notes": []
@@ -11018,79 +10922,30 @@
     {
       "id": "quote-card",
       "label": "文章金句",
-      "categories": [
-        "matters-town-quotes",
-        "freewrite-core"
-      ],
-      "requiredInputs": [
-        "quote",
-        "authorName",
-        "sourceTitle",
-        "brandLine"
-      ],
-      "recommendedOutputs": [
-        "1200x1200",
-        "1080x1350"
-      ]
+      "categories": ["matters-town-quotes", "freewrite-core"],
+      "requiredInputs": ["quote", "authorName", "sourceTitle", "brandLine"],
+      "recommendedOutputs": ["1200x1200", "1080x1350"]
     },
     {
       "id": "event-poster",
       "label": "活動海報",
-      "categories": [
-        "matters-lab-social",
-        "the-space"
-      ],
-      "requiredInputs": [
-        "eventTitle",
-        "date",
-        "time",
-        "speakers",
-        "platform",
-        "cta"
-      ],
-      "recommendedOutputs": [
-        "1200x630",
-        "1000x1000",
-        "1080x1350"
-      ]
+      "categories": ["matters-lab-social", "the-space"],
+      "requiredInputs": ["eventTitle", "date", "time", "speakers", "platform", "cta"],
+      "recommendedOutputs": ["1200x630", "1000x1000", "1080x1350"]
     },
     {
       "id": "campaign-card",
       "label": "Campaign 宣傳圖",
-      "categories": [
-        "matters-town-campaigns",
-        "freewrite-seasonal"
-      ],
-      "requiredInputs": [
-        "campaignName",
-        "headline",
-        "deck",
-        "cta",
-        "background"
-      ],
-      "recommendedOutputs": [
-        "1080x1080",
-        "1080x1350",
-        "688x160",
-        "1200x460"
-      ]
+      "categories": ["matters-town-campaigns", "freewrite-seasonal"],
+      "requiredInputs": ["campaignName", "headline", "deck", "cta", "background"],
+      "recommendedOutputs": ["1080x1080", "1080x1350", "688x160", "1200x460"]
     },
     {
       "id": "seven-day-book-batch",
       "label": "七日書批次題目卡",
-      "categories": [
-        "seven-day-book"
-      ],
-      "requiredInputs": [
-        "season",
-        "month",
-        "topics[]",
-        "dayNumber"
-      ],
-      "recommendedOutputs": [
-        "1080x1080",
-        "1080x1350"
-      ]
+      "categories": ["seven-day-book"],
+      "requiredInputs": ["season", "month", "topics[]", "dayNumber"],
+      "recommendedOutputs": ["1080x1080", "1080x1350"]
     }
   ]
 }

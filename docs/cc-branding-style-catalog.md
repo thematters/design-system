@@ -7,18 +7,18 @@
 
 ## 分類總覽
 
-| 分類 | 產品線 | Studio 可產品化程度 | 主要尺寸 | Figma 頁數 |
-| --- | --- | --- | --- | ---: |
-| 新手指南 | Shared | reference |  | 1 |
-| Matters.Town 社媒與站內公告 | Matters.Town | medium | 1594x900 (13)<br>1000x1000 (6)<br>1500x500 (3)<br>1594x907 (3) | 3 |
-| Matters.Town 文章金句 | Matters.Town | high | 1200x1200 (40)<br>2000x1333 (8)<br>2000x1002 (5) | 2 |
-| Matters.Town 活動與產品宣傳 | Matters.Town | medium | 1200x1200 (111)<br>1080x1920 (39)<br>1080x1080 (18)<br>1000x1000 (17) | 15 |
-| Matters Lab 社媒與活動海報 | Matters Lab | high | 1000x1000 (68)<br>1200x678 (32)<br>1200x900 (30)<br>1200x1200 (27) | 11 |
-| 自由寫品牌模板 | 自由寫 | high | 1080x1350 (87)<br>4096x4096 (12)<br>688x160 (8)<br>1080x1080 (7) | 3 |
-| 自由寫季節活動 | 自由寫 | medium | 1080x1350 (202)<br>1080x1080 (32)<br>1920x1440 (14)<br>2500x925 (9) | 9 |
-| 七日書 | 自由寫 / 七日書 | high | 1080x1080 (13)<br>2000x2000 (4)<br>1080x1350 (3)<br>2279x2338 (2) | 3 |
-| The Space | The Space | medium | 1200x630 (1) | 1 |
-| Traveloggers | Traveloggers | reference |  | 1 |
+| 分類                        | 產品線          | Studio 可產品化程度 | 主要尺寸                                                              | Figma 頁數 |
+| --------------------------- | --------------- | ------------------- | --------------------------------------------------------------------- | ---------: |
+| 新手指南                    | Shared          | reference           |                                                                       |          1 |
+| Matters.Town 社媒與站內公告 | Matters.Town    | medium              | 1594x900 (13)<br>1000x1000 (6)<br>1500x500 (3)<br>1594x907 (3)        |          3 |
+| Matters.Town 文章金句       | Matters.Town    | high                | 1200x1200 (40)<br>2000x1333 (8)<br>2000x1002 (5)                      |          2 |
+| Matters.Town 活動與產品宣傳 | Matters.Town    | medium              | 1200x1200 (111)<br>1080x1920 (39)<br>1080x1080 (18)<br>1000x1000 (17) |         15 |
+| Matters Lab 社媒與活動海報  | Matters Lab     | high                | 1000x1000 (68)<br>1200x678 (32)<br>1200x900 (30)<br>1200x1200 (27)    |         11 |
+| 自由寫品牌模板              | 自由寫          | high                | 1080x1350 (87)<br>4096x4096 (12)<br>688x160 (8)<br>1080x1080 (7)      |          3 |
+| 自由寫季節活動              | 自由寫          | medium              | 1080x1350 (202)<br>1080x1080 (32)<br>1920x1440 (14)<br>2500x925 (9)   |          9 |
+| 七日書                      | 自由寫 / 七日書 | high                | 1080x1080 (13)<br>2000x2000 (4)<br>1080x1350 (3)<br>2279x2338 (2)     |          3 |
+| The Space                   | The Space       | medium              | 1200x630 (1)                                                          |          1 |
+| Traveloggers                | Traveloggers    | reference           |                                                                       |          1 |
 
 ## 新手指南
 
@@ -30,9 +30,9 @@
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [新手指南](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-672) | 0 |  |
+| 頁面                                                                                         | Frames | 常見尺寸 |
+| -------------------------------------------------------------------------------------------- | -----: | -------- |
+| [新手指南](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-672) |      0 |          |
 
 ### 版型與底圖
 
@@ -83,11 +83,10 @@ OpenAI Image 2 初始 prompt：
 No image-generation prompt. This category is onboarding and usage guidance only.
 ```
 
-
 ### 代表 Frame
 
-| Frame | 尺寸 | URL |
-| --- | --- | --- |
+| Frame    | 尺寸    | URL                                                                              |
+| -------- | ------- | -------------------------------------------------------------------------------- |
 | 新手指南 | unknown | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-672 |
 
 ## Matters.Town 社媒與站內公告
@@ -100,11 +99,11 @@ No image-generation prompt. This category is onboarding and usage guidance only.
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [Matters.Town：社媒](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1271-4) | 29 | 1594x900 x12<br>1000x1000 x5<br>1594x907 x3<br>1500x500 x2<br>1200x206 x1 |
-| [Matters.Town：新域名上線](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1107-4) | 10 | 1000x1000 x1<br>1200x206 x1<br>1200x900 x1<br>1500x500 x1<br>1594x900 x1 |
-| [Matters.Town：選集默認封面 OG image](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1981-2) | 2 | 1200x630 x2 |
+| 頁面                                                                                                                    | Frames | 常見尺寸                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------- | -----: | ------------------------------------------------------------------------- |
+| [Matters.Town：社媒](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1271-4)                  |     29 | 1594x900 x12<br>1000x1000 x5<br>1594x907 x3<br>1500x500 x2<br>1200x206 x1 |
+| [Matters.Town：新域名上線](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1107-4)            |     10 | 1000x1000 x1<br>1200x206 x1<br>1200x900 x1<br>1500x500 x1<br>1594x900 x1  |
+| [Matters.Town：選集默認封面 OG image](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1981-2) |      2 | 1200x630 x2                                                               |
 
 ### 版型與底圖
 
@@ -161,15 +160,14 @@ OpenAI Image 2 初始 prompt：
 Create a text-free Matters.Town social announcement background. Abstract digital commons, calm editorial geometry, teal or mint legacy references may appear but use modern Matters purple #7258FF and lime #C3F432 as accents. Leave a clean text-safe area on the left or center. No readable text, no logo, no UI screenshot, no QR code.
 ```
 
-
 ### 代表 Frame
 
-| Frame | 尺寸 | URL |
-| --- | --- | --- |
-| Facebook & IG 推播圖片 | 1000x1000 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1271-313 |
-| 站上配圖 - 公告 - 1 | 1594x900 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1352-2 |
-| Newsletters Banner | 1600x613 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1271-1182 |
-| OG Image | 1200x630 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1981-3 |
+| Frame                  | 尺寸      | URL                                                                                 |
+| ---------------------- | --------- | ----------------------------------------------------------------------------------- |
+| Facebook & IG 推播圖片 | 1000x1000 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1271-313  |
+| 站上配圖 - 公告 - 1    | 1594x900  | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1352-2    |
+| Newsletters Banner     | 1600x613  | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1271-1182 |
+| OG Image               | 1200x630  | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1981-3    |
 
 ## Matters.Town 文章金句
 
@@ -181,10 +179,10 @@ Create a text-free Matters.Town social announcement background. Abstract digital
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [Matters.Town：文章金句](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2-22) | 20 | 1200x1200 x20 |
-| [Matters.Town：多圖 Post](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1413-2) | 33 | 1200x1200 x20<br>2000x1333 x8<br>2000x1002 x5 |
+| 頁面                                                                                                        | Frames | 常見尺寸                                      |
+| ----------------------------------------------------------------------------------------------------------- | -----: | --------------------------------------------- |
+| [Matters.Town：文章金句](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2-22)    |     20 | 1200x1200 x20                                 |
+| [Matters.Town：多圖 Post](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1413-2) |     33 | 1200x1200 x20<br>2000x1333 x8<br>2000x1002 x5 |
 
 ### 版型與底圖
 
@@ -244,14 +242,13 @@ OpenAI Image 2 初始 prompt：
 Create a text-free square quote-card background for Matters.Town. Literary, reflective, suitable for Traditional Chinese long-form quote overlay. Use soft paper texture, subtle light, abstract reading or public conversation motifs. Keep the center or upper-left area calm and high contrast for large Chinese serif text. No words, no symbols that look like letters, no logo.
 ```
 
-
 ### 代表 Frame
 
-| Frame | 尺寸 | URL |
-| --- | --- | --- |
-| General 文章的金句 | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2-23 |
-| 文章金句選 - 嚴肅版 | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1412-2 |
-| 文章金句選 - 輕鬆版 | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1412-79 |
+| Frame               | 尺寸      | URL                                                                                |
+| ------------------- | --------- | ---------------------------------------------------------------------------------- |
+| General 文章的金句  | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2-23     |
+| 文章金句選 - 嚴肅版 | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1412-2   |
+| 文章金句選 - 輕鬆版 | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1412-79  |
 | 文章圖片選 - 嚴肅版 | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1412-121 |
 
 ## Matters.Town 活動與產品宣傳
@@ -264,23 +261,23 @@ Create a text-free square quote-card background for Matters.Town. Literary, refl
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [Matters.Town：Newsletter 選集配圖](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1914-113) | 7 | 1200x1200 x7 |
-| [Matters.Town：Email & Newsletter banner](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2691-2) | 18 | 610x233 x14<br>400x400 x2<br>610x223 x1<br>610x400 x1 |
-| [Matters.Town：2022 成就榜單 NFT](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=578-4) | 6 | 1000x1000 x4<br>183x80 x2 |
-| [Matters.Town：2023 致謝詞小卡](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2750-2) | 13 | 1000x1000 x13 |
-| [Matters.Town：年度問卷](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=477-4) | 4 | 1200x1830 x3<br>1241x726 x1 |
-| [Matters.Town：馬特市民身份證](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1076-4) | 5 | 1200x754 x4<br>40x40 x1 |
-| [Matters.Town：散步活動海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1931-113) | 3 | 1200x1200 x3 |
-| [Matters.Town：註冊登入](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1985-3) | 9 | 1080x1920 x6<br>1200x1200 x2<br>2276x871 x1 |
-| [Matters.Town：遊牧者計畫](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2566-318) | 105 | 1200x1200 x57<br>1080x1920 x32<br>1080x1080 x7<br>1200x1600 x4<br>1600x1200 x2 |
-| [Matters.Town：遊牧者計畫競選海報產生器](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3053-11) | 23 | 1200x1200 x8<br>533x620 x3<br>680x1024 x2<br>800x196 x2<br>1010x293 x1 |
-| [Matters.Town：我的創作](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2656-2) | 2 | 1080x1920 x1<br>1200x1200 x1 |
-| [Matters.Town：Billboard](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3322-26) | 36 | 1200x1200 x33<br>1080x540 x1<br>1200x1638 x1<br>1735x282 x1 |
-| [Matters.Town：2024 年度問卷](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4169-1405) | 4 | 2000x700 x1<br>5985x1729 x1<br>5985x2998 x1<br>688x160 x1 |
-| [Matters.Town：錢包託管](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4179-124) | 8 | 1080x1350 x3<br>1080x1080 x2<br>3715x1729 x2<br>2233x1408 x1 |
-| [Matters.Town：2025 年度問卷](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5532-146) | 23 | 1080x1080 x9<br>1080x1350 x6<br>1200x460 x3<br>688x160 x3<br>7145x2998 x1 |
+| 頁面                                                                                                                        | Frames | 常見尺寸                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------- | -----: | ------------------------------------------------------------------------------ |
+| [Matters.Town：Newsletter 選集配圖](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1914-113)     |      7 | 1200x1200 x7                                                                   |
+| [Matters.Town：Email & Newsletter banner](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2691-2) |     18 | 610x233 x14<br>400x400 x2<br>610x223 x1<br>610x400 x1                          |
+| [Matters.Town：2022 成就榜單 NFT](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=578-4)          |      6 | 1000x1000 x4<br>183x80 x2                                                      |
+| [Matters.Town：2023 致謝詞小卡](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2750-2)           |     13 | 1000x1000 x13                                                                  |
+| [Matters.Town：年度問卷](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=477-4)                   |      4 | 1200x1830 x3<br>1241x726 x1                                                    |
+| [Matters.Town：馬特市民身份證](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1076-4)            |      5 | 1200x754 x4<br>40x40 x1                                                        |
+| [Matters.Town：散步活動海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1931-113)            |      3 | 1200x1200 x3                                                                   |
+| [Matters.Town：註冊登入](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1985-3)                  |      9 | 1080x1920 x6<br>1200x1200 x2<br>2276x871 x1                                    |
+| [Matters.Town：遊牧者計畫](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2566-318)              |    105 | 1200x1200 x57<br>1080x1920 x32<br>1080x1080 x7<br>1200x1600 x4<br>1600x1200 x2 |
+| [Matters.Town：遊牧者計畫競選海報產生器](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3053-11) |     23 | 1200x1200 x8<br>533x620 x3<br>680x1024 x2<br>800x196 x2<br>1010x293 x1         |
+| [Matters.Town：我的創作](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2656-2)                  |      2 | 1080x1920 x1<br>1200x1200 x1                                                   |
+| [Matters.Town：Billboard](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3322-26)                |     36 | 1200x1200 x33<br>1080x540 x1<br>1200x1638 x1<br>1735x282 x1                    |
+| [Matters.Town：2024 年度問卷](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4169-1405)          |      4 | 2000x700 x1<br>5985x1729 x1<br>5985x2998 x1<br>688x160 x1                      |
+| [Matters.Town：錢包託管](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4179-124)                |      8 | 1080x1350 x3<br>1080x1080 x2<br>3715x1729 x2<br>2233x1408 x1                   |
+| [Matters.Town：2025 年度問卷](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5532-146)           |     23 | 1080x1080 x9<br>1080x1350 x6<br>1200x460 x3<br>688x160 x3<br>7145x2998 x1      |
 
 ### 版型與底圖
 
@@ -341,16 +338,15 @@ OpenAI Image 2 初始 prompt：
 Create a text-free campaign background for Matters.Town. Contemporary civic writing platform, product announcement or annual survey mood, clean but warm. Use a coherent campaign visual system with purple #7258FF and lime #C3F432 accents, geometric blocks, paper or digital commons motifs. Leave clear safe areas for headline, date and CTA. No readable text, no UI, no logo.
 ```
 
-
 ### 代表 Frame
 
-| Frame | 尺寸 | URL |
-| --- | --- | --- |
-| IG 模板_1 | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5536-566 |
-| FB_1 | 1080x1080 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5536-692 |
-| 遊牧者計畫講座 海報模板 A：熱鬧繽紛 | 1080x1080 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3470-81 |
-| 公告模版_A | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3322-27 |
-| 改過IG 模板_1 | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4200-219 |
+| Frame                               | 尺寸      | URL                                                                                |
+| ----------------------------------- | --------- | ---------------------------------------------------------------------------------- |
+| IG 模板\_1                          | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5536-566 |
+| FB_1                                | 1080x1080 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5536-692 |
+| 遊牧者計畫講座 海報模板 A：熱鬧繽紛 | 1080x1080 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3470-81  |
+| 公告模版\_A                         | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3322-27  |
+| 改過IG 模板\_1                      | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4200-219 |
 
 ## Matters Lab 社媒與活動海報
 
@@ -362,19 +358,19 @@ Create a text-free campaign background for Matters.Town. Contemporary civic writ
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [Matter Lab：社媒](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=760-4) | 98 | 1000x1000 x34<br>1200x900 x30<br>1594x900 x22<br>2000x533 x5<br>1600x533 x2 |
-| [Matters Lab：Zusocial 活動模板](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2059-111) | 10 | 1200x1200 x7<br>1920x1024 x2<br>1920x1080 x1 |
-| [Matters Lab：Twitter Space 海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=346-4) | 7 | 1200x630 x7 |
-| [Matters Lab：Weekly AMA 海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-4) | 11 | 1200x630 x7<br>1200x490 x3<br>423x55 x1 |
-| [Matters Lab：社群活動懶人包](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-853) | 7 | 1600x903 x4<br>1600x1803 x3 |
-| [Matters Lab：Dec 2022 Side Event](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=457-4) | 7 | 900x1600 x4<br>1200x630 x2<br>100x100 x1 |
-| [Matters Lab：May 2023 Side Event](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1078-26) | 3 | 1200x630 x1<br>1600x1600 x1<br>900x1600 x1 |
-| [Matters Lab：馬特宇宙駕駛員](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=187-4) | 1 | 1200x768 x1 |
-| [Matters Lab：Team Class 海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-671) | 1 | 1200x630 x1 |
-| [Matters Lab：吹水會](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=261-46) | 1 | 1200x630 x1 |
-| [Matters Lab：本週活動預告](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2584-429) | 102 | 1000x1000 x34<br>1200x678 x32<br>1200x1200 x20<br>1200x1364 x4<br>2000x1002 x4 |
+| 頁面                                                                                                                  | Frames | 常見尺寸                                                                       |
+| --------------------------------------------------------------------------------------------------------------------- | -----: | ------------------------------------------------------------------------------ |
+| [Matter Lab：社媒](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=760-4)                   |     98 | 1000x1000 x34<br>1200x900 x30<br>1594x900 x22<br>2000x533 x5<br>1600x533 x2    |
+| [Matters Lab：Zusocial 活動模板](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2059-111)  |     10 | 1200x1200 x7<br>1920x1024 x2<br>1920x1080 x1                                   |
+| [Matters Lab：Twitter Space 海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=346-4)    |      7 | 1200x630 x7                                                                    |
+| [Matters Lab：Weekly AMA 海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-4)        |     11 | 1200x630 x7<br>1200x490 x3<br>423x55 x1                                        |
+| [Matters Lab：社群活動懶人包](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-853)       |      7 | 1600x903 x4<br>1600x1803 x3                                                    |
+| [Matters Lab：Dec 2022 Side Event](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=457-4)   |      7 | 900x1600 x4<br>1200x630 x2<br>100x100 x1                                       |
+| [Matters Lab：May 2023 Side Event](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=1078-26) |      3 | 1200x630 x1<br>1600x1600 x1<br>900x1600 x1                                     |
+| [Matters Lab：馬特宇宙駕駛員](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=187-4)        |      1 | 1200x768 x1                                                                    |
+| [Matters Lab：Team Class 海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-671)      |      1 | 1200x630 x1                                                                    |
+| [Matters Lab：吹水會](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=261-46)               |      1 | 1200x630 x1                                                                    |
+| [Matters Lab：本週活動預告](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2584-429)       |    102 | 1000x1000 x34<br>1200x678 x32<br>1200x1200 x20<br>1200x1364 x4<br>2000x1002 x4 |
 
 ### 版型與底圖
 
@@ -436,16 +432,15 @@ OpenAI Image 2 初始 prompt：
 Create a text-free Matters Lab event poster background. Experimental research lab, open technology, public-interest infrastructure, web3 or digital society themes. Dark or high-contrast base with geometric networks, subtle gradients, and space for event title plus speaker metadata. Use purple #7258FF and lime #C3F432 accents. No readable text, no logos, no interface mockups.
 ```
 
-
 ### 代表 Frame
 
-| Frame | 尺寸 | URL |
-| --- | --- | --- |
-| Matters Lab's Twitter Space_Instagram_01 | 1000x1000 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=797-29 |
-| 221110_蘋果新規 | 1200x630 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=346-5 |
-| Weekly AMA A款：雙講者 | 1200x630 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-15 |
-| 活動預告 A | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2630-1523 |
-| Zusocial_萬能模版 | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2059-684 |
+| Frame                                    | 尺寸      | URL                                                                                 |
+| ---------------------------------------- | --------- | ----------------------------------------------------------------------------------- |
+| Matters Lab's Twitter Space_Instagram_01 | 1000x1000 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=797-29    |
+| 221110\_蘋果新規                         | 1200x630  | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=346-5     |
+| Weekly AMA A款：雙講者                   | 1200x630  | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-15     |
+| 活動預告 A                               | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2630-1523 |
+| Zusocial\_萬能模版                       | 1200x1200 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=2059-684  |
 
 ## 自由寫品牌模板
 
@@ -457,11 +452,11 @@ Create a text-free Matters Lab event poster background. Experimental research la
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [自由寫：品牌模板](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3902-223) | 109 | 1080x1350 x87<br>1080x1080 x7<br>2500x925 x7<br>600x200 x2<br>877x279 x2 |
-| [自由寫：徽章、徽章領取說明圖、Default Image](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3501-230) | 24 | 4096x4096 x12<br>1199x599 x2<br>1600x1600 x2<br>2000x1333 x2<br>688x160 x2 |
-| [自由寫：用戶使用的活動模板](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4973-26) | 12 | 1200x1200 x6<br>688x160 x6 |
+| 頁面                                                                                                                              | Frames | 常見尺寸                                                                   |
+| --------------------------------------------------------------------------------------------------------------------------------- | -----: | -------------------------------------------------------------------------- |
+| [自由寫：品牌模板](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3902-223)                            |    109 | 1080x1350 x87<br>1080x1080 x7<br>2500x925 x7<br>600x200 x2<br>877x279 x2   |
+| [自由寫：徽章、徽章領取說明圖、Default Image](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3501-230) |     24 | 4096x4096 x12<br>1199x599 x2<br>1600x1600 x2<br>2000x1333 x2<br>688x160 x2 |
+| [自由寫：用戶使用的活動模板](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4973-26)                   |     12 | 1200x1200 x6<br>688x160 x6                                                 |
 
 ### 版型與底圖
 
@@ -522,16 +517,15 @@ OpenAI Image 2 初始 prompt：
 Create a text-free Freewrite editorial background. Literary writing activity, seasonal reading, paper, notebook, soft illustration, intimate creative atmosphere. Use a coherent palette with subtle Matters purple and lime accents, but allow warmer seasonal colors. Leave generous space for vertical Traditional Chinese title overlay. No words, no logo, no UI.
 ```
 
-
 ### 代表 Frame
 
-| Frame | 尺寸 | URL |
-| --- | --- | --- |
-| 1. 好文精選推薦_IG | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3902-907 |
-| 3. 文章金句_IG | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3902-1027 |
-| 2. 七日書題目_IG_1 | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3946-73 |
-| 5. 講座摘要 | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4008-296 |
-| 6. murmur | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4010-751 |
+| Frame               | 尺寸      | URL                                                                                 |
+| ------------------- | --------- | ----------------------------------------------------------------------------------- |
+| 1. 好文精選推薦\_IG | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3902-907  |
+| 3. 文章金句\_IG     | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3902-1027 |
+| 2. 七日書題目\_IG_1 | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=3946-73   |
+| 5. 講座摘要         | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4008-296  |
+| 6. murmur           | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4010-751  |
 
 ## 自由寫季節活動
 
@@ -543,17 +537,17 @@ Create a text-free Freewrite editorial background. Literary writing activity, se
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [自由寫：2024 冬季主題](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4198-1377) | 24 | 1080x1080 x9<br>1080x1350 x9<br>2179x1080 x3<br>2500x925 x3 |
-| [自由寫：2025 春季主題](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4249-134) | 7 | 7888x15089 x2<br>8964x10984 x2<br>1080x1080 x1<br>1080x1350 x1<br>4281x1697 x1 |
-| [自由寫：2025 夏季主題](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4904-2) | 49 | 1080x1350 x40<br>1080x1080 x4<br>10378x15089 x2<br>10982x10984 x1<br>2500x925 x1 |
-| [自由寫：70 題問卷](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4478-2) | 20 | 1080x1350 x20 |
-| [自由寫：週年慶活動相關物料](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4680-2) | 44 | 1080x1350 x29<br>1080x1080 x3<br>5424x1923 x3<br>688x160 x2<br>1080x1442 x1 |
-| [自由寫：2025 年 8、9月（兩廳院）](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5047-2) | 91 | 1080x1350 x55<br>1920x1440 x14<br>2500x925 x5<br>4363x8490 x5<br>4960x7116 x5 |
-| [自由寫：2025 秋天（用春天的模板）](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5412-6972) | 29 | 1080x1080 x13<br>1080x1350 x11<br>7888x15089 x2<br>8964x10984 x2<br>4281x1697 x1 |
-| [自由寫：2025 總結](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5495-2) | 36 | 1080x1350 x36 |
-| [自由寫：2026 春季主題](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5495-203) | 6 | 7888x8788 x2<br>8964x4218 x2<br>1080x1080 x1<br>1080x1350 x1 |
+| 頁面                                                                                                                     | Frames | 常見尺寸                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------ | -----: | -------------------------------------------------------------------------------- |
+| [自由寫：2024 冬季主題](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4198-1377)             |     24 | 1080x1080 x9<br>1080x1350 x9<br>2179x1080 x3<br>2500x925 x3                      |
+| [自由寫：2025 春季主題](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4249-134)              |      7 | 7888x15089 x2<br>8964x10984 x2<br>1080x1080 x1<br>1080x1350 x1<br>4281x1697 x1   |
+| [自由寫：2025 夏季主題](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4904-2)                |     49 | 1080x1350 x40<br>1080x1080 x4<br>10378x15089 x2<br>10982x10984 x1<br>2500x925 x1 |
+| [自由寫：70 題問卷](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4478-2)                    |     20 | 1080x1350 x20                                                                    |
+| [自由寫：週年慶活動相關物料](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4680-2)           |     44 | 1080x1350 x29<br>1080x1080 x3<br>5424x1923 x3<br>688x160 x2<br>1080x1442 x1      |
+| [自由寫：2025 年 8、9月（兩廳院）](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5047-2)     |     91 | 1080x1350 x55<br>1920x1440 x14<br>2500x925 x5<br>4363x8490 x5<br>4960x7116 x5    |
+| [自由寫：2025 秋天（用春天的模板）](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5412-6972) |     29 | 1080x1080 x13<br>1080x1350 x11<br>7888x15089 x2<br>8964x10984 x2<br>4281x1697 x1 |
+| [自由寫：2025 總結](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5495-2)                    |     36 | 1080x1350 x36                                                                    |
+| [自由寫：2026 春季主題](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5495-203)              |      6 | 7888x8788 x2<br>8964x4218 x2<br>1080x1080 x1<br>1080x1350 x1                     |
 
 ### 版型與底圖
 
@@ -614,16 +608,15 @@ OpenAI Image 2 初始 prompt：
 Create a text-free seasonal Freewrite campaign background. Choose a coherent seasonal illustration system: spring/summer/autumn/winter literary mood, reading, walking, notebooks, city textures, quiet creative life. Leave consistent title-safe areas for a series of Traditional Chinese posts. Use restrained Matters purple and lime accents. No readable text, no logo.
 ```
 
-
 ### 代表 Frame
 
-| Frame | 尺寸 | URL |
-| --- | --- | --- |
-| IG Post_1 | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4958-693 |
-| 單月版宣傳海報（8月） | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5134-42 |
-| IG_題目_5 | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5460-430 |
-| 主視覺（宣言大圖） | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5495-4 |
-| 問卷 1 | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4478-3 |
+| Frame                 | 尺寸      | URL                                                                                |
+| --------------------- | --------- | ---------------------------------------------------------------------------------- |
+| IG Post_1             | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4958-693 |
+| 單月版宣傳海報（8月） | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5134-42  |
+| IG\_題目\_5           | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5460-430 |
+| 主視覺（宣言大圖）    | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5495-4   |
+| 問卷 1                | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=4478-3   |
 
 ## 七日書
 
@@ -635,11 +628,11 @@ Create a text-free seasonal Freewrite campaign background. Choose a coherent sea
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [七日書 Logo](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5646-972) | 2 | 259x119 x2 |
-| [自由寫：Q2 七日書的模板](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5646-2) | 22 | 1080x1080 x13<br>1080x1350 x3<br>2279x2338 x2<br>8964x4218 x2<br>2500x925 x1 |
-| [七日書 POAP](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5646-982) | 4 | 2000x2000 x4 |
+| 頁面                                                                                                        | Frames | 常見尺寸                                                                     |
+| ----------------------------------------------------------------------------------------------------------- | -----: | ---------------------------------------------------------------------------- |
+| [七日書 Logo](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5646-972)           |      2 | 259x119 x2                                                                   |
+| [自由寫：Q2 七日書的模板](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5646-2) |     22 | 1080x1080 x13<br>1080x1350 x3<br>2279x2338 x2<br>8964x4218 x2<br>2500x925 x1 |
+| [七日書 POAP](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5646-982)           |      4 | 2000x2000 x4                                                                 |
 
 ### 版型與底圖
 
@@ -699,15 +692,14 @@ OpenAI Image 2 初始 prompt：
 Create a text-free Seven Day Book prompt-card background. A 7-day reading and writing challenge, literary, playful but calm, suitable for batch topic cards. Use a consistent series visual system with book, page, bookmark, calendar or quiet reading motifs. Leave a large clean area for day number and Traditional Chinese topic text. No readable text, no logo.
 ```
 
-
 ### 代表 Frame
 
-| Frame | 尺寸 | URL |
-| --- | --- | --- |
-| FB_題目_1 | 1080x1080 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5721-588 |
-| FB Post_1 | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5721-800 |
-| FB Cover：一月 | 2500x925 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5721-578 |
-| ↳ 七日書 POAP | unknown | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5646-982 |
+| Frame          | 尺寸      | URL                                                                                |
+| -------------- | --------- | ---------------------------------------------------------------------------------- |
+| FB\_題目\_1    | 1080x1080 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5721-588 |
+| FB Post_1      | 1080x1350 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5721-800 |
+| FB Cover：一月 | 2500x925  | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5721-578 |
+| ↳ 七日書 POAP  | unknown   | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=5646-982 |
 
 ## The Space
 
@@ -719,9 +711,9 @@ AMA 與社群活動海報。
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [The Space：AMA 海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=125-4) | 1 | 1200x630 x1 |
+| 頁面                                                                                                   | Frames | 常見尺寸    |
+| ------------------------------------------------------------------------------------------------------ | -----: | ----------- |
+| [The Space：AMA 海報](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=125-4) |      1 | 1200x630 x1 |
 
 ### 版型與底圖
 
@@ -774,11 +766,10 @@ OpenAI Image 2 初始 prompt：
 Create a text-free event background for The Space by Matters. Intimate online talk, open conversation, calm dark stage, subtle spatial geometry, enough safe area for event title and date. Use restrained purple and lime accents. No readable text, no logo.
 ```
 
-
 ### 代表 Frame
 
-| Frame | 尺寸 | URL |
-| --- | --- | --- |
+| Frame         | 尺寸     | URL                                                                             |
+| ------------- | -------- | ------------------------------------------------------------------------------- |
 | The Space AMA | 1200x630 | https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=125-7 |
 
 ## Traveloggers
@@ -791,9 +782,9 @@ Create a text-free event background for The Space by Matters. Intimate online ta
 
 ### Figma 頁面
 
-| 頁面 | Frames | 常見尺寸 |
-| --- | ---: | --- |
-| [Traveloggers：玩耍素材庫（建置中）](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-852) | 0 |  |
+| 頁面                                                                                                                   | Frames | 常見尺寸 |
+| ---------------------------------------------------------------------------------------------------------------------- | -----: | -------- |
+| [Traveloggers：玩耍素材庫（建置中）](https://www.figma.com/design/HQ5Y6bBc9dVDT99u8Qvkb5/CC---Branding?node-id=17-852) |      0 |          |
 
 ### 版型與底圖
 
@@ -837,16 +828,15 @@ OpenAI Image 2 初始 prompt：
 Create a text-free Traveloggers background. Travel writing, playful exploration, maps, postcards, routes, memory fragments, warm social journey atmosphere. Leave room for title and caption. No readable text, no logo.
 ```
 
-
 ### 代表 Frame
 
 尚未匯出代表 frame。
 
 ## Matters Studio 用例
 
-| 用例 | 對應分類 | 必填欄位 | 建議輸出 |
-| --- | --- | --- | --- |
-| 文章金句 | matters-town-quotes, freewrite-core | quote, authorName, sourceTitle, brandLine | 1200x1200, 1080x1350 |
-| 活動海報 | matters-lab-social, the-space | eventTitle, date, time, speakers, platform, cta | 1200x630, 1000x1000, 1080x1350 |
-| Campaign 宣傳圖 | matters-town-campaigns, freewrite-seasonal | campaignName, headline, deck, cta, background | 1080x1080, 1080x1350, 688x160, 1200x460 |
-| 七日書批次題目卡 | seven-day-book | season, month, topics[], dayNumber | 1080x1080, 1080x1350 |
+| 用例             | 對應分類                                   | 必填欄位                                        | 建議輸出                                |
+| ---------------- | ------------------------------------------ | ----------------------------------------------- | --------------------------------------- |
+| 文章金句         | matters-town-quotes, freewrite-core        | quote, authorName, sourceTitle, brandLine       | 1200x1200, 1080x1350                    |
+| 活動海報         | matters-lab-social, the-space              | eventTitle, date, time, speakers, platform, cta | 1200x630, 1000x1000, 1080x1350          |
+| Campaign 宣傳圖  | matters-town-campaigns, freewrite-seasonal | campaignName, headline, deck, cta, background   | 1080x1080, 1080x1350, 688x160, 1200x460 |
+| 七日書批次題目卡 | seven-day-book                             | season, month, topics[], dayNumber              | 1080x1080, 1080x1350                    |
