@@ -17,17 +17,15 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # Full history needed so changesets can compute changelogs
           # against the previous version tags.
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.0
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "20"
           cache: pnpm
